@@ -9,16 +9,12 @@ import { ComparePage } from '@/pages/ComparePage'
 import { SearchPage } from '@/pages/SearchPage'
 import { ConnectionsGraphPage } from '@/pages/ConnectionsGraphPage'
 import { PlanPage } from '@/pages/PlanPage'
-import { CommitPage } from '@/pages/CommitPage'
-import { CompanionPage } from '@/pages/CompanionPage'
 import { ImpactHubPage } from '@/pages/ImpactHubPage'
 import { topicById, companyById, supervisorById, fieldById } from '@/data/index'
 import { PHASES } from '@/data/phases'
 import { Badge } from '@/components/ui/badge'
 
 const PHASE1_PANELS = new Set(['graph', 'bookmarks', 'connections-graph', 'compare', 'search'])
-const PHASE3_PANELS = new Set(['outline', 'editor', 'citations', 'ai-assist'])
-const PHASE4_PANELS = new Set(['companion', 'checklist', 'formatting', 'submission', 'feedback'])
 
 function BookmarksView() {
   const { bookmarkedTopicIds, setActiveTopic, toggleBookmark } = useAppStore()
@@ -118,8 +114,6 @@ export function GraphPage() {
 
   const phase = PHASES.find(p => p.id === currentPhase) ?? PHASES[0]
   const isPhase1Panel = PHASE1_PANELS.has(currentPanel)
-  const isPhase3Panel = PHASE3_PANELS.has(currentPanel)
-  const isPhase4Panel = PHASE4_PANELS.has(currentPanel)
 
   return (
     <div className="flex h-screen overflow-hidden bg-background">
@@ -190,22 +184,8 @@ export function GraphPage() {
             </motion.div>
           )}
 
-          {/* Phase 2 — Commit (portfolio) */}
-          {currentPanel === 'commit' && (
-            <motion.div
-              key="commit"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="h-full w-full"
-            >
-              <CommitPage />
-            </motion.div>
-          )}
-
-          {/* Phase 3 — Plan */}
-          {isPhase3Panel && (
+          {/* Phase 2 — Plan (distribution + forecast impact + companion) */}
+          {currentPanel === 'plan' && (
             <motion.div
               key="plan"
               initial={{ opacity: 0 }}
@@ -218,21 +198,7 @@ export function GraphPage() {
             </motion.div>
           )}
 
-          {/* Phase 4 — Companion */}
-          {currentPanel === 'companion' && (
-            <motion.div
-              key="companion"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="h-full w-full"
-            >
-              <CompanionPage />
-            </motion.div>
-          )}
-
-          {/* Phase 5 — Impact Hub */}
+          {/* Phase 3 — Impact Hub */}
           {currentPanel === 'impact-hub' && (
             <motion.div
               key="impact-hub"
@@ -246,8 +212,8 @@ export function GraphPage() {
             </motion.div>
           )}
 
-          {/* Phase 2, 4–5 placeholders */}
-          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'impact-hub' && currentPanel !== 'commit' && (
+          {/* Impact Hub sub-panel placeholders (Tax Benefits, Legacy) */}
+          {!isPhase1Panel && currentPanel !== 'plan' && currentPanel !== 'impact-hub' && (
             <motion.div
               key={currentPanel}
               initial={{ opacity: 0 }}

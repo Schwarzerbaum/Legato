@@ -349,12 +349,10 @@ export function ResearchPage() {
     }
 
     const openCompanion = () => {
-      // Unlock Phase 4 by ensuring selectedProjectId is set.
-      // Don't override if the user already picked a specific project via Select.
       if (!useAppStore.getState().selectedProjectId) {
         setSelectedProjectId("project-06")
       }
-      setCurrentPhase(4)
+      setCurrentPhase(2)
     }
 
     const nodes: Node<ResearchNodeData>[] = [...nodeDataMap.values()].map((data) => {

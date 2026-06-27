@@ -2,12 +2,11 @@ import type { SidebarPanel } from '@/store/useAppStore'
 import type { LucideIcon } from 'lucide-react'
 import {
   Network, Bookmark, Scale, Search, Share2,
-  ListTree, Sparkles,
-  Target,
+  ListTree,
   Landmark, Receipt, Archive,
 } from 'lucide-react'
 
-export type PhaseId = 1 | 2 | 3 | 4 | 5
+export type PhaseId = 1 | 2 | 3
 
 export interface PhaseItem {
   panel: SidebarPanel
@@ -25,7 +24,8 @@ export interface PhaseConfig {
   disabled?: boolean // greyed out in bar — future phases not yet built
 }
 
-// Legato journey: from your first flexible euro to your own Impact Hub.
+// Legato journey: explore impact, plan your giving (and its forecast impact),
+// then graduate into your own Impact Hub.
 export const PHASES: PhaseConfig[] = [
   {
     id: 1, name: 'Explore', color: '#059669', lightBg: 'rgba(5,150,105,0.10)',
@@ -39,29 +39,14 @@ export const PHASES: PhaseConfig[] = [
     ],
   },
   {
-    id: 2, name: 'Commit', color: '#0d9488', lightBg: 'rgba(13,148,136,0.10)',
-    defaultPanel: 'commit',
+    id: 2, name: 'Plan', color: '#d97706', lightBg: 'rgba(217,119,6,0.10)',
+    defaultPanel: 'plan',
     items: [
-      { panel: 'commit',  label: 'Portfolio', icon: Target },
-      { panel: 'compare', label: 'Compare',   icon: Scale },
+      { panel: 'plan', label: 'Plan & Impact', icon: ListTree },
     ],
   },
   {
-    id: 3, name: 'Plan', color: '#d97706', lightBg: 'rgba(217,119,6,0.10)',
-    defaultPanel: 'outline',
-    items: [
-      { panel: 'outline', label: 'Giving Plan', icon: ListTree },
-    ],
-  },
-  {
-    id: 4, name: 'Impact', color: '#e11d48', lightBg: 'rgba(225,29,72,0.10)',
-    defaultPanel: 'companion',
-    items: [
-      { panel: 'companion', label: 'Impact Tracker', icon: Sparkles },
-    ],
-  },
-  {
-    id: 5, name: 'Impact Hub', color: '#7c3aed', lightBg: 'rgba(124,58,237,0.10)',
+    id: 3, name: 'Impact Hub', color: '#7c3aed', lightBg: 'rgba(124,58,237,0.10)',
     defaultPanel: 'impact-hub',
     items: [
       { panel: 'impact-hub', label: 'Your Impact Hub', icon: Landmark },

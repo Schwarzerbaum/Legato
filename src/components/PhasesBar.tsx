@@ -3,7 +3,7 @@ import { useAppStore } from '@/store/useAppStore'
 import { PHASES } from '@/data/phases'
 
 export function PhasesBar() {
-  const { currentPhase, setCurrentPhase, bookmarkedTopicIds, committedTopicIds } = useAppStore()
+  const { currentPhase, setCurrentPhase, committedTopicIds } = useAppStore()
   const hasCommitments = committedTopicIds.length > 0
 
   return (
@@ -13,10 +13,7 @@ export function PhasesBar() {
           const isActive = currentPhase === phase.id
           const notClickable =
             phase.disabled ||
-            (phase.id === 2 && bookmarkedTopicIds.length === 0) ||
-            (phase.id === 3 && !hasCommitments) ||
-            (phase.id === 4 && !hasCommitments) ||
-            (phase.id === 5 && !hasCommitments)
+            ((phase.id === 2 || phase.id === 3) && !hasCommitments)
           return (
             <div key={phase.id} className="flex items-center gap-1">
               {idx > 0 && (

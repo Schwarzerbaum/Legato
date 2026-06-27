@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 export type AppView = 'onboarding' | 'graph'
 export type SidebarPanel =
-  'graph' | 'bookmarks' | 'commit' | 'compare' | 'search' | 'connections-graph' |
+  'graph' | 'bookmarks' | 'compare' | 'search' | 'connections-graph' | 'plan' |
   'literature' | 'advisors' | 'resources' | 'notes' |
   'outline' | 'editor' | 'citations' | 'ai-assist' |
   'companion' | 'checklist' | 'formatting' | 'submission' | 'feedback' |
@@ -11,7 +11,7 @@ export type SidebarPanel =
 interface AppState {
   // Navigation
   currentView: AppView
-  currentPhase: 1 | 2 | 3 | 4 | 5
+  currentPhase: 1 | 2 | 3
   currentPanel: SidebarPanel
 
   // Onboarding
@@ -60,7 +60,7 @@ interface AppState {
   moveBookmark: (topicId: string, direction: 'up' | 'down') => void
   toggleCompare: (topicId: string) => void
   setCurrentPanel: (panel: SidebarPanel) => void
-  setCurrentPhase: (phase: 1 | 2 | 3 | 4 | 5) => void
+  setCurrentPhase: (phase: 1 | 2 | 3) => void
   setPlannedTopic: (id: string | null) => void
   setSuggestedFieldIds: (ids: string[]) => void
   setSuggestionsLoading: (v: boolean) => void
@@ -191,7 +191,7 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   setCurrentPhase: (phase) => {
     const defaultPanels: Record<number, SidebarPanel> = {
-      1: 'graph', 2: 'commit', 3: 'outline', 4: 'companion', 5: 'impact-hub',
+      1: 'graph', 2: 'plan', 3: 'impact-hub',
     }
     set({ currentPhase: phase, currentPanel: defaultPanels[phase], activeTopicId: null, activeSourceId: null })
   },
