@@ -2,13 +2,12 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Heart, Check, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
 import { useAppStore } from '@/store/useAppStore'
 import { CAUSE_THEMES } from '@/data/themes'
-import { suggestThemes } from '@/lib/suggestFields'
+import { HelpMeDecideChat } from '@/components/HelpMeDecideChat'
 import legatoLogo from '@/assets/legato.svg'
 import heroBg from '@/assets/hero.png'
 
@@ -23,7 +22,6 @@ export function OnboardingPage() {
   const {
     selectedThemeKeys,
     toggleTheme,
-    setSelectedThemes,
     giverStyle: givingStyle,
     setGivingStyle,
     enterGraph,
@@ -32,27 +30,8 @@ export function OnboardingPage() {
   const hasThemes = selectedThemeKeys.length > 0
   const canProceed = hasThemes && !!givingStyle
 
-  // "Help me decide" — AI suggests cards from a free-text description.
-  const [assistOpen, setAssistOpen] = useState(false)
-  const [assistText, setAssistText] = useState('')
-  const [assistLoading, setAssistLoading] = useState(false)
-  const [assistError, setAssistError] = useState<string | null>(null)
-
-  async function handleSuggest() {
-    const text = assistText.trim()
-    if (!text || assistLoading) return
-    setAssistLoading(true)
-    setAssistError(null)
-    const keys = await suggestThemes(text, CAUSE_THEMES.map(t => ({ key: t.key, label: t.label })))
-    setAssistLoading(false)
-    if (keys.length) {
-      setSelectedThemes(keys)
-      setAssistOpen(false)
-      setAssistText('')
-    } else {
-      setAssistError("Couldn't get a suggestion just now — try describing it differently, or pick the cards below.")
-    }
-  }
+  // "Help me decide" — opens a side chat that suggests + selects cards.
+  const [chatOpen, setChatOpen] = useState(false)
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-y-auto bg-background px-6 py-12">
@@ -105,10 +84,10 @@ export function OnboardingPage() {
               </span>
               <button
                 type="button"
-                onClick={() => setAssistOpen(o => !o)}
+                onClick={() => setChatOpen(o => !o)}
                 className={cn(
                   'flex items-center gap-1.5 rounded-full border px-3 py-1 ds-caption font-medium transition',
-                  assistOpen
+                  chatOpen
                     ? 'border-primary text-foreground'
                     : 'border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground',
                 )}
@@ -118,40 +97,6 @@ export function OnboardingPage() {
               </button>
             </div>
           </div>
-
-          {/* Help me decide — AI suggestion from a free-text description */}
-          <AnimatePresence>
-            {assistOpen && (
-              <motion.div
-                key="assist"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="overflow-hidden"
-              >
-                <div className="space-y-2 rounded-xl border border-border bg-card p-4">
-                  <p className="ds-caption text-muted-foreground">
-                    Not sure where to start? Describe what you care about and we'll pick the causes for you.
-                  </p>
-                  <div className="flex gap-2">
-                    <Input
-                      value={assistText}
-                      onChange={e => setAssistText(e.target.value)}
-                      onKeyDown={e => { if (e.key === 'Enter') handleSuggest() }}
-                      placeholder="e.g. I care about kids, schools and the climate…"
-                      disabled={assistLoading}
-                      className="h-10"
-                    />
-                    <Button onClick={handleSuggest} disabled={assistLoading || !assistText.trim()} className="h-10 shrink-0">
-                      {assistLoading ? <Sparkles className="size-4 animate-pulse" /> : 'Suggest'}
-                    </Button>
-                  </div>
-                  {assistError && <p className="ds-caption text-amber-600">{assistError}</p>}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {CAUSE_THEMES.map((theme, i) => {
@@ -271,6 +216,9 @@ export function OnboardingPage() {
           Your selection shapes the graph — only the causes you pick and their projects appear.
         </p>
       </motion.div>
+
+      {/* "Help me decide" side chat */}
+      <HelpMeDecideChat open={chatOpen} onClose={() => setChatOpen(false)} />
     </div>
   )
 }
