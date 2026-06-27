@@ -1,0 +1,271 @@
+{
+  "summary": {
+    "total": 18,
+    "correct": 1,
+    "partial": 0,
+    "incorrect": 17,
+    "avg_score": 0.053
+  },
+  "results": [
+    {
+      "id": "Q01",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 1/15",
+      "retrieved_pages": [
+        35,
+        2,
+        18
+      ],
+      "grounded_entities": [
+        "BIM",
+        "BIM-Leitfaden"
+      ]
+    },
+    {
+      "id": "Q02",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 5/20",
+      "retrieved_pages": [
+        35,
+        38,
+        18
+      ],
+      "grounded_entities": [
+        "BIM",
+        "BIM-Leitfaden",
+        "Straßenbauverwaltung"
+      ]
+    },
+    {
+      "id": "Q03",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 2/23",
+      "retrieved_pages": [
+        35,
+        20,
+        18
+      ],
+      "grounded_entities": [
+        "BIM",
+        "BIM-Leitfaden"
+      ]
+    },
+    {
+      "id": "Q04",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 0/13",
+      "retrieved_pages": [
+        35,
+        18,
+        20
+      ],
+      "grounded_entities": [
+        "BIM",
+        "BIM-Leitfaden"
+      ]
+    },
+    {
+      "id": "Q05",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 2/11",
+      "retrieved_pages": [
+        20,
+        35,
+        33
+      ],
+      "grounded_entities": [
+        "Auftraggeber-Informationsanforderungen"
+      ]
+    },
+    {
+      "id": "Q06",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 1/20",
+      "retrieved_pages": [
+        20,
+        6,
+        22
+      ],
+      "grounded_entities": [
+        "BIM"
+      ]
+    },
+    {
+      "id": "Q07",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 0/18",
+      "retrieved_pages": [
+        20,
+        37,
+        33
+      ],
+      "grounded_entities": [
+        "BIM"
+      ]
+    },
+    {
+      "id": "Q08",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 1/24",
+      "retrieved_pages": [
+        35,
+        2,
+        18
+      ],
+      "grounded_entities": []
+    },
+    {
+      "id": "Q09",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 0/21",
+      "retrieved_pages": [
+        20,
+        6,
+        12
+      ],
+      "grounded_entities": []
+    },
+    {
+      "id": "Q10",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 5/21",
+      "retrieved_pages": [
+        20,
+        6,
+        35
+      ],
+      "grounded_entities": [
+        "BIM",
+        "Auftraggeber-Informationsanforderungen",
+        "BIM-Abwicklungsplan"
+      ]
+    },
+    {
+      "id": "Q11",
+      "verdict": "correct",
+      "score": 0.95,
+      "reason": "13/16 key entities matched",
+      "retrieved_pages": [
+        25,
+        35,
+        26
+      ],
+      "grounded_entities": [
+        "LOI",
+        "Level of Information"
+      ]
+    },
+    {
+      "id": "Q12",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 6/25",
+      "retrieved_pages": [
+        18,
+        20,
+        38
+      ],
+      "grounded_entities": [
+        "BIM",
+        "Common Data Environment",
+        "CDE"
+      ]
+    },
+    {
+      "id": "Q13",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 2/26",
+      "retrieved_pages": [
+        20,
+        18,
+        35
+      ],
+      "grounded_entities": [
+        "BIM"
+      ]
+    },
+    {
+      "id": "Q14",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 0/38",
+      "retrieved_pages": [
+        20,
+        18,
+        6
+      ],
+      "grounded_entities": [
+        "BIM"
+      ]
+    },
+    {
+      "id": "Q15",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 3/26",
+      "retrieved_pages": [
+        35,
+        20,
+        33
+      ],
+      "grounded_entities": []
+    },
+    {
+      "id": "Q16",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 0/4",
+      "retrieved_pages": [
+        20,
+        6,
+        18
+      ],
+      "grounded_entities": [
+        "BIM",
+        "Straßenbauverwaltung",
+        "Baden-Württemberg"
+      ]
+    },
+    {
+      "id": "Q17",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 0/16",
+      "retrieved_pages": [
+        20,
+        6,
+        35
+      ],
+      "grounded_entities": [
+        "BIM",
+        "BIM-Methode"
+      ]
+    },
+    {
+      "id": "Q18",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "reason": "Missing key content: 3/80",
+      "retrieved_pages": [
+        20,
+        6,
+        18
+      ],
+      "grounded_entities": [
+        "BIM",
+        "BIM-Methode"
+      ]
+    }
+  ]
+}

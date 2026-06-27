@@ -1,0 +1,67 @@
+# Node / Next.js
+node_modules/
+.next/
+.vercel/
+dist/
+out/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.env
+.env.*
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Databases / ML artifacts
+*.db
+*.sqlite
+*.sqlite3
+legatum-knowledge-engine/
+blackswanx.db
+BlackSwanX/legatum/indexes/
+BlackSwanX/legatum/embeddings/
+BlackSwanX/legatum/graphs/
+BlackSwanX/legatum/extracted_images/
+BlackSwanX/__pycache__/
+BlackSwanX/legatum/__pycache__/
+
+# Build artifacts
+*.log
+.DS_Store
+Thumbs.db
+coverage/
+htmlcov/
+
+# Secrets
+*.pem
+*.key
+*.crt
+secrets/
+
+# Large model files
+*.bin
+*.pt
+*.onnx
+*.safetensors
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Old Vite frontend (archived, not part of main demo)
+legatum-frontend/node_modules/
+legatum-frontend/dist/
+
+# Docker volumes / data
+docker-data/
+postgres-data/
+redis-data/
