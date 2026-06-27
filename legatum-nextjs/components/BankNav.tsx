@@ -64,6 +64,22 @@ export default function BankNav() {
             </Link>
           )
         })}
+
+        {/* Link to the giver-facing app (set NEXT_PUBLIC_GIVER_URL at deploy) */}
+        {process.env.NEXT_PUBLIC_GIVER_URL && (
+          <a
+            href={process.env.NEXT_PUBLIC_GIVER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', marginLeft: 4, paddingLeft: 10, borderLeft: '1px solid #e2e8f0' }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', padding: '7px 12px', borderRadius: 999, cursor: 'pointer' }}>
+              <span style={{ fontSize: 11, fontWeight: 400, color: '#64748b', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>
+                Giver app ↗
+              </span>
+            </div>
+          </a>
+        )}
       </div>
     </nav>
   )

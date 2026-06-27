@@ -106,6 +106,21 @@ philanthropic portfolio:
 
 See `legatum-nextjs/README.md` for the full bank-engine docs.
 
+### Running & linking the two apps
+
+```bash
+npm run dev     # giver app  → http://localhost:5173  (Vite)
+npm run bank    # bank app   → http://localhost:3000  (Next.js)
+```
+
+They deploy separately (giver → Cloudflare Workers via `npm run deploy`; bank → its
+own host). To **link** them, each side reads the other's deployed URL from an env var,
+and the cross-link only renders when its URL is set:
+
+- **Giver app** (build-time): `VITE_BANK_URL=https://<bank-url>` → shows an
+  "LBBW Advisor view ↗" link top-right of onboarding.
+- **Bank app** (deploy env): `NEXT_PUBLIC_GIVER_URL=https://<giver-url>` → shows a
+  "Giver app ↗" link in the bottom nav.
 
 ---
 
