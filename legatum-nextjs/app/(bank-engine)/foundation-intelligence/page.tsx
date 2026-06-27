@@ -46,7 +46,7 @@ const FOUNDATIONS = [
     complianceScore: 88,
     sdgs: [2, 10, 16],
     ngos: ['Welthungerhilfe', 'PHINEO gAG'],
-    alerts: ['Annual Report 2025 — Einreichungsfrist 30.06.2026'],
+    alerts: ['Annual Report 2025 — Submission deadline 30.06.2026'],
     stiftungsregister: 'StR-BW-2023-0174',
     annualReport: 'due',
     gpa: 'clear',
@@ -86,7 +86,7 @@ const FOUNDATIONS = [
     complianceScore: 0,
     sdgs: [10, 11],
     ngos: ['Aktion Mensch'],
-    alerts: ['Notarielle Beurkundung erfolgt — wartet auf RP BW Anerkennung', 'Tax Exemption Notice Finanzamt ausstehend'],
+    alerts: ['Notarial deed complete — awaiting RP BW recognition', 'Tax Exemption Notice from tax authority pending'],
     stiftungsregister: 'Eintragung beantragt',
     annualReport: 'not_due',
     gpa: 'pending',
@@ -94,7 +94,7 @@ const FOUNDATIONS = [
 ]
 
 const STATUS_META: Record<string, { label: string; color: string }> = {
-  active:  { label: 'Aktiv',       color: GREEN },
+  active:  { label: 'Active',       color: GREEN },
   mature:  { label: 'Established', color: LBBW },
   pending: { label: 'Pending Registration', color: AMBER },
 }
@@ -221,7 +221,7 @@ export default function FoundationIntelligencePage() {
                           <div style={{ display:'flex', justifyContent:'space-between',
                             fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, color:INK, opacity:0.38 }}>
                             <span>{fmt(f.disbursed2025)} disbursed</span>
-                            <span>{pct}% von {fmt(f.disbursedTarget)}</span>
+                            <span>{pct}% of {fmt(f.disbursedTarget)}</span>
                           </div>
                         </>
                       )}

@@ -77,8 +77,8 @@ const LIVE: Record<string,{t:string;text:string;s:'pos'|'neg'|'neu';ts:string}[]
     { t:'◈', text:'Criticism: Administrative costs slightly up vs. 2024', s:'neg', ts:'4d ago' },
   ],
   sos:      [
-    { t:'◎', text:'SOS Children's Village Stuttgart: capacity expansion approved', s:'pos', ts:'2h ago' },
-    { t:'◈', text:'World Children's Day: SOS raises €1.2M in 48 hours', s:'pos', ts:'7h ago' },
+    { t:'◎', text:"SOS Children's Village Stuttgart: capacity expansion approved", s:'pos', ts:'2h ago' },
+    { t:'◈', text:"World Children's Day: SOS raises €1.2M in 48 hours", s:'pos', ts:'7h ago' },
     { t:'⊞', text:'GPA BW audit 2025 — no findings recorded', s:'pos', ts:'3d ago' },
     { t:'◈', text:'DKMS cooperation expanded: family support + health', s:'pos', ts:'5d ago' },
   ],
