@@ -2,12 +2,17 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+// User Engine: L1 onboarding · L4 persona · L5 impact · L7 foundation · L8 passport · L9 stifter
+// Bank Engine: L2 discover · L3 credibility · L6 knowledge-graph
 const NAV = [
   { href:'/', icon:'🏠', label:'Home' },
   { href:'/discover', icon:'🔍', label:'Discover' },
   { href:'/impact', icon:'⚡', label:'Impact' },
   { href:'/passport', icon:'🌳', label:'Passport' },
   { href:'/foundation', icon:'🏛', label:'Foundation' },
+  { href:'/stifter', icon:'🧠', label:'Strategy' },
+  { href:'/credibility', icon:'🛡', label:'Credibility' },
+  { href:'/knowledge-graph', icon:'🕸', label:'Graph' },
 ]
 
 export default function BottomNav() {

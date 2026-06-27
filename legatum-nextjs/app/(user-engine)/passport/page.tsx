@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-import BADGES from '../../data/badges.json'
+import BADGES from '../../../data/badges.json'
 
 const TREE_STAGES = [
   { stage:0, name:'Seed',        emoji:'🌱', desc:'Something dormant. Full of potential.', threshold:0 },

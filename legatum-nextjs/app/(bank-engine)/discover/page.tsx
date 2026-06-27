@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-import NGOS from '../../data/ngos.json'
+import NGOS from '../../../data/ngos.json'
 
 export default function DiscoverPage() {
   const router = useRouter()

@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
-import SDGFootprint from '../../components/SDGFootprint'
+import SDGFootprint from '../../../components/SDGFootprint'
 
-const Simulation = dynamic(() => import('../../components/Simulation'), { ssr: false })
+const Simulation = dynamic(() => import('../../../components/Simulation'), { ssr: false })
 
 const TABS = [
   { id: 'sim',  label: 'Particle Flow' },

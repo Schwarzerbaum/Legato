@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { QUESTIONS, calcPersona } from '../../data/questions'
+import { QUESTIONS, calcPersona } from '../../../data/questions'
 
 export default function OnboardingPage() {
   const router = useRouter()
@@ -26,7 +26,7 @@ export default function OnboardingPage() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, typing])
 
-  function choose(opt: typeof q.options[0]) {
+  function choose(opt: { key: string; text: string; scores: Record<string, number> }) {
     if (chosen || typing) return
     setChosen(opt.key)
     const next = {
@@ -128,7 +128,7 @@ export default function OnboardingPage() {
               {q.options.map((opt, i) => (
                 <motion.button key={opt.key}
                   initial={{opacity:0,x:-8}} animate={{opacity:1,x:0}} transition={{delay:i*0.06}}
-                  onClick={() => choose(opt)}
+                  onClick={() => choose(opt as { key: string; text: string; scores: Record<string, number> })}
                   disabled={!!chosen}
                   whileTap={{scale:0.98}}
                   className={`w-full text-left px-5 py-3 rounded-xl border text-sm transition-all ${

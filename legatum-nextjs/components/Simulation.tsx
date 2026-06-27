@@ -37,17 +37,20 @@ export default function Simulation() {
     const wrap   = wrapRef.current
     if (!canvas || !wrap) return
 
+    const safeWrap   = wrap
+    const safeCanvas = canvas
+
     function getSize() {
-      const rect = wrap.getBoundingClientRect()
-      const W = rect.width  || wrap.offsetWidth  || window.innerWidth  || 800
-      const H = rect.height || wrap.offsetHeight || 520
+      const rect = safeWrap.getBoundingClientRect()
+      const W = rect.width  || safeWrap.offsetWidth  || window.innerWidth  || 800
+      const H = rect.height || safeWrap.offsetHeight || 520
       return { W: Math.max(W, 300), H: Math.max(H, 400) }
     }
 
     function resize() {
       const {W,H} = getSize()
-      canvas.width  = W
-      canvas.height = H
+      safeCanvas.width  = W
+      safeCanvas.height = H
       buildNodes(W, H)
     }
 
@@ -55,7 +58,7 @@ export default function Simulation() {
     const ro = new ResizeObserver(resize)
     ro.observe(wrap)
 
-    const ctx = canvas.getContext('2d')!
+    const ctx = safeCanvas.getContext('2d')!
 
     function spawn() {
       const src = nodesRef.current.find(n=>n.id==='src')
@@ -118,12 +121,12 @@ export default function Simulation() {
       s.frame++
 
       // Ensure canvas is sized
-      if (canvas.width < 100) { resize(); rafRef.current=requestAnimationFrame(tick); return }
+      if (safeCanvas.width < 100) { resize(); rafRef.current=requestAnimationFrame(tick); return }
 
-      ctx.clearRect(0,0,canvas.width,canvas.height)
-      const bg=ctx.createRadialGradient(canvas.width/2,canvas.height/2,0,canvas.width/2,canvas.height/2,canvas.width*.65)
+      ctx.clearRect(0,0,safeCanvas.width,safeCanvas.height)
+      const bg=ctx.createRadialGradient(safeCanvas.width/2,safeCanvas.height/2,0,safeCanvas.width/2,safeCanvas.height/2,safeCanvas.width*.65)
       bg.addColorStop(0,'#0d1f3c'); bg.addColorStop(1,'#0A1628')
-      ctx.fillStyle=bg; ctx.fillRect(0,0,canvas.width,canvas.height)
+      ctx.fillStyle=bg; ctx.fillRect(0,0,safeCanvas.width,safeCanvas.height)
 
       drawEdges()
 
