@@ -23,8 +23,8 @@ their own LBBW-delegated foundation. Built as a bank product, not a donation app
 
 ## The journey (`src/data/phases.ts`)
 
-Discover (onboarding) → **Explore** → **Commit** → **Plan** → **Impact** → **Found**.
-Committing to one or more projects (the `committedTopicIds` portfolio) unlocks Plan/Impact/Found.
+Discover (onboarding) → **Explore** → **Commit** → **Plan** → **Impact** → **Impact Hub**.
+Committing to one or more projects (the `committedTopicIds` portfolio) unlocks Plan, Impact and the Impact Hub.
 
 ## Key paths
 
@@ -36,7 +36,7 @@ Committing to one or more projects (the `committedTopicIds` portfolio) unlocks P
 | `src/components/graph/GraphView.tsx` | The hero discovery graph |
 | `src/pages/ResearchPage.tsx` | AI giving-plan builder (Claude tool-calling) |
 | `src/pages/CompanionPage.tsx` | Impact tracker + AI companion |
-| `src/pages/FoundationPage.tsx` | The "Found" climax — donor-advised fund / foundation |
+| `src/pages/ImpactHubPage.tsx` | The "Impact Hub" climax — the donor-advised fund the user opens (vs. an external `foundations.json` NGO) |
 | `src/store/useAppStore.ts` | Navigation, selections, shortlist, giving portfolio |
 
 See `mock-data/README.md` for the data model.

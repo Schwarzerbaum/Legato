@@ -10,7 +10,7 @@ import { SearchPage } from '@/pages/SearchPage'
 import { ConnectionsGraphPage } from '@/pages/ConnectionsGraphPage'
 import { ResearchPage } from '@/pages/ResearchPage'
 import { CompanionPage } from '@/pages/CompanionPage'
-import { FoundationPage } from '@/pages/FoundationPage'
+import { ImpactHubPage } from '@/pages/ImpactHubPage'
 import { topicById, companyById, supervisorById, fieldById } from '@/data/index'
 import { PHASES } from '@/data/phases'
 import { Badge } from '@/components/ui/badge'
@@ -217,22 +217,22 @@ export function GraphPage() {
             </motion.div>
           )}
 
-          {/* Phase 5 — Found */}
-          {currentPanel === 'foundation' && (
+          {/* Phase 5 — Impact Hub */}
+          {currentPanel === 'impact-hub' && (
             <motion.div
-              key="foundation"
+              key="impact-hub"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="h-full w-full"
             >
-              <FoundationPage />
+              <ImpactHubPage />
             </motion.div>
           )}
 
           {/* Phase 2, 4–5 placeholders */}
-          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'foundation' && (
+          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'impact-hub' && (
             <motion.div
               key={currentPanel}
               initial={{ opacity: 0 }}

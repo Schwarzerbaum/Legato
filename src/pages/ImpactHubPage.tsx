@@ -9,16 +9,17 @@ import {
   formatEuro,
 } from '@/data/index'
 
-// The "Found" phase — the climax of the Legato journey. The donor graduates
-// from one-off giving into their own LBBW-delegated foundation (a donor-advised
-// fund). This is where the bank's business logic lands: assets under management,
-// recurring commitment, and long-term loyalty.
+// The "Impact Hub" phase — the climax of the Legato journey. The donor graduates
+// from one-off giving into their own LBBW-delegated Impact Hub (a donor-advised
+// fund). Unlike a traditional foundation — which takes ~6 months to set up — the
+// Impact Hub opens immediately. This is where the bank's business logic lands:
+// assets under management, recurring commitment, and long-term loyalty.
 
 const ENDOWMENT = 250_000          // illustrative starting endowment
 const ANNUAL_GRANT_RATE = 0.05     // 5% of endowment granted per year
 const TAX_DEDUCTION_RATE = 0.30    // ~30% effective tax benefit (illustrative)
 
-export function FoundationPage() {
+export function ImpactHubPage() {
   const { committedTopicIds } = useAppStore()
 
   const projects = committedTopicIds.map(id => topicById[id]).filter(Boolean)
@@ -52,12 +53,13 @@ export function FoundationPage() {
           </div>
           <h1 className="ds-title-xl">
             You're ready for your{' '}
-            <span className="text-ai">own foundation</span>
+            <span className="text-ai">own Impact Hub</span>
           </h1>
           <p className="ds-body text-muted-foreground">
             From your first flexible euro to a lasting institution. Legato turns the
             causes you've explored into a <span className="text-foreground font-medium">donor-advised fund</span> —
-            your personal foundation, with the paperwork, governance and compliance fully delegated to LBBW.
+            your personal Impact Hub. No six-month foundation set-up: it opens today, with the
+            paperwork, governance and compliance fully delegated to LBBW.
           </p>
         </motion.div>
 
@@ -73,7 +75,7 @@ export function FoundationPage() {
           <RecapStat value={String(partners.length || '—')} label="Partner organisations" />
         </motion.div>
 
-        {/* Foundation at a glance */}
+        {/* Impact Hub at a glance */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,7 +83,7 @@ export function FoundationPage() {
           className="rounded-2xl border border-border bg-card p-6 space-y-5"
         >
           <div className="flex items-center justify-between">
-            <h2 className="ds-title-sm">Your Legato Foundation</h2>
+            <h2 className="ds-title-sm">Your Legato Impact Hub</h2>
             <span
               className="rounded-full px-3 py-1 ds-caption font-medium"
               style={{ backgroundColor: 'rgba(124,58,237,0.12)', color: '#7c3aed' }}
@@ -98,7 +100,7 @@ export function FoundationPage() {
 
           {causes.length > 0 && (
             <div className="space-y-2">
-              <p className="ds-caption text-muted-foreground">Your foundation's focus</p>
+              <p className="ds-caption text-muted-foreground">Your Impact Hub's focus</p>
               <div className="flex flex-wrap gap-2">
                 {causes.map(c => (
                   <span key={c} className="rounded-full border border-border px-3 py-1 ds-caption">{c}</span>
@@ -112,7 +114,7 @@ export function FoundationPage() {
             style={{ backgroundColor: '#7c3aed' }}
           >
             <Sparkles className="size-4" />
-            Open my foundation with LBBW
+            Open my Impact Hub with LBBW
             <ArrowRight className="size-4" />
           </button>
         </motion.div>
@@ -142,14 +144,14 @@ export function FoundationPage() {
           <ValueProp
             icon={Landmark}
             title="A lasting legacy"
-            body="A foundation in your name, your values, your impact — for this generation and the next."
+            body="An Impact Hub in your name, your values, your impact — for this generation and the next."
           />
         </motion.div>
 
         {/* Pitch footnote */}
         <p className="ds-caption text-center text-muted-foreground/60">
           Prototype — figures are illustrative. The Legato journey converts flexible givers into
-          long-term LBBW foundation clients: recurring AUM, deeper loyalty, measurable impact.
+          long-term LBBW Impact Hub clients: recurring AUM, deeper loyalty, measurable impact.
         </p>
       </div>
     </div>

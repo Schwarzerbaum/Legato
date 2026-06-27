@@ -26,7 +26,7 @@ export interface PhaseConfig {
   disabled?: boolean // greyed out in bar — future phases not yet built
 }
 
-// Legato journey: from your first flexible euro to your own foundation.
+// Legato journey: from your first flexible euro to your own Impact Hub.
 export const PHASES: PhaseConfig[] = [
   {
     id: 1, name: 'Explore', color: '#059669', lightBg: 'rgba(5,150,105,0.10)',
@@ -68,10 +68,10 @@ export const PHASES: PhaseConfig[] = [
     ],
   },
   {
-    id: 5, name: 'Found', color: '#7c3aed', lightBg: 'rgba(124,58,237,0.10)',
-    defaultPanel: 'foundation',
+    id: 5, name: 'Impact Hub', color: '#7c3aed', lightBg: 'rgba(124,58,237,0.10)',
+    defaultPanel: 'impact-hub',
     items: [
-      { panel: 'foundation', label: 'Your Foundation', icon: Landmark },
+      { panel: 'impact-hub', label: 'Your Impact Hub', icon: Landmark },
       { panel: 'reviews',    label: 'Tax Benefits',    icon: Receipt },
       { panel: 'archive',    label: 'Legacy',          icon: Archive },
     ],

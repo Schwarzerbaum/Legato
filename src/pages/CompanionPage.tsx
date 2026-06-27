@@ -379,7 +379,7 @@ Advisors: ${advisorNames.length > 0 ? advisorNames.join(", ") : "None assigned"}
 ${timelineText || "No updates yet"}
 
 ## Your Role
-Help the donor with: impact overview ("what has my giving achieved?"), suggesting next gifts or recurring commitments, milestone tracking, tax-receipt reminders, and when it makes sense, growing into their own foundation with LBBW.
+Help the donor with: impact overview ("what has my giving achieved?"), suggesting next gifts or recurring commitments, milestone tracking, tax-receipt reminders, and when it makes sense, growing into their own Impact Hub with LBBW.
 Be concise, direct, warm and credible. Use bullet points for action items.`
   }, [project, timelineEvents])
 

@@ -16,9 +16,9 @@ LBBW explicitly does **not** want another donation app or crowdfunding platform 
 
 ## Our Solution
 
-**Legato** — a credible, modern path to impact giving, fully wrapped as an LBBW bank product. Next-Gen givers (20–45) self-serve: they discover their *Giver-Identity*, explore impact projects on an interactive graph, commit their first flexible euro, track real-world impact, and — when they're ready — graduate into their **own donor-advised foundation**, with all governance, compliance and tax handling delegated to LBBW.
+**Legato** — a credible, modern path to impact giving, fully wrapped as an LBBW bank product. Next-Gen givers (20–45) self-serve: they discover their *Giver-Identity*, explore impact projects on an interactive graph, commit their first flexible euro, track real-world impact, and — when they're ready — graduate into their **own Impact Hub** (a donor-advised fund) — which opens immediately rather than over the six months a traditional foundation needs, with all governance, compliance and tax handling delegated to LBBW.
 
-We lead with the Next-Gen discovery story and end on the *Found* climax, where the bank's business logic lands: recurring assets under management, deeper loyalty, and measurable impact.
+We lead with the Next-Gen discovery story and end on the *Impact Hub* climax, where the bank's business logic lands: recurring assets under management, deeper loyalty, and measurable impact.
 
 ---
 
@@ -31,7 +31,7 @@ We lead with the Next-Gen discovery story and end on the *Found* climax, where t
 | 2 | **Commit** | Shortlist, compare projects side-by-side, and commit your first flexible euro. |
 | 3 | **Plan** | An AI advisor builds your giving strategy as a visual portfolio of cause pillars and allocations. |
 | 4 | **Impact** | A real-time impact tracker + AI companion: "what has my giving achieved?" |
-| 5 | **Found** | Graduate into your own LBBW-delegated foundation — zero bureaucracy, immediate tax benefits, a lasting legacy. |
+| 5 | **Impact Hub** | Graduate into your own LBBW-delegated Impact Hub (a donor-advised fund) — opens immediately, no six-month foundation set-up, immediate tax benefits, a lasting legacy. |
 
 ---
 
@@ -42,7 +42,7 @@ We lead with the Next-Gen discovery story and end on the *Found* climax, where t
 - **Impact projects** — every project carries a funding goal/raised bar, region, UN SDG, and a concrete impact unit (e.g. *"€50 funds one month of school meals"*).
 - **AI giving-plan builder** — Claude structures your mission into cause pillars and allocations via tool calling.
 - **Impact tracker** — streaming AI companion reporting on the real-world impact of your gifts.
-- **Foundation climax** — the donor-advised fund / foundation product, framed around LBBW's AUM and loyalty business case.
+- **Impact Hub climax** — the donor-advised fund product the user opens instantly, framed around LBBW's AUM and loyalty business case.
 
 ---
 
