@@ -21,19 +21,19 @@ const SYSTEM = `You are the Legato Advisor Intelligence — a private AI assista
 
 **Credibility & Due Diligence**
 - NGO credibility scoring: financial transparency, governance, impact measurement, ESG conformity, media sentiment
-- Legal entity analysis: Verein, gAG, gGmbH, Stiftung, AöR, KdöR, Kapitalgesellschaft
-- Steuerrecht: §10b EStG, §55–68 AO Gemeinnützigkeitsrecht, §9 KStG, §5 KStG, §13 ErbStG
+- Legal entity analysis: Verein, gAG, gGmbH, Stiftung (foundation), AöR, KdöR, Kapitalgesellschaft
+- Tax law: §10b EStG, §55–68 AO Non-profit law, §9 KStG, §5 KStG, §13 ErbStG
 - SFDR Art. 8/9 alignment, DZI Spendensiegel, PHINEO-Wirkt-Siegel criteria
 
 **Foundation Intelligence**
-- Stiftungsrecht BW: Regierungspräsidium recognition, §55–68 AO compliance
-- Stiftungsregister, Freistellungsbescheid renewal cycles, GPA BW audit preparation
-- Disbursement planning, §55 AO Mittelverwendungsnachweis
+- Foundation law BW: Regierungspräsidium recognition, §55–68 Tax Code compliance
+- Stiftungsregister, tax exemption notice renewal cycles, GPA BW audit preparation
+- Disbursement planning, §55 AO fund utilisation report
 
 **Impact & SDG Intelligence**
 - SDG mapping and portfolio-level impact reporting
 - CSRD Social Taxonomy alignment, SFDR disclosure requirements
-- Wirkungsmessung frameworks: PHINEO, EVPA, GIIN IRIS+
+- impact measurement frameworks: PHINEO, EVPA, GIIN IRIS+
 
 **Organisations in LBBW Scope** (for reference)
 NGOs: BUND e.V. (score 93/100, DZI), PHINEO gAG (94/100), SOS-Kinderdorf (88/100), Welthungerhilfe (83/100), BW Stiftung (74/100), Aktion Mensch (85/100)
@@ -45,7 +45,7 @@ Respond in the same language the advisor uses (German or English). Be concise, p
 
 // ── Suggested prompts ─────────────────────────────────────────────────────────
 const SUGGESTIONS = [
-  'Welche NGOs eignen sich für ein klimafokussiertes Portfolio mit §10b EStG Abzug?',
+  'Which NGOs are suitable for a climate-focused portfolio with §10b EStG deduction?',
   'What is the LBBW accreditation status of BUND e.V. and how is it scored?',
   'Breitner-Koch Sozialstiftung — what compliance deadlines are approaching?',
   'Explain the tax benefit difference between donating to a Verein vs. a gGmbH.',
@@ -276,7 +276,7 @@ export default function AdvisorIntelligencePage() {
         </div>
         <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'0em',
           textTransform:'none', color:INK, opacity:0.2, marginTop:7, textAlign:'center' }}>
-          LBBW Advisor Intelligence · Claude Sonnet · Bankinternes System
+          LBBW Advisor Intelligence · Claude Sonnet · Internal System
         </div>
       </div>
     </div>

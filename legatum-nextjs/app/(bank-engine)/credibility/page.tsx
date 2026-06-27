@@ -10,63 +10,63 @@ const AMBER  = '#d97706'
 const RED    = '#dc2626'
 
 const ORG_TYPES = [
-  { id: 'ngo',    label: 'NGO / Gemeinnützig',  sub: 'Verein, gAG, gGmbH, Stiftung' },
-  { id: 'corp',   label: 'Kapitalgesellschaft',  sub: 'GmbH, AG, SE — Corporate Giving' },
-  { id: 'public', label: 'Öffentliche Hand',     sub: 'Stadt, Stadtwerk, AöR, Zweckverband' },
-  { id: 'faith',  label: 'Religionsgemeinschaft',sub: 'Kirchliche Stiftung, Caritas, Diakonie' },
+  { id: 'ngo',    label: 'NGO / Non-Profit',  sub: 'Registered Association, Foundation, gGmbH' },
+  { id: 'corp',   label: 'Corporate Entity',  sub: 'GmbH, AG, SE — Corporate Giving' },
+  { id: 'public', label: 'Public Sector',     sub: 'Municipality, Utility, Public Body' },
+  { id: 'faith',  label: 'Faith Organisation',sub: 'Church Foundation, Caritas, Diakonie' },
 ]
 
 const DIMENSIONS: Record<string, { label: string; weight: number; desc: string; basis: string }[]> = {
   ngo: [
-    { label: 'Steuerlicher Status',     weight: 20, desc: '§10b EStG / §55–68 AO Gemeinnützigkeit anerkannt und aktuell', basis: 'Freistellungsbescheid, Feststellungsbescheid FA' },
-    { label: 'Finanzielle Transparenz', weight: 20, desc: 'Jahresabschluss veröffentlicht, Mittelverwendung >85%', basis: 'Bundesanzeiger, DZI-Siegel, PHINEO-Wirkt-Siegel' },
-    { label: 'Governance-Qualität',     weight: 18, desc: 'Vorstand, Aufsichtsrat, Satzungskonformität, Interessenskonflikte', basis: 'Vereinsregister, Stiftungsregister BW, Satzungsanalyse' },
-    { label: 'Impact-Messung',          weight: 17, desc: 'Wirkungsnachweis, SDG-Alignment, Berichterstattung', basis: 'Jahresbericht, Wirkungsbericht, externe Evaluation' },
-    { label: 'ESG-Konformität',         weight: 15, desc: 'Ausschlüsse (Rüstung, Fossil), SFDR-Kohärenz, Klimabezug', basis: 'LBBW ESG-Leitlinien 2026, SFDR Art. 8/9' },
-    { label: 'Medien & Reputation',     weight: 10, desc: 'Öffentliche Wahrnehmung, Kontroversen, Social Media Sentiment', basis: 'Live Intelligence Feed, Pressedatenbank' },
+    { label: 'Tax Status',     weight: 20, desc: '§10b EStG / §55–68 AO non-profit status recognised and current', basis: 'Tax exemption notice, determination letter' },
+    { label: 'Financial Transparency', weight: 20, desc: 'Annual accounts published, fund utilisation >85%', basis: 'Federal Gazette, DZI Seal, PHINEO-Wirkt-Seal' },
+    { label: 'Governance Quality',     weight: 18, desc: 'Board, supervisory board, statutes compliance, conflicts of interest', basis: 'Association register, Foundation register BW, statutes analysis' },
+    { label: 'Impact Measurement',          weight: 17, desc: 'Wirkungsnachweis, SDG-Alignment, Berichterstattung', basis: 'Jahresbericht, Wirkungsbericht, externe Evaluation' },
+    { label: 'ESG Conformity',         weight: 15, desc: 'Exclusions (armaments, fossil), SFDR coherence, climate relevance', basis: 'LBBW ESG Guidelines 2026, SFDR Art. 8/9' },
+    { label: 'Media & Reputation',     weight: 10, desc: 'Public perception, controversies, social media sentiment', basis: 'Live Intelligence Feed, press database' },
   ],
   corp: [
-    { label: 'Corporate Giving Struktur', weight: 22, desc: 'Stiftung, Spend-Down-Vehikel oder Direktspende — Rechtsform und Zweckbindung', basis: 'Handelsregister, Corporate Foundation Satzung' },
+    { label: 'Corporate Giving Structure', weight: 22, desc: 'Foundation, spend-down vehicle or direct donation — legal form and purpose', basis: 'Commercial register, corporate foundation statutes' },
     { label: 'ESG-Rating & Reporting',   weight: 20, desc: 'CSRD-konforme Nachhaltigkeitsberichterstattung, externe Ratings', basis: 'MSCI ESG, ISS, Bloomberg ESG, Sustainalytics' },
-    { label: 'Tax Compliance',           weight: 18, desc: 'Abzugsfähigkeit nach §9 Abs. 1 KStG, Spendenbescheinigung', basis: 'KStG §9, BFH-Rechtsprechung, BMF-Schreiben' },
+    { label: 'Tax Compliance',           weight: 18, desc: 'Deductibility under §9(1) CIT Act, donation receipt', basis: 'CIT Act §9, Federal Tax Court rulings, Federal Finance Ministry letters' },
     { label: 'Impact Additionality',     weight: 18, desc: 'Nachweis gesellschaftlicher Mehrwert jenseits Marketinginteressen', basis: 'Impact Report, externe Wirkungsevaluation' },
-    { label: 'Governance & Compliance',  weight: 12, desc: 'AML/KYC cleared, keine laufenden behördlichen Verfahren', basis: 'LBBW KYC-Screening, Compliance-Datenbank' },
-    { label: 'Reputationsrisiko',        weight: 10, desc: 'Presse, ESG-Kontroversen, Branchenausschlüsse', basis: 'Reprisk, Live Intelligence Feed' },
+    { label: 'Governance & Compliance',  weight: 12, desc: 'AML/KYC cleared, no ongoing regulatory proceedings', basis: 'LBBW KYC screening, compliance database' },
+    { label: 'Reputational Risk',        weight: 10, desc: 'Press, ESG controversies, sector exclusions', basis: 'Reprisk, Live Intelligence Feed' },
   ],
   public: [
-    { label: 'Rechtsform & Befugnis',    weight: 25, desc: 'AöR, Zweckverband, kommunale GmbH — Handlungsbefugnis für Drittmittel', basis: 'Gemeindeordnung BW, Kommunalrecht, Satzung' },
-    { label: 'Haushalt & Bonität',       weight: 22, desc: 'Genehmigter Haushalt, keine vorläufige Haushaltsführung, Kreditwürdigkeit', basis: 'Haushaltssatzung, Kommunalaufsicht, Moody\'s/S&P' },
-    { label: 'Zweckbindung & SDGs',      weight: 20, desc: 'Öffentlicher Zweck gem. §56 GemO BW, SDG-Kohärenz', basis: 'Beschluss Gemeinderat, SDG-Mapping LBBW' },
-    { label: 'Transparenz & Prüfung',    weight: 18, desc: 'Gemeindeprüfungsanstalt BW (GPA), Rechnungsprüfungsamt', basis: 'GPA Prüfbericht, Rechnungsprüfungsamt BW' },
-    { label: 'Steuerliche Aspekte',      weight: 10, desc: 'Körperschaftsteuerbefreiung gem. §5 KStG, Umsatzsteuerstatus', basis: 'KStG §5, UStG §4 Nr. 12, FA-Bescheid' },
-    { label: 'Politisches Risiko',       weight: 5,  desc: 'Regierungswechsel, Haushaltsrisiken, Fördermittelabhängigkeit', basis: 'LBBW kommunale Ratingmodelle' },
+    { label: 'Legal Form & Authority',    weight: 25, desc: 'Public body, municipal GmbH — authority for third-party funds', basis: 'Municipal Code BW, local authority law, statutes' },
+    { label: 'Budget & Credit Rating',       weight: 22, desc: 'Approved budget, no provisional budget management, creditworthiness', basis: 'Haushaltssatzung, Kommunalaufsicht, Moody\'s/S&P' },
+    { label: 'Purpose & SDGs',      weight: 20, desc: 'Public purpose per §56 Municipal Code BW, SDG coherence', basis: 'Municipal council resolution, LBBW SDG mapping' },
+    { label: 'Transparency & Audit',    weight: 18, desc: 'State Audit Office BW (GPA), audit authority', basis: 'GPA audit report, audit authority BW' },
+    { label: 'Tax Aspects',      weight: 10, desc: 'Corporate tax exemption per §5 CIT Act, VAT status', basis: 'CIT Act §5, VAT Act §4 No. 12, tax authority notice' },
+    { label: 'Political Risk',       weight: 5,  desc: 'Change of government, budget risks, grant dependency', basis: 'LBBW municipal rating models' },
   ],
   faith: [
-    { label: 'Körperschaftsstatus',      weight: 25, desc: 'Körperschaft des öffentlichen Rechts gem. Art. 140 GG, staatliche Anerkennung', basis: 'Staatskirchenvertrag BW, Art. 140 GG/137 WRV' },
-    { label: 'Finanzielle Transparenz',  weight: 20, desc: 'Haushalt und Mittelverwendung — Caritas/Diakonie nach DZI', basis: 'DZI-Siegel, Jahresabschluss, Kirchensteuerstatistik' },
-    { label: 'Zweckbindung',             weight: 20, desc: 'Karitatives Wirken, keine politische Einflussnahme i.S.d. §52 AO', basis: 'Satzungsanalyse, AO §52 Abs. 2 Nr. 10' },
-    { label: 'Governance',               weight: 18, desc: 'Ordensstruktur, Diözese, Synodalverfassung — Compliance-Prüfung', basis: 'Kanonisches Recht, EKD-Kirchengesetz BW' },
-    { label: 'Impact & Reichweite',      weight: 12, desc: 'Benefiziar-Zahlen, Versorgungsgebiet, Qualitätsnachweise', basis: 'Jahresbericht, externe Evaluation' },
-    { label: 'Reputationsrisiko',        weight: 5,  desc: 'Aktuelle Presseberichterstattung, institutionelle Kontroversen', basis: 'Live Intelligence Feed, Pressedatenbank' },
+    { label: 'Corporate Status',      weight: 25, desc: 'Body under public law per Art. 140 GG, state recognition', basis: 'State-church treaty BW, Art. 140 GG/137 WRV' },
+    { label: 'Financial Transparency',  weight: 20, desc: 'Budget and fund utilisation — Caritas/Diakonie per DZI', basis: 'DZI Seal, annual accounts, church tax statistics' },
+    { label: 'Purpose Restriction',             weight: 20, desc: 'Charitable activities, no political influence per §52 AO', basis: 'Statutes analysis, AO §52 Sec. 2 No. 10' },
+    { label: 'Governance',               weight: 18, desc: 'Order structure, diocese, synodal constitution — compliance review', basis: 'Canon law, EKD church law BW' },
+    { label: 'Impact & Reach',      weight: 12, desc: 'Beneficiary numbers, service area, quality evidence', basis: 'Annual report, external evaluation' },
+    { label: 'Reputational Risk',        weight: 5,  desc: 'Aktuelle Presseberichterstattung, institutionelle Kontroversen', basis: 'Live Intelligence Feed, press database' },
   ],
 }
 
 const SAMPLE_ORGS: Record<string, { name: string; reg: string; location: string; founded: string; scores: number[]; taxStatus: string; taxBenefit: string; flags: string[] }[]> = {
   ngo: [
-    { name: 'BUND e.V.',       reg:'VR 4251 AG Berlin',    location:'Berlin / BW', founded:'1975', scores:[19,18,17,16,14,9], taxStatus:'§55–68 AO · Freigestellt', taxBenefit:'§10b EStG — bis 20% des GdE abzugsfähig', flags:[] },
-    { name: 'Welthungerhilfe', reg:'VR 3843 AG Bonn',      location:'Bonn',        founded:'1962', scores:[16,17,14,16,12,9], taxStatus:'§55–68 AO · Freigestellt', taxBenefit:'§10b EStG — bis 20% des GdE abzugsfähig', flags:['Hohe institutionelle Geberabhängigkeit'] },
-    { name: 'BW Stiftung',     reg:'Stiftungsregister BW', location:'Stuttgart',   founded:'2000', scores:[14,15,14,12,12,7], taxStatus:'§55–68 AO · Stiftung des öffentlichen Rechts', taxBenefit:'§10b EStG · §13 Abs. 1 Nr. 16 ErbStG', flags:[] },
+    { name: 'BUND e.V.',       reg:'VR 4251 AG Berlin',    location:'Berlin / BW', founded:'1975', scores:[19,18,17,16,14,9], taxStatus:'§55–68 AO · Tax Exempt', taxBenefit:'§10b EStG — deductible up to 20% of taxable income', flags:[] },
+    { name: 'Welthungerhilfe', reg:'VR 3843 AG Bonn',      location:'Bonn',        founded:'1962', scores:[16,17,14,16,12,9], taxStatus:'§55–68 AO · Tax Exempt', taxBenefit:'§10b EStG — deductible up to 20% of taxable income', flags:['High institutional donor dependency'] },
+    { name: 'BW Stiftung',     reg:'Stiftungsregister BW', location:'Stuttgart',   founded:'2000', scores:[14,15,14,12,12,7], taxStatus:'§55–68 AO · Public-Law Foundation', taxBenefit:'§10b EStG · §13(1) No. 16 Inheritance Tax Act', flags:[] },
   ],
   corp: [
-    { name: 'Robert Bosch GmbH', reg:'HRB 14774 AG Stuttgart',  location:'Stuttgart', founded:'1886', scores:[20,18,15,16,11,9], taxStatus:'§9 KStG — Corporate Giving abzugsfähig', taxBenefit:'Bis 20% des Einkommens oder 4‰ der Umsätze + Löhne', flags:[] },
-    { name: 'Mercedes-Benz AG',  reg:'HRB 762873 AG Stuttgart', location:'Stuttgart', founded:'1926', scores:[19,17,15,14,10,8], taxStatus:'§9 KStG — Direktspende an anerkannte Körperschaft', taxBenefit:'§9 Abs. 1 Nr. 2 KStG — voller Betriebsausgabenabzug', flags:['CSRD-Bericht 2025 unter SEC-Prüfung'] },
+    { name: 'Robert Bosch GmbH', reg:'HRB 14774 AG Stuttgart',  location:'Stuttgart', founded:'1886', scores:[20,18,15,16,11,9], taxStatus:'§9 CIT Act — Corporate giving deductible', taxBenefit:'Up to 20% of income or 4‰ of revenue + wages', flags:[] },
+    { name: 'Mercedes-Benz AG',  reg:'HRB 762873 AG Stuttgart', location:'Stuttgart', founded:'1926', scores:[19,17,15,14,10,8], taxStatus:'§9 CIT Act — Direct donation to recognised body', taxBenefit:'§9(1) No. 2 CIT Act — full business expense deduction', flags:['CSRD report 2025 under SEC review'] },
   ],
   public: [
-    { name: 'Stadtwerk Tübingen GmbH',    reg:'HRB 382182 AG Stuttgart', location:'Tübingen',  founded:'1999', scores:[22,18,16,14,8,3],  taxStatus:'§5 Abs. 1 Nr. 2 KStG — Dauerdefizitausgleich', taxBenefit:'KSt-Befreiung für hoheitliche Tätigkeit; USt §4 Nr. 12', flags:[] },
-    { name: 'Landeshauptstadt Stuttgart', reg:'Gemeindeverzeichnis BW',   location:'Stuttgart', founded:'1219', scores:[24,20,18,16,8,4],  taxStatus:'§5 Abs. 1 Nr. 2 KStG — vollständige KSt-Befreiung', taxBenefit:'Art. 105 GG — kommunale Finanzhoheit; KSt-Befreiung §5 KStG', flags:[] },
+    { name: 'Stadtwerk Tübingen GmbH',    reg:'HRB 382182 AG Stuttgart', location:'Tübingen',  founded:'1999', scores:[22,18,16,14,8,3],  taxStatus:'§5(1) No. 2 CIT Act — permanent deficit compensation', taxBenefit:'Corp. tax exemption for sovereign activities; VAT §4 No. 12', flags:[] },
+    { name: 'City of Stuttgart', reg:'Gemeindeverzeichnis BW',   location:'Stuttgart', founded:'1219', scores:[24,20,18,16,8,4],  taxStatus:'§5(1) No. 2 CIT Act — full corporate tax exemption', taxBenefit:'Art. 105 GG — municipal fiscal sovereignty; CIT exemption §5', flags:[] },
   ],
   faith: [
-    { name: 'Diözese Rottenburg-Stuttgart', reg:'Art. 140 GG KdöR', location:'Rottenburg', founded:'1821', scores:[23,17,18,16,11,4], taxStatus:'Art. 140 GG — Körperschaft des öffentlichen Rechts', taxBenefit:'§13 Abs. 1 Nr. 16b ErbStG — Erbschaftsteuerbefreiung; §10b EStG', flags:[] },
+    { name: 'Diözese Rottenburg-Stuttgart', reg:'Art. 140 GG KdöR', location:'Rottenburg', founded:'1821', scores:[23,17,18,16,11,4], taxStatus:'Art. 140 GG — corporation under public law', taxBenefit:'§13(1) No. 16b InhTaxAct — inheritance tax exemption; §10b IncomeTaxAct', flags:[] },
   ],
 }
 
@@ -75,7 +75,7 @@ function grade(s: number) {
   if (s >= 88) return { g: 'AA', label: 'LBBW Accredited',        color: LBBW }
   if (s >= 75) return { g: 'A',  label: 'Accreditation Eligible', color: GREEN }
   if (s >= 60) return { g: 'B',  label: 'Conditional',            color: AMBER }
-  return              { g: 'C',  label: 'Nicht empfohlen',         color: RED }
+  return              { g: 'C',  label: 'Not recommended',         color: RED }
 }
 
 function TaxRow({ label, value }: { label: string; value: string }) {
@@ -106,13 +106,13 @@ export default function CredibilityPage() {
       <div style={{ marginBottom: 28 }}>
         <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'-0.01em',
           textTransform:'none', color:INK, opacity:0.28, marginBottom:8 }}>
-          LBBW Credibility Engine · Bankinternes Due-Diligence-System
+          LBBW Credibility Engine · Internal Due Diligence System
         </div>
         <h1 style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:30, fontWeight:500,
           color:INK, margin:'0 0 5px' }}>Credibility Assessment</h1>
         <p style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:15, color:INK,
           opacity:0.44, fontStyle:'italic', margin:0, lineHeight:1.7 }}>
-          Mehrdimensionale Bewertung jeder Organisation — NGO, Kapitalgesellschaft, öffentliche Hand oder Religionsgemeinschaft — nach LBBW ESG-Leitlinien, Steuerrecht und internationalen Impact-Standards.
+          Multi-dimensional assessment of every organisation — NGO, corporate entity, public body, or faith organisation — under LBBW ESG guidelines, tax law, and international impact standards.
         </p>
       </div>
 
@@ -194,7 +194,7 @@ export default function CredibilityPage() {
               <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:48,
                 color:color, lineHeight:1 }}>{total}</div>
               <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11,
-                color:INK, opacity:0.32 }}>/ 100 Punkte</div>
+                color:INK, opacity:0.32 }}>/ 100 Points</div>
             </div>
           </div>
 
@@ -202,7 +202,7 @@ export default function CredibilityPage() {
           <div style={{ display:'flex', background:'#fff',
             borderBottom:`0.5px solid ${INK}10`, marginBottom:1 }}>
             {(['score','tax','method'] as const).map((id) => {
-              const lbl = id==='score' ? 'Scoring' : id==='tax' ? 'Steuerrecht & Vorteile' : 'Methodik'
+              const lbl = id==='score' ? 'Scoring' : id==='tax' ? 'Tax Law & Benefits' : 'Methodology'
               return (
                 <button key={id} onClick={() => setTab(id)} style={{
                   padding:'10px 18px', background:'none', border:'none',
@@ -264,9 +264,9 @@ export default function CredibilityPage() {
                 <div style={{ background:'#fff', border:`1px solid ${INK}0D`, padding:'20px' }}>
                   <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:1, marginBottom:16 }}>
                     {[
-                      { l:'Steuerlicher Status', v: org.taxStatus },
+                      { l:'Tax Status', v: org.taxStatus },
                       { l:'Registrierung',       v: org.reg },
-                      { l:'Gründungsjahr',       v: org.founded },
+                      { l:'Founded',       v: org.founded },
                       { l:'Standort',            v: org.location },
                     ].map(row => (
                       <div key={row.l} style={{ padding:'12px 14px', background:`${INK}02`,
@@ -283,34 +283,34 @@ export default function CredibilityPage() {
                     background:`${LBBW}04`, marginBottom:14 }}>
                     <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'0.15em',
                       textTransform:'none', color:LBBW, opacity:0.7, marginBottom:8 }}>
-                      Steuerlicher Vorteil für LBBW-Kunden
+                      Tax benefit for LBBW clients
                     </div>
                     <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:16,
                       color:INK, lineHeight:1.6, marginBottom:12 }}>{org.taxBenefit}</div>
                     <div style={{ display:'flex', flexDirection:'column', gap:0 }}>
                       {orgType === 'ngo' && <>
-                        <TaxRow label="Spendenhöchstbetrag"  value="20% des Gesamtbetrags der Einkünfte (§10b Abs. 1 EStG)" />
-                        <TaxRow label="Großspendenregelung"  value="Vortrag nicht abzugsfähiger Beträge auf Folgejahre möglich" />
-                        <TaxRow label="Unternehmensspenden"  value="Alternativ: 4‰ der Summe aus Umsätzen und Löhnen (§10b Abs. 1 S. 1 Alt. 2)" />
-                        <TaxRow label="Stiftungsdotierung"   value="Bis zu €1.000.000 zusätzlich in 10 Jahren (§10b Abs. 1a EStG)" />
-                        <TaxRow label="Erbschaftsteuer"      value="§13 Abs. 1 Nr. 16b ErbStG — Steuerbefreiung für Zuwendungen an gemeinnützige KdöR" />
+                        <TaxRow label="Max. donation deduction"  value="20% of total income (§10b(1) IncomeTaxAct)" />
+                        <TaxRow label="Large-donation carryforward"  value="Non-deductible amounts may be carried forward to subsequent years" />
+                        <TaxRow label="Corporate donations"  value="Alternative: 4‰ of total turnover and wages (§10b(1) IncomeTaxAct alt. 2)" />
+                        <TaxRow label="Foundation endowment"   value="Up to €1,000,000 additional over 10 years (§10b(1a) IncomeTaxAct)" />
+                        <TaxRow label="Inheritance tax"      value="§13(1) No. 16b InhTaxAct — tax exemption for grants to charitable public-law bodies" />
                       </>}
                       {orgType === 'corp' && <>
                         <TaxRow label="Betriebsausgabenabzug" value="§9 Abs. 1 Nr. 2 KStG — bis 20% des Einkommens oder 4‰ Umsatz/Lohn" />
-                        <TaxRow label="Spendenbescheinigung"  value="Empfänger muss gemeinnützig anerkannte Körperschaft sein" />
+                        <TaxRow label="Donation certificate"  value="Recipient must be a recognised charitable entity" />
                         <TaxRow label="Sponsoring-Abgrenzung" value="Echte Spende vs. Betriebsausgabe (BMF-Schreiben 18.02.1998)" />
-                        <TaxRow label="CSRD Offenlegung"      value="Art. 8 Taxonomieverordnung — Berichtspflicht für Social Taxonomy ab 2026" />
+                        <TaxRow label="CSRD disclosure"      value="Art. 8 Taxonomy Regulation — social taxonomy reporting obligation from 2026" />
                       </>}
                       {orgType === 'public' && <>
-                        <TaxRow label="KSt-Befreiung"        value="§5 Abs. 1 Nr. 2 KStG — vollständige Befreiung für hoheitliche Tätigkeit" />
-                        <TaxRow label="USt-Status"           value="§4 Nr. 12 UStG / §2b UStG — juristische Personen des öffentlichen Rechts" />
-                        <TaxRow label="Zuwendungsnachweis"   value="Amtliche Bescheinigung als Zuwendungsempfänger nach §10b EStG zulässig" />
-                        <TaxRow label="Haushaltsrecht"       value="GemO BW §78 — Mittelverwendungspflicht und Prüfung durch GPA BW" />
+                        <TaxRow label="CIT exemption"        value="§5(1) No. 2 CIT Act — full exemption for sovereign activities" />
+                        <TaxRow label="VAT status"           value="§4 No. 12 VAT Act / §2b VAT Act — legal persons under public law" />
+                        <TaxRow label="Grant certificate"   value="Official certification as grant recipient permitted under §10b IncomeTaxAct" />
+                        <TaxRow label="Budget law"       value="Municipal Code BW §78 — fund utilisation obligation and GPA BW audit" />
                       </>}
                       {orgType === 'faith' && <>
-                        <TaxRow label="KdöR-Status"          value="Art. 140 GG i.V.m. Art. 137 Abs. 5 WRV — staatliche Anerkennung als KdöR" />
-                        <TaxRow label="Erbschaftsteuer"      value="§13 Abs. 1 Nr. 16b ErbStG — volle Steuerbefreiung für Zuwendungen" />
-                        <TaxRow label="Schenkungsteuer"      value="§13 Abs. 1 Nr. 16 ErbStG — Freistellung für gemeinnützige Empfänger" />
+                        <TaxRow label="Public-law status"          value="Art. 140 GG in conj. with Art. 137(5) WRV — state recognition as public-law corporation" />
+                        <TaxRow label="Inheritance tax"      value="§13(1) No. 16b InhTaxAct — full tax exemption for grants" />
+                        <TaxRow label="Gift tax"      value="§13(1) No. 16 InhTaxAct — exemption for charitable recipients" />
                         <TaxRow label="Kirchensteuer BW"     value="Landeskirchliche Regelungen BW — Kirchensteuergesetz BW §2" />
                       </>}
                     </div>
@@ -322,10 +322,10 @@ export default function CredibilityPage() {
                     <p style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:13.5,
                       color:INK, fontStyle:'italic', lineHeight:1.75, margin:0, opacity:0.68 }}>
                       {g === 'AA'
-                        ? `${org.name} erfüllt alle LBBW-Kriterien. Steuerliche Abzugsfähigkeit nach §10b EStG vollständig nachgewiesen. Direkte Portfolioallokation freigegeben.`
+                        ? `${org.name} meets all LBBW criteria. Tax deductibility under §10b IncomeTaxAct fully verified. Direct portfolio allocation approved.`
                         : g === 'A'
-                        ? `${org.name} erfüllt die Mindestanforderungen. Empfehlung: vertiefte Due-Diligence-Prüfung vor Portfolioaufnahme.`
-                        : `${org.name} erfüllt derzeit nicht alle LBBW-Anforderungen. Nicht für direkte Portfolioallokation empfohlen.`}
+                        ? `${org.name} meets minimum requirements. Recommendation: enhanced due diligence prior to portfolio inclusion.`
+                        : `${org.name} does not currently meet all LBBW requirements. Not recommended for direct portfolio allocation.`}
                     </p>
                   </div>
                 </div>
@@ -338,14 +338,14 @@ export default function CredibilityPage() {
                 <div style={{ background:'#fff', border:`1px solid ${INK}0D`, padding:'20px' }}>
                   <p style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:15.5, color:INK,
                     opacity:0.6, fontStyle:'italic', lineHeight:1.8, marginBottom:20 }}>
-                    Das LBBW Credibility Engine bewertet jede Organisation anhand von sechs gewichteten Dimensionen. Die Gesamtpunktzahl (0–100) bestimmt die Akkreditierungsstufe und die Portfoliofähigkeit im Rahmen der LBBW Philanthropic Services.
+                    The LBBW Credibility Engine scores each organisation across six weighted dimensions. The total score (0–100) determines the accreditation level and portfolio eligibility within LBBW Philanthropic Services.
                   </p>
                   <div style={{ display:'flex', flexDirection:'column', gap:6, marginBottom:22 }}>
                     {[
-                      { g:'AA', range:'88–100', label:'LBBW Accredited',        col:LBBW,  desc:'Direkte Portfolioaufnahme freigegeben. §10b EStG vollständig geprüft.' },
-                      { g:'A',  range:'75–87',  label:'Accreditation Eligible', col:GREEN, desc:'Portfoliofähig nach vertiefter Due-Diligence-Prüfung durch LBBW.' },
-                      { g:'B',  range:'60–74',  label:'Conditional',            col:AMBER, desc:'Nur mit zusätzlichen Auflagen und laufendem Monitoring empfohlen.' },
-                      { g:'C',  range:'<60',    label:'Nicht empfohlen',         col:RED,   desc:'Nicht für LBBW-Portfolioallokation geeignet.' },
+                      { g:'AA', range:'88–100', label:'LBBW Accredited',        col:LBBW,  desc:'Direct portfolio inclusion approved. §10b IncomeTaxAct fully verified.' },
+                      { g:'A',  range:'75–87',  label:'Accreditation Eligible', col:GREEN, desc:'Portfolio-eligible after enhanced LBBW due diligence.' },
+                      { g:'B',  range:'60–74',  label:'Conditional',            col:AMBER, desc:'Recommended only with additional conditions and ongoing monitoring.' },
+                      { g:'C',  range:'<60',    label:'Not recommended',         col:RED,   desc:'Not suitable for LBBW portfolio allocation.' },
                     ].map(row => (
                       <div key={row.g} style={{ display:'flex', gap:14, alignItems:'center',
                         padding:'12px 14px', border:`1px solid ${INK}0A`,
@@ -368,7 +368,7 @@ export default function CredibilityPage() {
                     </div>
                     <p style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:12.5, color:INK,
                       opacity:0.5, lineHeight:1.85, fontStyle:'italic', margin:0 }}>
-                      Bewertung nach §10b EStG, §55–68 AO (Gemeinnützigkeitsrecht), §9 Abs. 1 Nr. 2 KStG, §5 KStG, Art. 140 GG, LBBW ESG-Leitlinien 2026, SFDR Art. 8/9, DZI-Spendensiegel-Kriterien, PHINEO-Wirkungsstandards und kommunalem Haushaltsrecht (GemO BW). Alle Bewertungen sind auditierbar und reproduzierbar.
+                      Assessment under §10b IncomeTaxAct, §55–68 Tax Code (charity law), §9(1) No. 2 CIT Act, §5 CIT Act, Art. 140 GG, LBBW ESG Guidelines 2026, SFDR Art. 8/9, DZI donation-seal criteria, PHINEO impact standards, and municipal budget law (Municipal Code BW). All assessments are auditable and reproducible.
                     </p>
                   </div>
                 </div>

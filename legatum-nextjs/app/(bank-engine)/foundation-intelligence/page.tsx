@@ -15,7 +15,7 @@ const FOUNDATIONS = [
     id: 'f1',
     name: 'Hoffmann Klimastiftung',
     client: 'Dr. Miriam Hoffmann',
-    purpose: 'Waldschutz und erneuerbare Energien in Baden-Württemberg',
+    purpose: 'Forest protection and renewable energy in Baden-Württemberg',
     assets: 1_200_000,
     disbursed2025: 84_000,
     disbursedTarget: 120_000,
@@ -35,7 +35,7 @@ const FOUNDATIONS = [
     id: 'f2',
     name: 'Breitner-Koch Sozialstiftung',
     client: 'Familie Breitner-Koch',
-    purpose: 'Armutsbekämpfung, Ernährungssicherheit und Menschenrechte',
+    purpose: 'Poverty alleviation, food security and human rights',
     assets: 4_800_000,
     disbursed2025: 210_000,
     disbursedTarget: 350_000,
@@ -46,7 +46,7 @@ const FOUNDATIONS = [
     complianceScore: 88,
     sdgs: [2, 10, 16],
     ngos: ['Welthungerhilfe', 'PHINEO gAG'],
-    alerts: ['Jahresbericht 2025 — Einreichungsfrist 30.06.2026'],
+    alerts: ['Annual Report 2025 — Einreichungsfrist 30.06.2026'],
     stiftungsregister: 'StR-BW-2023-0174',
     annualReport: 'due',
     gpa: 'clear',
@@ -81,12 +81,12 @@ const FOUNDATIONS = [
     disbursedTarget: 50_000,
     status: 'pending',
     recognition: 'In Bearbeitung', recognitionDate: '—',
-    taxStatus: 'Freistellungsbescheid ausstehend',
+    taxStatus: 'Tax Exemption Notice ausstehend',
     nextDisbursement: '—',
     complianceScore: 0,
     sdgs: [10, 11],
     ngos: ['Aktion Mensch'],
-    alerts: ['Notarielle Beurkundung erfolgt — wartet auf RP BW Anerkennung', 'Freistellungsbescheid Finanzamt ausstehend'],
+    alerts: ['Notarielle Beurkundung erfolgt — wartet auf RP BW Anerkennung', 'Tax Exemption Notice Finanzamt ausstehend'],
     stiftungsregister: 'Eintragung beantragt',
     annualReport: 'not_due',
     gpa: 'pending',
@@ -96,17 +96,17 @@ const FOUNDATIONS = [
 const STATUS_META: Record<string, { label: string; color: string }> = {
   active:  { label: 'Aktiv',       color: GREEN },
   mature:  { label: 'Established', color: LBBW },
-  pending: { label: 'In Gründung', color: AMBER },
+  pending: { label: 'Pending Registration', color: AMBER },
 }
 
 const COMPLIANCE_CALENDAR = [
-  { date: '30.06.2026', item: 'Breitner-Koch Sozialstiftung — Jahresbericht 2025 einreichen', priority: 'high',   done: false },
-  { date: '15.07.2026', item: 'von Saalfeld Stiftung — Zwischenausschüttung Q3 freigeben',    priority: 'normal', done: false },
-  { date: '01.09.2026', item: 'Hoffmann Klimastiftung — Q3 Ausschüttung an BUND e.V.',         priority: 'normal', done: false },
+  { date: '30.06.2026', item: 'Breitner-Koch Sozialstiftung — Annual Report 2025 einreichen', priority: 'high',   done: false },
+  { date: '15.07.2026', item: 'von Saalfeld Stiftung — Interim disbursement Q3 freigeben',    priority: 'normal', done: false },
+  { date: '01.09.2026', item: 'Hoffmann Klimastiftung — Q3 Disbursement an BUND e.V.',         priority: 'normal', done: false },
   { date: '15.09.2026', item: 'Walczak Digitalstiftung — Stiftungsregister BW Eintragung',     priority: 'high',   done: false },
-  { date: '31.12.2026', item: 'Alle Stiftungen — §55 AO Mittelverwendungsnachweis',            priority: 'normal', done: false },
-  { date: '31.01.2026', item: 'von Saalfeld Stiftung — GPA BW Jahresprüfung',                 priority: 'done',   done: true  },
-  { date: '15.03.2026', item: 'Hoffmann Klimastiftung — Freistellungsbescheid verlängert',     priority: 'done',   done: true  },
+  { date: '31.12.2026', item: 'Alle Stiftungen — §55 AO Fund Utilisation Report',            priority: 'normal', done: false },
+  { date: '31.01.2026', item: 'von Saalfeld Foundation — GPA BW annual audit',                 priority: 'done',   done: true  },
+  { date: '15.03.2026', item: 'Hoffmann Climate Foundation — Tax Exemption Notice renewed',     priority: 'done',   done: true  },
 ]
 
 function fmt(n: number) {
@@ -128,23 +128,23 @@ export default function FoundationIntelligencePage() {
       <div style={{ marginBottom: 28 }}>
         <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'-0.01em',
           textTransform:'none', color:INK, opacity:0.28, marginBottom:8 }}>
-          LBBW Foundation Intelligence · Bankinternes Stiftungsmanagement
+          LBBW Foundation Intelligence · Internal Foundation Management
         </div>
         <h1 style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:30, fontWeight:500,
           color:INK, margin:'0 0 5px' }}>Foundation Intelligence</h1>
         <p style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:15, color:INK,
           opacity:0.44, fontStyle:'italic', margin:0, lineHeight:1.7 }}>
-          Vollständige Übersicht aller LBBW-delegierten Stiftungen — Compliance, Ausschüttungen, Stiftungsregister BW und steuerliche Überwachung in Echtzeit.
+          Complete overview of all LBBW-managed foundations — compliance, disbursements, Foundation Register BW and real-time tax monitoring.
         </p>
       </div>
 
       {/* KPI strip */}
       <div style={{ display:'flex', gap:1, marginBottom:24 }}>
         {[
-          { l:'Stiftungen gesamt',     v: FOUNDATIONS.length.toString(),   sub:'davon 1 in Gründung' },
-          { l:'Stiftungsvermögen',     v: fmt(totalAssets),                 sub:'verwaltetes Kapital' },
-          { l:'Ausschüttungen 2025',   v: fmt(totalDisbursed),              sub:'§55 AO konform' },
-          { l:'Offene Compliance',     v: alertCount.toString(),            sub:'Fristen & Auflagen', alert: alertCount > 0 },
+          { l:'Foundations total',     v: FOUNDATIONS.length.toString(),   sub:'incl. 1 pending registration' },
+          { l:'Foundation assets',     v: fmt(totalAssets),                 sub:'assets under management' },
+          { l:'Disbursements 2025',   v: fmt(totalDisbursed),              sub:'§55 AO compliant' },
+          { l:'Open Compliance',     v: alertCount.toString(),            sub:'Deadlines & Conditions', alert: alertCount > 0 },
         ].map(k => (
           <div key={k.l} style={{ flex:1, padding:'14px 16px',
             background: k.alert ? `${RED}08` : '#fff',
@@ -169,7 +169,7 @@ export default function FoundationIntelligencePage() {
             textTransform:'none', color: view===v ? PARCH : INK,
             opacity: view===v ? 1 : 0.45,
           }}>
-            {v === 'portfolio' ? 'Stiftungsportfolio' : 'Compliance-Kalender'}
+            {v === 'portfolio' ? 'Foundation Portfolio' : 'Compliance Calendar'}
           </button>
         ))}
       </div>
@@ -220,7 +220,7 @@ export default function FoundationIntelligencePage() {
                           </div>
                           <div style={{ display:'flex', justifyContent:'space-between',
                             fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, color:INK, opacity:0.38 }}>
-                            <span>{fmt(f.disbursed2025)} ausgeschüttet</span>
+                            <span>{fmt(f.disbursed2025)} disbursed</span>
                             <span>{pct}% von {fmt(f.disbursedTarget)}</span>
                           </div>
                         </>
@@ -270,7 +270,7 @@ export default function FoundationIntelligencePage() {
                           { l:'Stiftungsregister', v: found.stiftungsregister },
                           { l:'Anerkennung',       v: `${found.recognition}${found.recognitionDate !== '—' ? ' · ' + found.recognitionDate : ''}` },
                           { l:'Steuerlicher Status', v: found.taxStatus },
-                          { l:'Nächste Ausschüttung', v: found.nextDisbursement },
+                          { l:'Next Disbursement', v: found.nextDisbursement },
                         ].map(row => (
                           <div key={row.l}>
                             <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'0em',
@@ -312,7 +312,7 @@ export default function FoundationIntelligencePage() {
                           border:'none', cursor:'pointer', borderRadius:2,
                           fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11,
                           letterSpacing:'0em', textTransform:'uppercase' }}>
-                          Ausschüttung freigeben
+                          Disbursement freigeben
                         </button>
                         <button style={{ padding:'10px 0', background:'transparent',
                           color:INK, border:`1px solid ${INK}22`,
