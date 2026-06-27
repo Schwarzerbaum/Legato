@@ -1,65 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #0A1628;
-  --surface: #0F2040;
-  --elevated: #162952;
-  --teal: #00C896;
-  --teal-glow: rgba(0,200,150,0.25);
-  --catalyst: #F59E0B;
-  --guardian: #059669;
-  --explorer: #0EA5E9;
-  --architect: #7C3AED;
-  --warn: #EF4444;
-  --verified: #10B981;
-  --onchain: #8B5CF6;
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #475569;
+  --bg: #ffffff;
+  --bg-subtle: #f8fafc;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --purple: #7c3aed;
+  --blue: #2563eb;
+  --green: #059669;
+  --amber: #d97706;
+  --red: #dc2626;
+  --lbbw: #003B6F;
+  --radius: 10px;
 }
 
 * { box-sizing: border-box; }
 
 html, body {
-  background: #0A1628;
-  color: #F8FAFC;
-  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   min-height: 100%;
 }
 
-.font-display { font-family: 'Clash Display', 'Inter', sans-serif; }
-.font-mono-lg { font-family: 'JetBrains Mono', monospace; }
+/* Gradient text — matches Legato .text-ai */
+.text-gradient {
+  background: linear-gradient(90deg, #7c3aed, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
-
-@keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.12); opacity: 1; }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-@keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  100% { transform: scale(2.8); opacity: 0; }
-}
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-@keyframes particle-float {
-  0% { transform: translate(0, 0) scale(1); opacity: 1; }
-  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
-}
-
-.animate-breathe { animation: breathe 4s ease-in-out infinite; }
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
