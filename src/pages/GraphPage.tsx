@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Bookmark, X } from 'lucide-react'
 import { useAppStore } from '@/store/useAppStore'
 import { PhasesBar } from '@/components/PhasesBar'
+import { PhasePanelTabs } from '@/components/PhasePanelTabs'
 import { GraphView } from '@/components/graph/GraphView'
 import { TopicDetailPanel } from '@/components/TopicDetailPanel'
 import { SourceDetailPanel } from '@/components/SourceDetailPanel'
@@ -11,6 +12,7 @@ import { ConnectionsGraphPage } from '@/pages/ConnectionsGraphPage'
 import { ResearchPage } from '@/pages/ResearchPage'
 import { CompanionPage } from '@/pages/CompanionPage'
 import { FoundationPage } from '@/pages/FoundationPage'
+import { TaxBenefitsPage } from '@/pages/TaxBenefitsPage'
 import { topicById, companyById, supervisorById, fieldById } from '@/data/index'
 import { PHASES } from '@/data/phases'
 import { Badge } from '@/components/ui/badge'
@@ -231,8 +233,22 @@ export function GraphPage() {
             </motion.div>
           )}
 
+          {/* Phase 5 — Tax Benefits */}
+          {currentPanel === 'reviews' && (
+            <motion.div
+              key="reviews"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="h-full w-full"
+            >
+              <TaxBenefitsPage />
+            </motion.div>
+          )}
+
           {/* Phase 2, 4–5 placeholders */}
-          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'foundation' && (
+          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'foundation' && currentPanel !== 'reviews' && (
             <motion.div
               key={currentPanel}
               initial={{ opacity: 0 }}
@@ -246,6 +262,15 @@ export function GraphPage() {
           )}
         </AnimatePresence>
         </div>
+
+        {/* Phase sub-panel tabs — overlaid at top (Found phase) */}
+        {currentPhase === 5 && (
+          <div className="absolute top-0 left-0 right-0 pointer-events-none">
+            <div className="pointer-events-auto w-fit mx-auto">
+              <PhasePanelTabs />
+            </div>
+          </div>
+        )}
 
         {/* Phases bar — overlaid at bottom */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
