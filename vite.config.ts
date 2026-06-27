@@ -5,22 +5,22 @@ import { cloudflare } from '@cloudflare/vite-plugin'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-function anthropicDevProxy(): Plugin {
+function openaiDevProxy(): Plugin {
   return {
-    name: 'anthropic-dev-proxy',
+    name: 'openai-dev-proxy',
     enforce: 'pre',
     configureServer(server) {
       let apiKey = ''
       try {
         const content = readFileSync(resolve(__dirname, '.dev.vars'), 'utf-8')
-        const match = content.match(/^ANTHROPIC_API_KEY=(.+)$/m)
+        const match = content.match(/^OPENAI_API_KEY=(.+)$/m)
         if (match) apiKey = match[1].trim()
       } catch {}
 
       server.middlewares.use('/api/ai', async (req, res, next) => {
         if (!apiKey) { next(); return }
         try {
-          const targetUrl = `https://api.anthropic.com${req.url ?? '/'}`
+          const targetUrl = `https://api.openai.com${req.url ?? '/'}`
 
           const chunks: Buffer[] = []
           await new Promise<void>((resolve) => {
@@ -35,8 +35,7 @@ function anthropicDevProxy(): Plugin {
               headers[key] = value
             }
           }
-          headers['x-api-key'] = apiKey
-          headers['anthropic-version'] = '2023-06-01'
+          headers['authorization'] = `Bearer ${apiKey}`
 
           const response = await fetch(targetUrl, {
             method: req.method,
@@ -72,7 +71,7 @@ function anthropicDevProxy(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [anthropicDevProxy(), react(), tailwindcss(), cloudflare()],
+  plugins: [openaiDevProxy(), react(), tailwindcss(), cloudflare()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

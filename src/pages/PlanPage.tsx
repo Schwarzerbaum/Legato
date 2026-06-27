@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useMemo } from "react"
 import { motion } from "framer-motion"
 import ReactMarkdown from "react-markdown"
-import Anthropic from "@anthropic-ai/sdk"
+import OpenAI from "openai"
 import {
   ListTree, Sparkles, Scale, ArrowRight, Heart, Layers, Globe, MapPin, TrendingUp, Send,
 } from "lucide-react"
@@ -27,11 +27,13 @@ function partnerName(t: Topic): string {
 
 // ── AI companion (right pane) — forecast / planning focused ───────────────────
 
-const client = new Anthropic({
+const client = new OpenAI({
   apiKey: "not-needed",
-  baseURL: `${window.location.origin}/api/ai`,
+  baseURL: `${window.location.origin}/api/ai/v1`,
   dangerouslyAllowBrowser: true,
 })
+
+const MODEL = "gpt-4o-mini"
 
 interface Message {
   role: "user" | "assistant"
@@ -84,19 +86,23 @@ Be concise, direct, warm and credible. Use bullet points for action items and re
     setInput("")
     setLoading(true)
     try {
-      const stream = client.messages.stream({
-        model: "claude-opus-4-6",
+      const stream = await client.chat.completions.create({
+        model: MODEL,
         max_tokens: 1500,
-        system: systemPrompt,
-        messages: newMessages.map(m => ({ role: m.role, content: m.content })),
+        stream: true,
+        messages: [
+          { role: "system", content: systemPrompt },
+          ...newMessages.map(m => ({ role: m.role, content: m.content })),
+        ],
       })
-      for await (const event of stream) {
-        if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+      for await (const chunk of stream) {
+        const delta = chunk.choices[0]?.delta?.content
+        if (delta) {
           setMessages(prev => {
             const updated = [...prev]
             updated[updated.length - 1] = {
               role: "assistant",
-              content: updated[updated.length - 1].content + (event.delta as { type: string; text: string }).text,
+              content: updated[updated.length - 1].content + delta,
             }
             return updated
           })

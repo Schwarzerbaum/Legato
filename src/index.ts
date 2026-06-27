@@ -3,7 +3,7 @@ interface Fetcher {
 }
 
 export interface Env {
-  ANTHROPIC_API_KEY: string;
+  OPENAI_API_KEY: string;
   ASSETS: Fetcher;
 }
 
@@ -12,19 +12,18 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname.startsWith('/api/ai/')) {
-      const anthropicPath = url.pathname.replace('/api/ai', '');
-      const anthropicUrl = `https://api.anthropic.com${anthropicPath}${url.search}`;
+      const upstreamPath = url.pathname.replace('/api/ai', '');
+      const upstreamApiUrl = `https://api.openai.com${upstreamPath}${url.search}`;
 
       // Forward original headers, then inject auth
       const forwardedHeaders = new Headers(request.headers);
-      forwardedHeaders.set('x-api-key', env.ANTHROPIC_API_KEY);
-      forwardedHeaders.set('anthropic-version', '2023-06-01');
+      forwardedHeaders.set('authorization', `Bearer ${env.OPENAI_API_KEY}`);
       // Remove host header so it doesn't conflict with the upstream host
       forwardedHeaders.delete('host');
       forwardedHeaders.delete('origin');
       forwardedHeaders.delete('referer');
 
-      const upstreamRequest = new Request(anthropicUrl, {
+      const upstreamRequest = new Request(upstreamApiUrl, {
         method: request.method,
         headers: forwardedHeaders,
         body: request.body,

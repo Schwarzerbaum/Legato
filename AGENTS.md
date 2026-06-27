@@ -17,8 +17,9 @@ their own LBBW-delegated foundation. Built as a bank product, not a donation app
 - **Stack:** Vite 8 + React 19 + TypeScript SPA, deployed to Cloudflare Workers.
 - **State:** single Zustand store at `src/store/useAppStore.ts`.
 - **Styling:** Tailwind v4 (config lives in `src/App.css`), shadcn/ui (`new-york`, base color zinc).
-- **AI:** Anthropic Claude via a same-origin proxy `/api/ai/*` (`src/index.ts` worker injects the key;
-  `vite.config.ts` proxies it in dev from `.dev.vars`). Never expose `ANTHROPIC_API_KEY` to the browser.
+- **AI:** OpenAI (`gpt-4o-mini`) via a same-origin proxy `/api/ai/*` (`src/index.ts` worker injects
+  the key; `vite.config.ts` proxies it in dev from `.dev.vars`). Never expose `OPENAI_API_KEY` to the
+  browser. Client uses the `openai` SDK with `baseURL: '/api/ai/v1'`.
 - **Graphs:** discovery graph uses `@xyflow/react`; the research/topic graphs use `reactflow` v11 + `elkjs`.
 
 ## The journey (`src/data/phases.ts`)

@@ -1,33 +1,38 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import ReactMarkdown from "react-markdown"
-import Anthropic from "@anthropic-ai/sdk"
+import OpenAI from "openai"
 import { X, Sparkles, Send } from "lucide-react"
 import { useAppStore } from "@/store/useAppStore"
 import { CAUSE_THEMES, themeByKey } from "@/data/themes"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
-const client = new Anthropic({
+const client = new OpenAI({
   apiKey: "not-needed",
-  baseURL: `${window.location.origin}/api/ai`,
+  baseURL: `${window.location.origin}/api/ai/v1`,
   dangerouslyAllowBrowser: true,
 })
 
-const SELECT_TOOL = {
-  name: "select_causes",
-  description:
-    "Select the cause cards that best match what the giver cares about. Call this once you understand them; you may call it again to refine.",
-  input_schema: {
-    type: "object" as const,
-    properties: {
-      keys: {
-        type: "array",
-        items: { type: "string", enum: CAUSE_THEMES.map(t => t.key) },
-        description: "2 to 4 theme keys, ordered by relevance.",
+const MODEL = "gpt-4o-mini"
+
+const SELECT_TOOL: OpenAI.Chat.Completions.ChatCompletionTool = {
+  type: "function",
+  function: {
+    name: "select_causes",
+    description:
+      "Select the cause cards that best match what the giver cares about. Call this once you understand them; you may call it again to refine.",
+    parameters: {
+      type: "object",
+      properties: {
+        keys: {
+          type: "array",
+          items: { type: "string", enum: CAUSE_THEMES.map(t => t.key) },
+          description: "2 to 4 theme keys, ordered by relevance.",
+        },
       },
+      required: ["keys"],
     },
-    required: ["keys"],
   },
 }
 
@@ -36,7 +41,11 @@ const SYSTEM = `You are a warm, concise giving advisor at LBBW helping a new phi
 Available cause themes (key — label):
 ${CAUSE_THEMES.map(t => `${t.key} — ${t.label}`).join("\n")}
 
-Have a short, friendly conversation. Ask at most one or two brief questions if you need to, then call the select_causes tool with the 2–4 best-matching theme keys. After selecting, briefly tell them what you picked and why, and invite them to adjust the cards. Keep every reply to 1–3 sentences.`
+How you work:
+- The ONLY way to actually select cards is by calling the select_causes function. Text you write does NOT select anything, so never just name causes in prose.
+- As soon as the user tells you what they care about (usually their very first message), immediately call select_causes with the 2–4 best-matching theme keys. Do not describe your recommendation in words instead of calling the tool.
+- Only ask a brief clarifying question if their message is genuinely too vague to map to any theme.
+- After calling the tool, write 1–2 warm sentences naming what you picked and inviting them to adjust the cards.`
 
 interface DisplayMsg {
   role: "user" | "assistant"
@@ -48,10 +57,9 @@ export function HelpMeDecideChat({ open, onClose }: { open: boolean; onClose: ()
   const [display, setDisplay] = useState<DisplayMsg[]>([])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
-  const convo = useRef<Anthropic.MessageParam[]>([])
+  const convo = useRef<OpenAI.Chat.Completions.ChatCompletionMessageParam[]>([])
   const bottomRef = useRef<HTMLDivElement>(null)
 
-  // Seed the greeting when the panel opens fresh.
   useEffect(() => {
     if (open && display.length === 0) {
       setDisplay([
@@ -78,43 +86,33 @@ export function HelpMeDecideChat({ open, onClose }: { open: boolean; onClose: ()
     try {
       let guard = 0
       while (guard++ < 4) {
-        const res = await client.messages.create({
-          model: "claude-opus-4-6",
+        const res = await client.chat.completions.create({
+          model: MODEL,
           max_tokens: 600,
-          system: SYSTEM,
+          messages: [{ role: "system", content: SYSTEM }, ...convo.current],
           tools: [SELECT_TOOL],
-          messages: convo.current,
         })
 
-        const textOut = res.content
-          .filter((b): b is Anthropic.TextBlock => b.type === "text")
-          .map(b => b.text)
-          .join("")
-          .trim()
-        if (textOut) setDisplay(d => [...d, { role: "assistant", text: textOut }])
+        const m = res.choices[0].message
+        if (m.content) setDisplay(d => [...d, { role: "assistant", text: m.content! }])
+        convo.current.push({ role: "assistant", content: m.content ?? "", tool_calls: m.tool_calls })
 
-        convo.current.push({ role: "assistant", content: res.content })
+        if (!m.tool_calls?.length) break
 
-        const toolUses = res.content.filter(
-          (b): b is Anthropic.ToolUseBlock => b.type === "tool_use",
-        )
-        if (toolUses.length === 0) break
-
-        for (const tu of toolUses) {
-          if (tu.name === "select_causes") {
-            const keys = ((tu.input as { keys?: unknown }).keys ?? []) as unknown[]
-            const valid = keys.filter((k): k is string => typeof k === "string" && !!themeByKey[k])
-            if (valid.length) setSelectedThemes(valid)
+        for (const tc of m.tool_calls) {
+          if (tc.type === "function" && tc.function.name === "select_causes") {
+            try {
+              const args = JSON.parse(tc.function.arguments) as { keys?: unknown[] }
+              const keys = (args.keys ?? []).filter(
+                (k): k is string => typeof k === "string" && !!themeByKey[k],
+              )
+              if (keys.length) setSelectedThemes(keys)
+            } catch {
+              // ignore malformed tool args
+            }
           }
+          convo.current.push({ role: "tool", tool_call_id: tc.id, content: "Cards updated on screen." })
         }
-        convo.current.push({
-          role: "user",
-          content: toolUses.map(tu => ({
-            type: "tool_result" as const,
-            tool_use_id: tu.id,
-            content: "Cards updated on screen.",
-          })),
-        })
       }
     } catch {
       setDisplay(d => [

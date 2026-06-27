@@ -56,7 +56,7 @@ We lead with the Next-Gen discovery story and end on the *Impact Hub* climax, wh
 | Animation | Framer Motion |
 | State | Zustand |
 | Graph | XYFlow/React, ReactFlow, elkjs |
-| AI | Anthropic Claude (Haiku + Opus) via a same-origin proxy |
+| AI | OpenAI (gpt-4o-mini) via a same-origin proxy |
 | Deployment | Cloudflare Workers |
 
 ---
@@ -75,7 +75,7 @@ npm run build
 npx wrangler deploy
 ```
 
-Set `ANTHROPIC_API_KEY` for AI features — locally in a `.dev.vars` file in the project root, and in your Cloudflare Worker environment for production. Without it the app still runs, but the AI features (Giver-Identity suggestions, giving-plan builder, impact chat) silently no-op.
+Set `OPENAI_API_KEY` for AI features — locally in a `.dev.vars` file in the project root, and in your Cloudflare Worker environment for production (`npx wrangler secret put OPENAI_API_KEY`). Without it the app still runs, but the AI features ("Help me decide" onboarding chat, planning companion) silently no-op.
 
 ---
 
