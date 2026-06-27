@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Bookmark, X } from 'lucide-react'
 import { useAppStore } from '@/store/useAppStore'
 import { PhasesBar } from '@/components/PhasesBar'
+import { PhasePanelTabs } from '@/components/PhasePanelTabs'
 import { GraphView } from '@/components/graph/GraphView'
 import { TopicDetailPanel } from '@/components/TopicDetailPanel'
 import { SourceDetailPanel } from '@/components/SourceDetailPanel'
@@ -10,6 +11,7 @@ import { SearchPage } from '@/pages/SearchPage'
 import { ConnectionsGraphPage } from '@/pages/ConnectionsGraphPage'
 import { PlanPage } from '@/pages/PlanPage'
 import { ImpactHubPage } from '@/pages/ImpactHubPage'
+import { TaxBenefitsPage } from '@/pages/TaxBenefitsPage'
 import { topicById, companyById, supervisorById, fieldById } from '@/data/index'
 import { PHASES } from '@/data/phases'
 import { Badge } from '@/components/ui/badge'
@@ -212,8 +214,22 @@ export function GraphPage() {
             </motion.div>
           )}
 
-          {/* Impact Hub sub-panel placeholders (Tax Benefits, Legacy) */}
-          {!isPhase1Panel && currentPanel !== 'plan' && currentPanel !== 'impact-hub' && (
+          {/* Phase 3 — Tax Benefits (Impact Hub sub-panel) */}
+          {currentPanel === 'reviews' && (
+            <motion.div
+              key="reviews"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="h-full w-full"
+            >
+              <TaxBenefitsPage />
+            </motion.div>
+          )}
+
+          {/* Impact Hub sub-panel placeholder (Legacy) */}
+          {!isPhase1Panel && currentPanel !== 'plan' && currentPanel !== 'impact-hub' && currentPanel !== 'reviews' && (
             <motion.div
               key={currentPanel}
               initial={{ opacity: 0 }}
@@ -227,6 +243,15 @@ export function GraphPage() {
           )}
         </AnimatePresence>
         </div>
+
+        {/* Phase sub-panel tabs — overlaid at top (Impact Hub phase) */}
+        {currentPhase === 3 && (
+          <div className="absolute top-0 left-0 right-0 pointer-events-none">
+            <div className="pointer-events-auto w-fit mx-auto">
+              <PhasePanelTabs />
+            </div>
+          </div>
+        )}
 
         {/* Phases bar — overlaid at bottom */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none">

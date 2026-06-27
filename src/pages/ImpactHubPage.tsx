@@ -39,7 +39,7 @@ export function ImpactHubPage() {
 
   return (
     <div className="h-full overflow-y-auto">
-      <div className="mx-auto max-w-3xl px-8 py-12 pb-28 space-y-8">
+      <div className="mx-auto max-w-3xl px-8 pt-24 pb-28 space-y-8">
         {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
