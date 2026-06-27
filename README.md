@@ -1,6 +1,7 @@
 # LEGATUM — Intelligence-First Philanthropic Banking
 
-> Built for **HackXplore 2026** by LBBW · Team: Mango
+> Built for **HackXplore 2026** by LBBW
+> 
 
 Legatum is a 9-layer AI-powered philanthropic banking product that transforms LBBW's wealth management offering. It turns philanthropic intent into structured, verifiable, long-term impact — guided by an agentic AI swarm at every step.
 
