@@ -46,6 +46,7 @@ interface AppState {
 
   // Actions
   toggleTheme: (key: string) => void
+  setSelectedThemes: (keys: string[]) => void
   setActiveTheme: (key: string) => void
   setGivingStyle: (id: string) => void
   enterGraph: () => void
@@ -101,6 +102,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       : [...selectedThemeKeys, key]
     set({ selectedThemeKeys: next })
   },
+
+  setSelectedThemes: (keys) => set({ selectedThemeKeys: keys }),
 
   setActiveTheme: (key) =>
     set({ activeThemeKey: key, selectedFieldIds: [], selectedSourceIds: [], activeTopicId: null }),
