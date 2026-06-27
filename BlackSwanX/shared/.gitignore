@@ -1,7 +1,0 @@
-*
-!.gitignore
-!**/README.md
-# Ausnahme: das RAG-Projekt wird versioniert. Secrets / venv / lokale Daten
-# regelt shared/rag/.gitignore (.env, .venv, data/pages, runs, workspace …).
-!rag/
-!rag/**
