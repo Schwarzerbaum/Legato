@@ -92,8 +92,9 @@ export function TaxBenefitsPage() {
             <div className="flex items-center justify-between">
               <h2 className="ds-title-cards">Your giving over time</h2>
               <div className="flex items-center gap-4">
+                <Legend color={GOOD} label="Total giving" />
                 <Legend color={YOU} label="You pay" />
-                <Legend color={TAX} label="Tax refunds" />
+                <Legend color={TAX} label="Tax relief" />
               </div>
             </div>
             <ProjectionChart data={projection} />
@@ -232,7 +233,7 @@ function ProjectionChart({ data }: { data: ReturnType<typeof givingProjection> }
         <motion.path d={netArea} fill="url(#grad-net)" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} />
 
         <motion.path
-          d={line(p => p.cumulativeDonated)} fill="none" stroke={TAX} strokeWidth={2.5}
+          d={line(p => p.cumulativeDonated)} fill="none" stroke={GOOD} strokeWidth={2.5}
           strokeLinecap="round" strokeLinejoin="round"
           initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.7 }}
         />
@@ -251,7 +252,7 @@ function ProjectionChart({ data }: { data: ReturnType<typeof givingProjection> }
         {hp && (
           <g>
             <line x1={x(hover!)} x2={x(hover!)} y1={P.top} y2={P.top + innerH} stroke={YOU} strokeWidth={1} strokeDasharray="3 3" opacity={0.6} />
-            <circle cx={x(hover!)} cy={y(hp.cumulativeDonated)} r={4} fill={TAX} stroke="white" strokeWidth={1.5} />
+            <circle cx={x(hover!)} cy={y(hp.cumulativeDonated)} r={4} fill={GOOD} stroke="white" strokeWidth={1.5} />
             <circle cx={x(hover!)} cy={y(hp.cumulativeNetCost)} r={4} fill={YOU} stroke="white" strokeWidth={1.5} />
           </g>
         )}
@@ -263,7 +264,7 @@ function ProjectionChart({ data }: { data: ReturnType<typeof givingProjection> }
           style={{ left: `${(x(hover!) / W) * 100}%`, transform: `translateX(${hover! > n / 2 ? 'calc(-100% - 10px)' : '10px'})` }}
         >
           <p className="ds-caption font-medium">{calendarYear(hp.year)}</p>
-          <Row color={TAX} label="Given" value={euro(hp.cumulativeDonated)} />
+          <Row color={GOOD} label="Total giving" value={euro(hp.cumulativeDonated)} />
           <Row color={YOU} label="Net cost" value={euro(hp.cumulativeNetCost)} />
         </div>
       )}
