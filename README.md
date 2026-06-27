@@ -90,37 +90,24 @@ The prototype runs on realistic mock data (German/European, Baden-Württemberg f
 
 ---
 
-## The bank side — `legatum-nextjs/` + `backend/`
+## The bank side — built into the same app (`/bank/*`)
 
-Alongside the giver-facing app (this repo's root), the project ships the
-**bank/advisor-facing** side so an LBBW banker can discover, vet and manage the
-philanthropic portfolio:
+The **bank/advisor-facing** side now lives **inside this one app** (rebuilt natively in
+the Legato design system), so an LBBW banker can discover, vet and manage the
+philanthropic portfolio without leaving it:
 
-- **`legatum-nextjs/`** — a Next.js 14 advisor app with five screens: Discover (verified
-  German NGOs), Assess (BlackSwanX credibility / anomaly detection), Portfolio, Foundation
-  intelligence (Treuhand-/Verbrauchsstiftung guidance), and a D3 Knowledge-Graph view.
-  Run with `cd legatum-nextjs && npm install && npm run dev`.
+- **`src/pages/bank/`** — five advisor screens at `/bank/*`: **Discover** (due-diligence
+  map of vetted NGOs/corporates), **Assess** (credibility scores), **Portfolio** (advisor
+  client dashboard), **Foundation** (Treuhand-/Verbrauchsstiftung guidance), and a
+  **Knowledge-Graph** intelligence view. Switch in via the "LBBW Advisor view" button
+  (top-right of the giver app); switch back via "Giver app" in the bank's bottom nav.
 - **`backend/`** — Python intelligence layers (`legatum_bank_engine`, `legatum_user_engine`,
   `legatum_intelligence` orchestrator/router/vector-store).
 - **`contracts/LegatumPassport.sol`** — an ERC-721 on-chain "Legatum Passport" + giving badges.
 
-See `legatum-nextjs/README.md` for the full bank-engine docs.
-
-### Running & linking the two apps
-
-```bash
-npm run dev     # giver app  → http://localhost:5173  (Vite)
-npm run bank    # bank app   → http://localhost:3000  (Next.js)
-```
-
-They deploy separately (giver → Cloudflare Workers via `npm run deploy`; bank → its
-own host). To **link** them, each side reads the other's deployed URL from an env var,
-and the cross-link only renders when its URL is set:
-
-- **Giver app** (build-time): `VITE_BANK_URL=https://<bank-url>` → shows an
-  "LBBW Advisor view ↗" link top-right of onboarding.
-- **Bank app** (deploy env): `NEXT_PUBLIC_GIVER_URL=https://<giver-url>` → shows a
-  "Giver app ↗" link in the bottom nav.
+> `legatum-nextjs/` is the partner's original standalone Next.js version, kept for
+> reference — it has been superseded by the in-app `/bank/*` pages and is no longer run by
+> `npm run dev`.
 
 ---
 
