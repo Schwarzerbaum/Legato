@@ -54,15 +54,15 @@ Legatum/
 │   ├── data/                ← ngos.json (15 NGOs, 2 anomaly-flagged), badges.json, questions.js
 │   └── store/               ← Zustand persist store (full journey state)
 │
-├── BlackSwanX/              ← AI credibility verification engine
-│   ├── legatum/             ← Graph RAG, corrective RAG, anomaly detection
-│   ├── backend/             ← FastAPI endpoints
-│   └── legatum_api.py       ← Legatum-specific API layer
+├── credibility-engine/      ← AI NGO verification layer (Graph RAG + anomaly detection)
+│   ├── graph_rag.py         ← Graph-based NGO fact retrieval
+│   ├── corrective_rag.py    ← Corrective RAG loop (re-queries low-confidence answers)
+│   ├── vendor_risk.py       ← Credibility scoring (financial transparency, impact consistency)
+│   ├── pheromones.py        ← Stigmergic agent coordination
+│   └── legatum_api.py       ← API layer connecting to Next.js frontend
 │
-├── contracts/
-│   └── LegatumPassport.sol  ← ERC-721 on-chain giving identity + badge NFTs
-│
-└── legatum-frontend/        ← Original Vite prototype (archived reference)
+└── contracts/
+    └── LegatumPassport.sol  ← ERC-721 on-chain giving identity + badge NFTs
 ```
 
 ---
