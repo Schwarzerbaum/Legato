@@ -1,3 +1,4 @@
+# ── Root Vite/React app (Legato giver frontend) ──────────────────────────────
 # Logs
 logs
 *.log
@@ -24,3 +25,46 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ── legatum-nextjs (bank-side Next.js app) ───────────────────────────────────
+.next/
+.vercel/
+out/
+*.tsbuildinfo
+
+# ── backend (Python) ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.env
+.env.*
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Databases / ML artifacts
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets / keys / models
+*.pem
+*.key
+*.crt
+secrets/
+*.bin
+*.pt
+*.onnx
+*.safetensors
+
+# Misc
+Thumbs.db
+coverage/
+htmlcov/
+docker-data/
+postgres-data/
+redis-data/

@@ -90,6 +90,25 @@ The prototype runs on realistic mock data (German/European, Baden-Württemberg f
 
 ---
 
+## The bank side — `legatum-nextjs/` + `backend/`
+
+Alongside the giver-facing app (this repo's root), the project ships the
+**bank/advisor-facing** side so an LBBW banker can discover, vet and manage the
+philanthropic portfolio:
+
+- **`legatum-nextjs/`** — a Next.js 14 advisor app with five screens: Discover (verified
+  German NGOs), Assess (BlackSwanX credibility / anomaly detection), Portfolio, Foundation
+  intelligence (Treuhand-/Verbrauchsstiftung guidance), and a D3 Knowledge-Graph view.
+  Run with `cd legatum-nextjs && npm install && npm run dev`.
+- **`backend/`** — Python intelligence layers (`legatum_bank_engine`, `legatum_user_engine`,
+  `legatum_intelligence` orchestrator/router/vector-store).
+- **`contracts/LegatumPassport.sol`** — an ERC-721 on-chain "Legatum Passport" + giving badges.
+
+See `legatum-nextjs/README.md` for the full bank-engine docs.
+
+
+---
+
 ## Team
 
-Built at HackXplore 2026.
+Built during **HackXplore 2026** at LBBW Stuttgart.
