@@ -38,13 +38,13 @@ function parseImpactUnit(unit: string): { cost: number; text: string } | null {
 export function TaxBenefitsPage() {
   const { committedTopicIds } = useAppStore()
 
-  const [income, setIncome] = useState(60_000)
-  const [monthly, setMonthly] = useState(150)
+  const [income, setIncome] = useState(200_000)
+  const [annual, setAnnual] = useState(25_000)
   const [years, setYears] = useState(30)
 
   const inputs: TaxInputs = useMemo(
-    () => ({ income, donation: monthly * 12, married: false, churchRate: 0 }),
-    [income, monthly],
+    () => ({ income, donation: annual, married: false, churchRate: 0 }),
+    [income, annual],
   )
   const projection = useMemo(() => givingProjection(inputs, years), [inputs, years])
   const final = projection[projection.length - 1]
@@ -112,9 +112,9 @@ export function TaxBenefitsPage() {
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.16 }}
           className="grid grid-cols-1 sm:grid-cols-3 gap-8"
         >
-          <Slider label="Monthly gift" value={monthly} min={10} max={1_000} step={10}
-            display={`${euro(monthly)}/mo`} onChange={setMonthly} accent={YOU} />
-          <Slider label="Your income" value={income} min={20_000} max={200_000} step={1_000}
+          <Slider label="Annual gift" value={annual} min={10_000} max={200_000} step={5_000}
+            display={`${euro(annual)}/yr`} onChange={setAnnual} accent={YOU} />
+          <Slider label="Your income" value={income} min={100_000} max={2_000_000} step={10_000}
             display={euro(income)} onChange={setIncome} accent={YOU} />
           <Slider label="Years of giving" value={years} min={5} max={50} step={1}
             display={`${years} yrs`} onChange={setYears} accent={YOU} />

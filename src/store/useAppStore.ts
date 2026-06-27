@@ -86,7 +86,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   bookmarkedTopicIds: [],
   committedTopicIds: [],
   plannedTopicId: null,
-  givingTotal: 1000,
+  givingTotal: 25_000,
   allocations: {},
   compareTopicIds: [null, null],
 

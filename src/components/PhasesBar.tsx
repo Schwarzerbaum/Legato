@@ -5,6 +5,7 @@ import { PHASES } from '@/data/phases'
 export function PhasesBar() {
   const { currentPhase, setCurrentPhase, committedTopicIds } = useAppStore()
   const hasCommitments = committedTopicIds.length > 0
+  const nextPhase = PHASES.find(p => p.id === currentPhase + 1)
 
   return (
     <div className="flex shrink-0 items-center justify-center py-3">
@@ -36,6 +37,21 @@ export function PhasesBar() {
             </div>
           )
         })}
+
+        {/* Next button — appears once the giver has committed to a project */}
+        {hasCommitments && nextPhase && (
+          <>
+            <div className="mx-1.5 h-4 w-px bg-border/70" />
+            <button
+              onClick={() => setCurrentPhase(nextPhase.id)}
+              className="flex items-center gap-1 rounded-full px-3 py-1 ds-caption font-semibold text-white transition-transform active:scale-95"
+              style={{ backgroundColor: nextPhase.color }}
+            >
+              Next: {nextPhase.name}
+              <ChevronRight className="size-3.5" />
+            </button>
+          </>
+        )}
       </div>
     </div>
   )

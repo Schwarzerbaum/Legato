@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
 const ACCENT = "#d97706" // Plan accent
-const PRESETS = [250, 1000, 5000, 25000]
+const PRESETS = [25_000, 50_000, 100_000, 250_000]
 
 function euro(n: number): string {
   return "€" + Math.round(n).toLocaleString("de-DE")
@@ -262,7 +262,8 @@ export function PlanPage() {
               <span className="ds-title-lg text-muted-foreground">€</span>
               <input
                 type="number"
-                min={0}
+                min={25_000}
+                step={5_000}
                 value={givingTotal}
                 onChange={e => setGivingTotal(Number(e.target.value))}
                 className="w-44 bg-transparent ds-title-xl outline-none"
