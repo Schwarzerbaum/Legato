@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'LEGATUM · LBBW Bank Intelligence',
+  title: 'Legato · LBBW Bank Intelligence',
   description: 'AI-powered philanthropic advisory for LBBW advisors',
 }
 

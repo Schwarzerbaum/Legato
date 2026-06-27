@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BankNav from '../../components/BankNav'
 
-export const metadata: Metadata = { title: 'LEGATUM · Bank Intelligence' }
+export const metadata: Metadata = { title: 'Legato · Bank Intelligence' }
 
 export default function BankEngineLayout({ children }: { children: React.ReactNode }) {
   return (

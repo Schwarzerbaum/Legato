@@ -12,7 +12,7 @@ const GREEN  = '#059669'
 interface Message { role: 'user' | 'assistant'; content: string }
 
 // ── Bank system prompt ────────────────────────────────────────────────────────
-const SYSTEM = `You are the LEGATUM Advisor Intelligence — a private AI assistant embedded in LBBW's philanthropic banking platform. You assist LBBW relationship managers and philanthropic advisors with:
+const SYSTEM = `You are the Legato Advisor Intelligence — a private AI assistant embedded in LBBW's philanthropic banking platform. You assist LBBW relationship managers and philanthropic advisors with:
 
 **Portfolio & Client Intelligence**
 - Client giving mandates, cause pillars, SDG alignment, allocation strategy
@@ -133,7 +133,7 @@ export default function AdvisorIntelligencePage() {
       }}>
         <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'-0.01em',
           textTransform:'none', color:INK, opacity:0.28, marginBottom:6 }}>
-          LEGATUM · Advisor Intelligence
+          Legato · Advisor Intelligence
         </div>
         <div style={{ display:'flex', alignItems:'baseline', gap:12 }}>
           <h1 style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:24, fontWeight:500,

@@ -173,7 +173,7 @@ function CenterNode() {
       padding:'14px 24px', textAlign:'center', minWidth:200, boxShadow:`0 2px 18px ${INK}07` }}>
       <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'-0.01em',
         textTransform:'none', color:INK, opacity:0.22, marginBottom:6 }}>
-        LEGATUM · Bank Intelligence
+        Legato · Bank Intelligence
       </div>
       <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:17, fontStyle:'italic',
         color:INK, opacity:0.68 }}>Philanthropy Due Diligence</div>
