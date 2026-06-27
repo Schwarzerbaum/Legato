@@ -1,0 +1,328 @@
+{
+  "timestamp": "2026-06-20T19:50:17.096346",
+  "pdf": "2025_Broschuere_BIM-Leitfaden_2.0_barrierefrei.pdf",
+  "verdict": "PARTIAL",
+  "summary": {
+    "total": 18,
+    "correct": 6,
+    "partial": 7,
+    "incorrect": 5,
+    "avg_score": 0.508
+  },
+  "comparison": {
+    "phase_1_baseline": 0.45,
+    "optimized_current": 0.508,
+    "target_range": [
+      0.6,
+      0.75
+    ]
+  },
+  "results": [
+    {
+      "id": "Q01",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "answer": "Der BIM-Leitfaden 2.0 basiert auf dem Masterplan BIM Bundesfernstraßen des Bundes.",
+      "metadata": {
+        "retrieved_pages": [
+          2,
+          13,
+          14,
+          32,
+          18
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q02",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "Alle Partner:innen außerhalb der Verwaltung können den BIM-Leitfaden 2.0 nutzen.",
+      "metadata": {
+        "retrieved_pages": [
+          2,
+          6,
+          20,
+          4,
+          7
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q03",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "answer": "Diese Information ist nicht verfügbar.",
+      "metadata": {
+        "retrieved_pages": [
+          27,
+          2,
+          14,
+          33,
+          24
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q04",
+      "verdict": "correct",
+      "score": 0.9,
+      "answer": "Eine **Common Data Environment (CDE)** ist eine zentrale Datenumgebung, in der alle Projektbeteiligten Informationen zu einem Bauwerk oder Straßenkörper speichern und teilen können. Sie ermöglicht die",
+      "metadata": {
+        "retrieved_pages": [
+          18,
+          32,
+          38,
+          7,
+          22
+        ],
+        "entities_used": 4,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q05",
+      "verdict": "correct",
+      "score": 1.0,
+      "answer": "Das Ticketmanagement in der BIM-Projektabwicklung dient dazu, Aufgaben und Probleme innerhalb des Projekts zu verwalten. Es ermöglicht es, Tickets zu erstellen, zuzuweisen, zu bearbeiten und zu schlie",
+      "metadata": {
+        "retrieved_pages": [
+          32,
+          27,
+          34,
+          24,
+          30
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q06",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "Ein Issue im BCF-Format ist eine Aufgabe, die von einer Person erzeugt wird und an eine andere bestimmte Beteiligte zugewiesen wird. Es enthält eine Beschreibung, Verknüpfungen zu modellbasierten Komm",
+      "metadata": {
+        "retrieved_pages": [
+          30,
+          32,
+          31,
+          1,
+          2
+        ],
+        "entities_used": 5,
+        "relations_used": 2
+      }
+    },
+    {
+      "id": "Q07",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "BCF-Issues werden in der BIM-Projektabwicklung gemäß SBV BW identifiziert und verwaltet.",
+      "metadata": {
+        "retrieved_pages": [
+          38,
+          32,
+          33,
+          8,
+          37
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q08",
+      "verdict": "correct",
+      "score": 1.0,
+      "answer": "BIM steht für Building Information Modeling, was ein Prozess ist, der digitale Modelle von Gebäuden und Infrastrukturen erstellt und verwaltet. Es ermöglicht einen transparenten, effizienten und direk",
+      "metadata": {
+        "retrieved_pages": [
+          0,
+          1,
+          17,
+          39,
+          4
+        ],
+        "entities_used": 8,
+        "relations_used": 9
+      }
+    },
+    {
+      "id": "Q09",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "answer": "Diese Information ist nicht verfügbar.",
+      "metadata": {
+        "retrieved_pages": [
+          18,
+          34,
+          30,
+          21,
+          20
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q10",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "Das Level of Information (LOI) legt die Informationsstufe für das digitale Bauwerksmodell fest. Es besteht aus geometrischen, alphanumerischen Informationen und der Dokumentation. LOI wurde aus LOD (L",
+      "metadata": {
+        "retrieved_pages": [
+          25,
+          26,
+          40,
+          24,
+          38
+        ],
+        "entities_used": 9,
+        "relations_used": 8
+      }
+    },
+    {
+      "id": "Q11",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "Die Anforderungen an den Level of Information (LOI) nach BIM-Leitfaden sind:\n\n- Geometrische Informationen (LOG)\n- Alphanumerische Informationen (LOI)\n- Dokumentation\n\nDiese Informationen müssen in De",
+      "metadata": {
+        "retrieved_pages": [
+          25,
+          26,
+          33,
+          40,
+          18
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q12",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "Der BIM-Abwicklungsplan (BAP) beschreibt die Bereitstellung der vorgegebenen digitalen Liefergegenstände aus der AIA und stimmt diese mit dem AN ab. Somit definiert der BAP die Umsetzung des AwFs im P",
+      "metadata": {
+        "retrieved_pages": [
+          34,
+          27,
+          38,
+          33,
+          24
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q13",
+      "verdict": "correct",
+      "score": 1.0,
+      "answer": "Die Auftraggeber-Informationsanforderungen (AIA) sind Vorgaben, die der Auftraggeber (AN) zu liefern hat, um die festgelegten BIM-Ziele und -Anforderungen (AwF) zu erreichen. Diese Anforderungen beinh",
+      "metadata": {
+        "retrieved_pages": [
+          33,
+          28,
+          15,
+          18,
+          14
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q14",
+      "verdict": "correct",
+      "score": 1.0,
+      "answer": "Ein digitales Zwilling im Kontext des BIM-Leitfadens ist eine umfassende digitalisierte Repräsentation eines Bauwerks, die sowohl physische als auch digitale Informationen über den gesamten Lebenszykl",
+      "metadata": {
+        "retrieved_pages": [
+          38,
+          9,
+          35,
+          29,
+          15
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q15",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "answer": "Diese Information ist nicht verfügbar.",
+      "metadata": {
+        "retrieved_pages": [
+          33,
+          14,
+          28,
+          2,
+          20
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q16",
+      "verdict": "partial",
+      "score": 0.5,
+      "answer": "Das BIM-Kompetenzzentrum ist im VM angesiedelt und steuert die Einführung und Umsetzung der BIM-Methode landesweit. Es hat die Federführung für die Entwicklung, Steuerung und Koordination aller Aufgab",
+      "metadata": {
+        "retrieved_pages": [
+          21,
+          20,
+          22,
+          18,
+          19
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q17",
+      "verdict": "correct",
+      "score": 0.75,
+      "answer": "Der BIM-Leitfaden bietet die folgenden Vorteile für Projekte:\n\n1. Verbesserte Kooperation und Zusammenarbeit zwischen allen Beteiligten.\n2. Standardisierung von Prozessen und Schnittstellen.\n3. Fokus ",
+      "metadata": {
+        "retrieved_pages": [
+          15,
+          13,
+          8,
+          33,
+          6
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    },
+    {
+      "id": "Q18",
+      "verdict": "incorrect",
+      "score": 0.0,
+      "answer": "Antwort konnte nicht generiert werden.",
+      "metadata": {
+        "retrieved_pages": [
+          18,
+          33,
+          9,
+          13,
+          22
+        ],
+        "entities_used": 10,
+        "relations_used": 10
+      }
+    }
+  ]
+}

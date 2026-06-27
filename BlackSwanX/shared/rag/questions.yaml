@@ -1,0 +1,128 @@
+document:
+  title: BIM-Leitfaden 2.0 Evaluation
+  questions:
+    - id: Q01
+      question: Auf welchen Grundlagen basiert der BIM-Leitfaden 2.0?
+      expected_answer: Der BIM-Leitfaden 2.0 basiert auf dem BIM-Leitfaden für das Straßenbauwesen in Baden-Württemberg, berücksichtigt die VDI-Richtlinie 2552 und wurde auf die Belange der baden-württembergischen Straßenbauverwaltung angepasst.
+      source_page: 3
+      evidence: {type: text}
+      expected_entities: [BIM-Leitfaden 2.0, VDI-Richtlinie 2552, Straßenbauverwaltung Baden-Württemberg]
+
+    - id: Q02
+      question: Wer kann den BIM-Leitfaden 2.0 außerhalb der Straßenbauverwaltung nutzen?
+      expected_answer: Der BIM-Leitfaden 2.0 kann auch von anderen Organisationen und Bundes-Länder-Gremien genutzt werden, die mit BIM-Methoden arbeiten.
+      source_page: 3
+      evidence: {type: text}
+      expected_entities: [BIM-Leitfaden 2.0, BIM-Methode]
+
+    - id: Q03
+      question: Welche Anforderungen stellt der BIM-Leitfaden 2.0 an die Datenverwaltung?
+      expected_answer: Der BIM-Leitfaden 2.0 stellt Anforderungen an strukturierte Datenverwaltung, gemeinsame Datenumgebung (CDE), und dokumentierte Prozesse.
+      source_page: 18
+      evidence: {type: text}
+      expected_entities: [CDE, BIM-Leitfaden 2.0, Datenmanagement]
+
+    - id: Q04
+      question: Was ist eine Common Data Environment (CDE)?
+      expected_answer: Die CDE ist ein zentrales Speichermedium für alle verwalteten Daten eines BIM-Projekts, das Projektdaten, Kommunikation und Datensicherung umfasst.
+      source_page: 18
+      evidence: {type: text}
+      expected_entities: [CDE, Landes-CDE, Projektdaten]
+
+    - id: Q05
+      question: Welche Funktion erfüllt das Ticketmanagement in der BIM-Projektabwicklung?
+      expected_answer: Das Ticketmanagement ermöglicht es, Aufgaben zu erstellen, zuzuweisen und zu verwalten, sowie eine Änderungshistorie zu dokumentieren.
+      source_page: 32
+      evidence: {type: text}
+      expected_entities: [BCF, Freigabeprozess]
+
+    - id: Q06
+      question: Was ist ein Issue im BCF-Format?
+      expected_answer: Ein Issue im BCF-Format ist ein Ticket für Qualitätsprobleme mit einer Verortung im Modell (Ansichtspunkt) zur Vermeidung von Missverständnissen.
+      source_page: 32
+      evidence: {type: text}
+      expected_entities: [BCF, Koordinationsmodell]
+
+    - id: Q07
+      question: Wie werden Issues in der BIM-Projektabwicklung gemäß SBV BW identifiziert und verwaltet?
+      expected_answer: Issues werden mittels digitales Aufgabenmanagement (BCF-Issues) identifiziert und in der gemeinsamen CDE verwaltet mit Verortung im Modell.
+      source_page: 32
+      evidence: {type: text}
+      expected_entities: [BCF, CDE, SBV BW]
+
+    - id: Q08
+      question: Was ist BIM?
+      expected_answer: BIM (Building Information Modeling) ist eine Methode zur Verwaltung und Integration von Gebäude- und Infrastrukturinformationen.
+      source_page: 3
+      evidence: {type: text}
+      expected_entities: [BIM-Methode, Digitaler Zwilling]
+
+    - id: Q09
+      question: Welche Rolle spielt die VDI-Richtlinie 2552 im BIM-Leitfaden?
+      expected_answer: Die VDI-Richtlinie 2552 ist eine Grundlage für die Entwicklung und Standardisierung des BIM-Leitfadens.
+      source_page: 5
+      evidence: {type: text}
+      expected_entities: [VDI-Richtlinie 2552, BIM-Leitfaden 2.0]
+
+    - id: Q10
+      question: Was versteht man unter dem Level of Information (LOI)?
+      expected_answer: Der Level of Information (LOI) definiert die Detailstufe und den Umfang der Informationen, die in verschiedenen Projektphasen erforderlich sind.
+      source_page: 26
+      evidence: {type: text}
+      expected_entities: [LOI, LOIN, AIA]
+
+    - id: Q11
+      question: Was sind die Anforderungen an den Level of Information (LOI) nach BIM-Leitfaden?
+      expected_answer: Der LOI definiert die erforderliche Detailstufe und den Informationsgehalt für verschiedene Leistungsphasen des Projekts.
+      source_page: 26
+      evidence: {type: text}
+      expected_entities: [LOI, LOIN, AIA, Fachmodell]
+
+    - id: Q12
+      question: Welche Bedeutung hat der BIM-Abwicklungsplan (BAP)?
+      expected_answer: Der BIM-Abwicklungsplan definiert die Prozesse, Verantwortlichkeiten und technischen Anforderungen für die BIM-Projektabwicklung.
+      source_page: 28
+      evidence: {type: text}
+      expected_entities: [BAP, AIA, BIM-Abwicklungsplan]
+
+    - id: Q13
+      question: Was sind Auftraggeber-Informationsanforderungen (AIA)?
+      expected_answer: Die AIA definieren die Informationsanforderungen des Auftraggebers für die verschiedenen Projektphasen.
+      source_page: 22
+      evidence: {type: text}
+      expected_entities: [AIA, BAP, BIM-Management]
+
+    - id: Q14
+      question: Wie wird ein digitales Zwilling im Kontext des BIM-Leitfadens verstanden?
+      expected_answer: Der digitale Zwilling ist eine vollständige digitale Repräsentation des Bauwerks mit allen relevanten Informationen und Daten.
+      source_page: 38
+      evidence: {type: text}
+      expected_entities: [Digitaler Zwilling, BIM-Methode, CDE]
+
+    - id: Q15
+      question: Welche Standards und Normen sind in den BIM-Leitfaden 2.0 integriert?
+      expected_answer: Der BIM-Leitfaden 2.0 integriert Vorgaben aus VDI-Richtlinien, buildingSMART Standards und weitere nationale/internationale Standards.
+      source_page: 5
+      evidence: {type: text}
+      expected_entities: [VDI-Richtlinie 2552, IFC, BCF, buildingSMART Professional Certification Program – Foundation Basic]
+
+    - id: Q16
+      question: Wer ist das BIM-Kompetenzzentrum und welche Aufgaben hat es?
+      expected_answer: Das BIM-Kompetenzzentrum unterstützt die Straßenbauverwaltung bei der Implementierung und Anwendung von BIM-Methoden.
+      source_page: 12
+      evidence: {type: text}
+      expected_entities: [BIM-Kompetenzzentrum, Ministerium für Verkehr Baden-Württemberg, BIM-Methode]
+
+    - id: Q17
+      question: Welche Vorteile bietet die Anwendung des BIM-Leitfadens für Projekte?
+      expected_answer: Die BIM-Methode ermöglicht bessere Zusammenarbeit, Qualitätskontrolle, Kostenmanagement und Dokumentation über den gesamten Projektlebenszyklus.
+      source_page: 3
+      evidence: {type: text}
+      expected_entities: [BIM-Methode, Digitaler Zwilling, Qualitätsprüfung]
+
+    - id: Q18
+      question: Wie können die Vorgaben des BIM-Leitfadens 2.0 in bestehende Projekte integriert werden?
+      expected_answer: Der BIM-Leitfaden 2.0 kann schrittweise implementiert werden, beginnend mit kritischen Prozessen und Datenflüssen.
+      source_page: 6
+      evidence: {type: text}
+      expected_entities: [BIM-Leitfaden 2.0, BIM-Methode, AIA]

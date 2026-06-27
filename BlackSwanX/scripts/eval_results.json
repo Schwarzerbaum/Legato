@@ -1,0 +1,333 @@
+{
+  "model": "llama3.2:3b",
+  "pdf": "/Users/mango/Downloads/2025_Broschuere_BIM-Leitfaden_2.0_barrierefrei.pdf",
+  "score_pct": 33.3,
+  "green": 4,
+  "yellow": 4,
+  "red": 10,
+  "questions": [
+    {
+      "id": "Q01",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 15.6,
+      "found_entities": [
+        "BIM-Leitfaden 2.0",
+        "BIM-Projekte"
+      ],
+      "missing_entities": [
+        "BIM-Methodik",
+        "Landesverwaltung",
+        "Straßenbauverwaltung Baden-Württemberg"
+      ],
+      "answer_preview": "Der BIM-Leitfaden 2.0 dient als zentrales Dokument für die Einführung und Umsetzung der Building Information Modeling-Methode (BIM) in der Straßenbauverwaltung des Bundes. Es ist das zentrale Werkzeug"
+    },
+    {
+      "id": "Q02",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 14.7,
+      "found_entities": [],
+      "missing_entities": [
+        "Partner:innen außerhalb der Verwaltung",
+        "Unternehmen",
+        "Ingenieurbüros",
+        "Hochschulen",
+        "Universitäten",
+        "Vereine",
+        "Verbände"
+      ],
+      "answer_preview": "Diese Information ist nicht in den verfügbaren Dokumenten enthalten."
+    },
+    {
+      "id": "Q03",
+      "color": "GREEN",
+      "score": 2.0,
+      "elapsed": 15.6,
+      "found_entities": [
+        "Masterplan BIM Bundesfernstraßen",
+        "VDI-Richtlinie 2552",
+        "DEGES",
+        "Bundes-Länder-Gremien"
+      ],
+      "missing_entities": [
+        "BIM-Leitfaden für das Straßenbauwesen in Baden-Württemberg"
+      ],
+      "answer_preview": "Der BIM-Leitfaden 2.0 basiert auf Erkenntnissen des BMV Masterplan BIM Bundesfernstraßen und der VDI-Richtlinie 2552 sowie eigene Erfahrungen des Landes Baden-Württemberg und Erkenntnisse aus untersch"
+    },
+    {
+      "id": "Q04",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 15.9,
+      "found_entities": [
+        "BIM-Leitfaden",
+        "Rahmendokumente"
+      ],
+      "missing_entities": [
+        "AIA",
+        "BAP",
+        "Datenmanagement",
+        "LOIN-Konzept",
+        "Objektkatalog"
+      ],
+      "answer_preview": "Der BIM-Leitfaden 2.0 ist gemäß der Übersicht der Rahmendokumente aufgebaut aus folgenden Abschnitten:\n\n- Kurzdarstellung\n- Einführung\n- BIM-Strategie der Straßenbauverwaltung BW\n- Abkürzungsverzeichn"
+    },
+    {
+      "id": "Q05",
+      "color": "YELLOW",
+      "score": 1.0,
+      "elapsed": 17.4,
+      "found_entities": [
+        "Auftraggeber-Informationsanforderungen",
+        "AIA"
+      ],
+      "missing_entities": [
+        "BIM-Management",
+        "BIM-Anwendungsfälle"
+      ],
+      "answer_preview": "Aus dem Kontext können wir ableiten, dass die Verantwortung für die Erstellung der Auftraggeber-Informationsanforderungen (AIA) nicht explizit im Dokument angegeben ist. Es wird jedoch erwähnt, dass d"
+    },
+    {
+      "id": "Q06",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 15.0,
+      "found_entities": [
+        "BIM-Gesamtkoordination"
+      ],
+      "missing_entities": [
+        "BIM-Management",
+        "BIM-Abwicklungsplan",
+        "BAP",
+        "Fachmodell",
+        "Koordinationsmodell",
+        "Kollisionsprüfung"
+      ],
+      "answer_preview": "Die BIM-Gesamtkoordination übernimmt die Koordination zwischen den verschiedenen Fachbereichen und Abschnitten des Projekts, um eine Zusammenarbeit und Koordination sicherzustellen. Dazu führt sie die"
+    },
+    {
+      "id": "Q07",
+      "color": "GREEN",
+      "score": 2.0,
+      "elapsed": 15.2,
+      "found_entities": [
+        "BIM-Fachkoordination",
+        "BIM-Modellautor:innen",
+        "Qualitätsstandards",
+        "Termine",
+        "Datenaustausch",
+        "Datenmodell"
+      ],
+      "missing_entities": [],
+      "answer_preview": "Die BIM-Fachkoordination übernimmt die Verantwortung für die Einhaltung der vertraglich geregelten Qualitätsstandards, der festgelegten Termine und des fehlerfreien Datenaustauschs auf Fachebene. Sie "
+    },
+    {
+      "id": "Q08",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 13.5,
+      "found_entities": [
+        "BIM"
+      ],
+      "missing_entities": [
+        "Digitaler Zwilling",
+        "alphanumerische Informationen",
+        "Lebenszyklus",
+        "Bauwerk",
+        "Betriebsmodell"
+      ],
+      "answer_preview": "Der BIM-Leitfaden 2.0 definiert einen digitalen Zwilling als eine virtuelle Kopie eines physischen Objekts, die alle relevanten Informationen und Eigenschaften des Objekts enthält. Dieser digitale Zwi"
+    },
+    {
+      "id": "Q09",
+      "color": "GREEN",
+      "score": 2.0,
+      "elapsed": 20.9,
+      "found_entities": [
+        "Teilmodell",
+        "Fachmodell",
+        "Koordinationsmodell"
+      ],
+      "missing_entities": [],
+      "answer_preview": "Basierend auf den bereitgestellten Dokumentenabschnitten können wir folgende Zusammenhänge zwischen Teilmodellen, Fachmodellen und Koordinationsmodellen ableiten:\n\n- Ein Teilmodell (oder auch Teilfach"
+    },
+    {
+      "id": "Q10",
+      "color": "GREEN",
+      "score": 2.0,
+      "elapsed": 20.4,
+      "found_entities": [
+        "Auftraggeber-Informationsanforderungen",
+        "AIA",
+        "BIM-Abwicklungsplan",
+        "BAP",
+        "Auftraggeber",
+        "Auftragnehmer"
+      ],
+      "missing_entities": [
+        "Vor-BAP",
+        "BAP-Protokoll"
+      ],
+      "answer_preview": "Die Auftraggeber-Informationsanforderungen (AIA) und der BIM-Abwicklungsplan (BAP) stehen zueinander in einer engen Beziehung. Die AIA beschreiben die Anforderungen an Informationen, die der Auftragne"
+    },
+    {
+      "id": "Q11",
+      "color": "YELLOW",
+      "score": 1.0,
+      "elapsed": 14.3,
+      "found_entities": [
+        "Level of Information Need",
+        "LOIN",
+        "Dokumentation",
+        "LOI"
+      ],
+      "missing_entities": [
+        "geometrische Informationen",
+        "alphanumerische Informationen",
+        "LOG"
+      ],
+      "answer_preview": "Aus den geometrischen, alphanumerischen Informationen und der Dokumentation setzt sich der Level of Information Need (LOIN) zusammen."
+    },
+    {
+      "id": "Q12",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 18.1,
+      "found_entities": [
+        "Common Data Environment",
+        "CDE"
+      ],
+      "missing_entities": [
+        "Single Source of Truth",
+        "Projektinformationen",
+        "Projektbeteiligte",
+        "Versionierung",
+        "Historisierung",
+        "Freigabeprozess"
+      ],
+      "answer_preview": "Das Common Data Environment (CDE) ist eine Funktion, die für die Sicherung und Übertragung von Projektdaten innerhalb eines BIM-Projekts verantwortlich ist. Es handelt sich um eine zentrale Datensamml"
+    },
+    {
+      "id": "Q13",
+      "color": "YELLOW",
+      "score": 1.0,
+      "elapsed": 19.2,
+      "found_entities": [
+        "Issue",
+        "Workflow",
+        "Bearbeitung"
+      ],
+      "missing_entities": [
+        "Issue Management",
+        "BCF",
+        "Prüfung",
+        "Freigabe",
+        "geschlossen"
+      ],
+      "answer_preview": "Die Identifizierung, Bearbeitung und Nachverfolgung von Issues im BIM-Projektabwicklungskontext ist ein wichtiger Bestandteil des Workflows. Laut dem Text wird der Ersteller Issue die alle Rollen in D"
+    },
+    {
+      "id": "Q14",
+      "color": "YELLOW",
+      "score": 1.0,
+      "elapsed": 19.4,
+      "found_entities": [
+        "Workflow",
+        "Projektdaten",
+        "Bearbeitung"
+      ],
+      "missing_entities": [
+        "Prüfung",
+        "Freigabe",
+        "Tabelle 3.2",
+        "3D Fachmodell",
+        "3D Koordinationsmodell",
+        "BCF Issue-Management"
+      ],
+      "answer_preview": "Die Workflows in der BIM-Projektabwicklung dienen dazu, standardisierte Vorgehensweisen für definierte Prozesse innerhalb der gesamten Projektbearbeitung festzulegen. Durch den Einsatz von Workflows w"
+    },
+    {
+      "id": "Q15",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 13.7,
+      "found_entities": [],
+      "missing_entities": [
+        "Projektvorbereitung",
+        "Auftraggeber-Informationsanforderungen",
+        "AIA",
+        "BIM-Anwendungsfälle",
+        "Ausschreibungsunterlagen",
+        "Vertragsunterlagen",
+        "BAP"
+      ],
+      "answer_preview": "Diese Information ist nicht in den verfügbaren Dokumenten enthalten."
+    },
+    {
+      "id": "Q16",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 19.1,
+      "found_entities": [
+        "BIM-Strategie",
+        "Straßenbauverwaltung Baden-Württemberg"
+      ],
+      "missing_entities": [
+        "Menschen",
+        "Technologie",
+        "Richtlinien",
+        "Prozesse"
+      ],
+      "answer_preview": "Basierend auf den bereitgestellten Dokumentenabschnitten kann die BIM-Strategie der Straßenbauverwaltung Baden-Württemberg nicht explizit auf vier Handlungsfelder zugeordnet werden. Die BIM-Strategie "
+    },
+    {
+      "id": "Q17",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 20.0,
+      "found_entities": [
+        "bessere Öffentlichkeitsbeteiligung"
+      ],
+      "missing_entities": [
+        "verbesserte Zusammenarbeit",
+        "erhöhte Effizienz",
+        "Kostensenkung",
+        "bessere Visualisierung",
+        "Nachhaltigkeit",
+        "Lebenszyklusmanagement",
+        "Fehlerreduktion",
+        "Dokumentation und Nachverfolgbarkeit",
+        "Simulation und Analyse"
+      ],
+      "answer_preview": "Basierend auf dem bereitgestellten Kontext können wir folgende Ziele und Mehrwerte für die Einführung der BIM-Methode im Leitfaden genannt werden:\n\n* Eine bessere Öffentlichkeitsbeteiligung durch Visu"
+    },
+    {
+      "id": "Q18",
+      "color": "RED",
+      "score": 0.0,
+      "elapsed": 23.2,
+      "found_entities": [],
+      "missing_entities": [
+        "Phase I",
+        "Phase II",
+        "Phase III",
+        "Regelbetrieb",
+        "BMV",
+        "Autobahn GmbH des Bundes",
+        "AIA-Modul",
+        "buildingSMART Foundation Basic",
+        "buildingSMART Practitioner",
+        "Praxistage",
+        "Intensivschulung",
+        "Desite MD Pro",
+        "Landes-CDE",
+        "Card_1 BIM-Modeler",
+        "SofiCAD-BIM",
+        "Autodesk Revit",
+        "iTWO5D"
+      ],
+      "answer_preview": "Die Einführung der BIM-Methode in Deutschland erfolgt durch das BIM-Kompetenzzentrum, das von der SBV BW geleitet wird. Das BIM-Kompetenzzentrum steuert die Einführung und Umsetzung der BIM-Methode la"
+    }
+  ]
+}

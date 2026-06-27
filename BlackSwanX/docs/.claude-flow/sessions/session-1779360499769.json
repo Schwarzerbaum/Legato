@@ -1,0 +1,14 @@
+{
+  "id": "session-1779360499769",
+  "startedAt": "2026-05-21T10:48:19.769Z",
+  "cwd": "/Users/mango/BlackSwanX/docs",
+  "context": {},
+  "metrics": {
+    "edits": 1,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-05-22T20:47:42.762Z",
+  "duration": 122362999
+}

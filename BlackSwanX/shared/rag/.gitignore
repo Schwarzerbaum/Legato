@@ -1,0 +1,28 @@
+# Python-generated
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+# venv / lock-managed
+.venv
+# Secrets / local env
+.env
+*.local
+# Generated workflow-run artifacts
+runs/
+# Sandbox workspace (agents' real files)
+workspace/
+# Ingested corpus + rendered pages (large, local)
+data/pages/*
+!data/pages/.gitkeep
+corpus/
+# Run logs (e.g. ingestion logs we tail to monitor)
+*.log
+# Generated graph viewer + vendored JS + eval output
+data/*.html
+data/vis-network.min.js
+data/*.json
+# OS
+.DS_Store

@@ -1,0 +1,226 @@
+[
+  {
+    "timestamp": 1779482862761,
+    "nodes": 15,
+    "edges": 6,
+    "pageRankSum": 1,
+    "confidences": [
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.495,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "mem-MEMORY-application-tracking",
+        "summary": "Application Tracking",
+        "confidence": 0.495,
+        "pageRank": 0.14990270452409796,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-cover-letter-strategy--5-princ",
+        "summary": "Cover Letter Strategy (5 Principles)",
+        "confidence": 0.495,
+        "pageRank": 0.12880331560924127,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-key-highlights-for-cover-lette",
+        "summary": "Key Highlights for Cover Letters",
+        "confidence": 0.495,
+        "pageRank": 0.10398035178307494,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-key-files",
+        "summary": "Key Files",
+        "confidence": 0.495,
+        "pageRank": 0.10398035178307494,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-resume-mapping",
+        "summary": "Resume Mapping",
+        "confidence": 0.495,
+        "pageRank": 0.07477689618109518,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-architecture",
+        "summary": "Architecture",
+        "confidence": 0.495,
+        "pageRank": 0.07477689618109518,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1779482862754-q66z",
+        "summary": "Frequently edited: unknown (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-profile",
+        "summary": "Profile",
+        "confidence": 0.495,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-praanva-project-memory",
+        "summary": "Praanva Project Memory",
+        "confidence": 0.495,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-project_praanva_vision----",
+        "summary": "---",
+        "confidence": 0.495,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1779513949490,
+    "nodes": 15,
+    "edges": 6,
+    "pageRankSum": 1,
+    "confidences": [
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.49,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "mem-MEMORY-application-tracking",
+        "summary": "Application Tracking",
+        "confidence": 0.49,
+        "pageRank": 0.14990270452409796,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-cover-letter-strategy--5-princ",
+        "summary": "Cover Letter Strategy (5 Principles)",
+        "confidence": 0.49,
+        "pageRank": 0.12880331560924127,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-key-highlights-for-cover-lette",
+        "summary": "Key Highlights for Cover Letters",
+        "confidence": 0.49,
+        "pageRank": 0.10398035178307494,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-key-files",
+        "summary": "Key Files",
+        "confidence": 0.49,
+        "pageRank": 0.10398035178307494,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-resume-mapping",
+        "summary": "Resume Mapping",
+        "confidence": 0.49,
+        "pageRank": 0.07477689618109518,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-architecture",
+        "summary": "Architecture",
+        "confidence": 0.49,
+        "pageRank": 0.07477689618109518,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1779482862754-q66z",
+        "summary": "Frequently edited: unknown (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-profile",
+        "summary": "Profile",
+        "confidence": 0.49,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-praanva-project-memory",
+        "summary": "Praanva Project Memory",
+        "confidence": 0.49,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-project_praanva_vision----",
+        "summary": "---",
+        "confidence": 0.49,
+        "pageRank": 0.0404199426598134,
+        "accessCount": 0
+      }
+    ]
+  }
+]
