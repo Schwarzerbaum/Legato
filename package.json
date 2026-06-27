@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node node_modules/vite/bin/vite.js",
+    "dev": "concurrently -k -n giver,bank -c blue,magenta \"node node_modules/vite/bin/vite.js\" \"npm --prefix legatum-nextjs install --silent && npm --prefix legatum-nextjs run dev\"",
+    "dev:giver": "node node_modules/vite/bin/vite.js",
     "bank": "npm --prefix legatum-nextjs install && npm --prefix legatum-nextjs run dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -46,6 +47,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.0",
+    "concurrently": "^10.0.3",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",

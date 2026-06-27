@@ -10,6 +10,12 @@ const STEPS = [
   { n: 5, label: 'Intelligence', href: '/knowledge-graph' },
 ]
 
+// In production set NEXT_PUBLIC_GIVER_URL; in local dev default to the giver
+// app's port (:5173) so the switch button works out of the box.
+const GIVER_URL =
+  process.env.NEXT_PUBLIC_GIVER_URL ??
+  (process.env.NODE_ENV === 'development' ? 'http://localhost:5173' : undefined)
+
 export default function BankNav() {
   const path = usePathname() ?? ''
   const activeStep = STEPS.find(s => path === s.href || path.startsWith(s.href + '/'))
@@ -66,9 +72,9 @@ export default function BankNav() {
         })}
 
         {/* Link to the giver-facing app (set NEXT_PUBLIC_GIVER_URL at deploy) */}
-        {process.env.NEXT_PUBLIC_GIVER_URL && (
+        {GIVER_URL && (
           <a
-            href={process.env.NEXT_PUBLIC_GIVER_URL}
+            href={GIVER_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: 'none', marginLeft: 4, paddingLeft: 10, borderLeft: '1px solid #e2e8f0' }}

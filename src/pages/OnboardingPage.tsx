@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Heart, Check, Sparkles, ArrowUpRight } from 'lucide-react'
+import { ArrowRight, Heart, Check, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
@@ -10,9 +10,6 @@ import { CAUSE_THEMES } from '@/data/themes'
 import { HelpMeDecideChat } from '@/components/HelpMeDecideChat'
 import legatoLogo from '@/assets/legato.svg'
 import heroBg from '@/assets/hero.png'
-
-// Bank/advisor app URL — set VITE_BANK_URL at build time to enable the link.
-const BANK_URL = import.meta.env.VITE_BANK_URL as string | undefined
 
 const GIVING_STYLES = [
   'Start small & flexible',
@@ -53,19 +50,6 @@ export function OnboardingPage() {
       <div className="fixed left-6 top-6 z-20">
         <img src={legatoLogo} alt="Legato" className="h-6" />
       </div>
-
-      {/* Bank/advisor app link top-right — set VITE_BANK_URL at build time */}
-      {BANK_URL && (
-        <a
-          href={BANK_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed right-6 top-6 z-20 flex items-center gap-1.5 ds-caption font-medium text-muted-foreground transition-colors hover:text-foreground"
-        >
-          LBBW Advisor view
-          <ArrowUpRight className="size-3.5" />
-        </a>
-      )}
 
       {/* Card */}
       <motion.div

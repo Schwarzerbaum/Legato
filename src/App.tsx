@@ -2,12 +2,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useAppStore } from './store/useAppStore'
 import { OnboardingPage } from './pages/OnboardingPage'
 import { GraphPage } from './pages/GraphPage'
+import { AdvisorViewLink } from './components/AdvisorViewLink'
 
 function App() {
   const currentView = useAppStore(s => s.currentView)
 
   return (
-    <AnimatePresence mode="wait">
+    <>
+      <AdvisorViewLink />
+      <AnimatePresence mode="wait">
       {currentView === 'onboarding' ? (
         <motion.div
           key="onboarding"
@@ -31,7 +34,8 @@ function App() {
           <GraphPage />
         </motion.div>
       )}
-    </AnimatePresence>
+      </AnimatePresence>
+    </>
   )
 }
 
