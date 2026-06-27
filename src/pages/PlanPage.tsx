@@ -1,28 +1,18 @@
 import { motion } from 'framer-motion'
 import { ListTree, Sparkles, Scale, ArrowRight } from 'lucide-react'
 import { useAppStore } from '@/store/useAppStore'
-import { topicById, companyById, foundationById, fieldById } from '@/data/index'
+import { companyById, foundationById, fieldById } from '@/data/index'
+import type { Topic } from '@/data/index'
+import { computeAllocations } from '@/lib/giving'
 
 const ACCENT = '#d97706' // phase-3 (Plan) accent
-
 const PRESETS = [250, 1000, 5000, 25000]
 
 function euro(n: number): string {
   return '€' + Math.round(n).toLocaleString('de-DE')
 }
 
-// impactUnit looks like "€200 equips one classroom …" → split cost + phrase.
-function parseImpactUnit(unit: string): { cost: number; phrase: string } | null {
-  const m = unit.match(/^€\s*([\d.,]+)\s+(.*)$/)
-  if (!m) return null
-  const cost = parseInt(m[1].replace(/[.,]/g, ''), 10)
-  if (!cost) return null
-  return { cost, phrase: m[2] }
-}
-
-function partnerName(topicId: string): string {
-  const t = topicById[topicId]
-  if (!t) return ''
+function partnerName(t: Topic): string {
   if (t.companyId) return companyById[t.companyId]?.name ?? ''
   if (t.foundationId) return foundationById[t.foundationId]?.name ?? ''
   return ''
@@ -38,14 +28,9 @@ export function PlanPage() {
     setCurrentPhase,
   } = useAppStore()
 
-  const projects = committedTopicIds.map(id => topicById[id]).filter(Boolean)
+  const plan = computeAllocations(committedTopicIds, allocations, givingTotal)
 
-  // weights → normalised shares (always sum to 100% of the total, no "must equal 100" guard)
-  const weightOf = (id: string) => allocations[id] ?? 50
-  const sumWeights = projects.reduce((s, p) => s + weightOf(p.id), 0)
-  const denom = sumWeights || 1
-
-  if (projects.length === 0) {
+  if (plan.length === 0) {
     return (
       <div className="flex h-full items-center justify-center p-8">
         <div className="max-w-sm space-y-3 text-center">
@@ -121,25 +106,18 @@ export function PlanPage() {
           <div className="flex items-center justify-between px-0.5">
             <div className="flex items-center gap-2">
               <Scale className="size-4 text-muted-foreground" />
-              <span className="ds-label">Distribute across {projects.length} project{projects.length !== 1 ? 's' : ''}</span>
+              <span className="ds-label">Distribute across {plan.length} project{plan.length !== 1 ? 's' : ''}</span>
             </div>
             <button
-              onClick={() => projects.forEach(p => setAllocation(p.id, 50))}
+              onClick={() => plan.forEach(a => setAllocation(a.topic.id, 50))}
               className="ds-caption text-muted-foreground hover:text-foreground transition-colors"
             >
               Even split
             </button>
           </div>
 
-          {projects.map((p, i) => {
-            const weight = weightOf(p.id)
-            const share = weight / denom
-            const amount = Math.round(givingTotal * share)
-            const pct = Math.round(share * 100)
-            const parsed = parseImpactUnit(p.impactUnit)
-            const units = parsed ? Math.floor(amount / parsed.cost) : 0
+          {plan.map(({ topic: p, weight, amount, pct, impact }, i) => {
             const causes = p.fieldIds.map(id => fieldById[id]?.name).filter(Boolean).slice(0, 2)
-
             return (
               <motion.div
                 key={p.id}
@@ -150,7 +128,7 @@ export function PlanPage() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0 space-y-1">
-                    <p className="ds-caption text-muted-foreground">{partnerName(p.id)}</p>
+                    <p className="ds-caption text-muted-foreground">{partnerName(p)}</p>
                     <h3 className="ds-label leading-tight">{p.title}</h3>
                     <div className="flex flex-wrap gap-1.5 pt-0.5">
                       {causes.map(c => (
@@ -173,12 +151,12 @@ export function PlanPage() {
                   className="w-full cursor-pointer accent-[#d97706]"
                 />
 
-                {parsed && (
+                {impact && (
                   <div className="flex items-baseline gap-1.5 rounded-lg bg-secondary/60 px-3 py-2">
                     <Sparkles className="size-3.5 shrink-0 translate-y-0.5" style={{ color: ACCENT }} />
                     <p className="ds-caption text-muted-foreground">
-                      <span className="font-semibold text-foreground">≈ {units.toLocaleString('de-DE')}×</span>{' '}
-                      {parsed.phrase}
+                      <span className="font-semibold text-foreground">≈ {impact.units.toLocaleString('de-DE')}×</span>{' '}
+                      {impact.phrase}
                     </p>
                   </div>
                 )}

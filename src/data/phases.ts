@@ -3,7 +3,7 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Network, Bookmark, Scale, Search, Share2,
   ListTree, Sparkles,
-  Target, MessageSquare,
+  Target,
   Landmark, Receipt, Archive,
 } from 'lucide-react'
 
@@ -57,9 +57,7 @@ export const PHASES: PhaseConfig[] = [
     id: 4, name: 'Impact', color: '#e11d48', lightBg: 'rgba(225,29,72,0.10)',
     defaultPanel: 'companion',
     items: [
-      { panel: 'companion',  label: 'Impact Tracker', icon: Sparkles },
-      { panel: 'checklist',  label: 'Milestones',     icon: Target },
-      { panel: 'feedback',   label: 'Updates',        icon: MessageSquare },
+      { panel: 'companion', label: 'Impact Tracker', icon: Sparkles },
     ],
   },
   {
