@@ -6,7 +6,7 @@ export type SidebarPanel =
   'literature' | 'advisors' | 'resources' | 'notes' |
   'outline' | 'editor' | 'citations' | 'ai-assist' |
   'companion' | 'checklist' | 'formatting' | 'submission' | 'feedback' |
-  'foundation' | 'reviews' | 'revisions' | 'publish' | 'archive'
+  'impact-hub' | 'reviews' | 'revisions' | 'publish' | 'archive'
 
 interface AppState {
   // Navigation
@@ -15,7 +15,8 @@ interface AppState {
   currentPanel: SidebarPanel
 
   // Onboarding
-  giverMotivation: string | null
+  selectedThemeKeys: string[]      // chosen cause-cards (see src/data/themes.ts)
+  activeThemeKey: string | null    // which selected theme's map is currently on screen
   giverStyle: string | null
 
   // Graph selections
@@ -40,7 +41,8 @@ interface AppState {
   selectedProjectId: string | null
 
   // Actions
-  setMotivation: (id: string) => void
+  toggleTheme: (key: string) => void
+  setActiveTheme: (key: string) => void
   setGivingStyle: (id: string) => void
   enterGraph: () => void
   goToOnboarding: () => void
@@ -65,7 +67,8 @@ export const useAppStore = create<AppState>((set, get) => ({
   currentPhase: 1,
   currentPanel: 'graph',
 
-  giverMotivation: null,
+  selectedThemeKeys: [],
+  activeThemeKey: null,
   giverStyle: null,
 
   selectedFieldIds: [],
@@ -83,7 +86,16 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   selectedProjectId: null,
 
-  setMotivation: (id) => set({ giverMotivation: id, giverStyle: null, suggestedFieldIds: [], suggestionsLoading: false }),
+  toggleTheme: (key) => {
+    const { selectedThemeKeys } = get()
+    const next = selectedThemeKeys.includes(key)
+      ? selectedThemeKeys.filter(k => k !== key)
+      : [...selectedThemeKeys, key]
+    set({ selectedThemeKeys: next })
+  },
+
+  setActiveTheme: (key) =>
+    set({ activeThemeKey: key, selectedFieldIds: [], selectedSourceIds: [], activeTopicId: null }),
 
   setGivingStyle: (id) => set({ giverStyle: id }),
 
@@ -92,6 +104,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       currentView: 'graph',
       currentPhase: 1,
       currentPanel: 'graph',
+      activeThemeKey: get().selectedThemeKeys[0] ?? null,
       selectedFieldIds: [],
       selectedSourceIds: [],
       activeTopicId: null,
@@ -167,7 +180,7 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   setCurrentPhase: (phase) => {
     const defaultPanels: Record<number, SidebarPanel> = {
-      1: 'graph', 2: 'connections-graph', 3: 'outline', 4: 'companion', 5: 'foundation',
+      1: 'graph', 2: 'connections-graph', 3: 'outline', 4: 'companion', 5: 'impact-hub',
     }
     set({ currentPhase: phase, currentPanel: defaultPanels[phase], activeTopicId: null, activeSourceId: null })
   },

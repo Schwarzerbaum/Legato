@@ -16,6 +16,8 @@ import {
 } from '@xyflow/react'
 
 import { useAppStore, deriveGraphLevel } from '@/store/useAppStore'
+import { fieldIdsForThemes, themeByKey } from '@/data/themes'
+import { cn } from '@/lib/utils'
 import { ACADEMIC, INDUSTRY } from './colors'
 
 import {
@@ -80,12 +82,13 @@ interface GraphState {
   selectedFieldIds: string[]
   selectedSourceIds: string[]
   suggestedFieldIds: string[]
+  onboardingFieldIds: string[]
   graphLevel: number
   savedPositions: Map<string, { x: number; y: number }>
 }
 
 function buildGraphElements(state: GraphState): { nodes: Node[]; edges: Edge[] } {
-  const { selectedFieldIds, selectedSourceIds, suggestedFieldIds, graphLevel, savedPositions } = state
+  const { selectedFieldIds, selectedSourceIds, suggestedFieldIds, onboardingFieldIds, graphLevel, savedPositions } = state
   const nodes: Node[] = []
   const edges: Edge[] = []
 
@@ -106,8 +109,13 @@ function buildGraphElements(state: GraphState): { nodes: Node[]; edges: Edge[] }
   })
 
   // ── Ring 1: Fields ──────────────────────────────────────────────────────────
-  const fieldCount = fields.length
-  fields.forEach((field, i) => {
+  // Filtered to the cause areas behind the giver's onboarding selections; if
+  // nothing was chosen, fall back to the full set of 20.
+  const visibleFields = onboardingFieldIds.length
+    ? fields.filter(f => onboardingFieldIds.includes(f.id))
+    : fields
+  const fieldCount = visibleFields.length
+  visibleFields.forEach((field, i) => {
     const angleDeg = FIELD_START_DEG + i * (360 / fieldCount)
     const defaultPos = ringPosition(R1, angleDeg)
     const isFieldSelected = selectedFieldIds.includes(field.id)
@@ -255,6 +263,11 @@ function GraphCanvas() {
   const store = useAppStore()
   const { fitView } = useReactFlow()
 
+  // The map shows ONE theme at a time; the top bar switches between selected themes.
+  const activeKey = store.selectedThemeKeys.includes(store.activeThemeKey ?? '')
+    ? store.activeThemeKey
+    : (store.selectedThemeKeys[0] ?? null)
+
   const graphLevel = deriveGraphLevel(store)
   const prevLevel = useRef(graphLevel)
 
@@ -283,6 +296,7 @@ function GraphCanvas() {
       selectedFieldIds: store.selectedFieldIds,
       selectedSourceIds: store.selectedSourceIds,
       suggestedFieldIds: store.suggestedFieldIds,
+      onboardingFieldIds: fieldIdsForThemes(activeKey ? [activeKey] : []),
       graphLevel,
       savedPositions: nodePositions.current,
     })
@@ -298,6 +312,8 @@ function GraphCanvas() {
     store.selectedFieldIds,
     store.selectedSourceIds,
     store.suggestedFieldIds,
+    store.selectedThemeKeys,
+    activeKey,
     graphLevel,
     setNodes,
     setEdges,
@@ -340,6 +356,35 @@ function GraphCanvas() {
           <img src={legatoLogo} alt="Legato" className="h-6 opacity-60 pointer-events-none" />
         </Panel>
       </ReactFlow>
+
+      {/* Top bar: switch between the giver's selected themes — each has its own map */}
+      {store.selectedThemeKeys.length > 1 && (
+        <div className="pointer-events-auto absolute top-4 left-1/2 z-10 -translate-x-1/2">
+          <div className="flex items-center gap-1 rounded-full border border-border bg-background/85 p-1 shadow-sm backdrop-blur-sm">
+            {store.selectedThemeKeys.map(key => {
+              const t = themeByKey[key]
+              if (!t) return null
+              const Icon = t.icon
+              const isActive = key === activeKey
+              return (
+                <button
+                  key={key}
+                  onClick={() => store.setActiveTheme(key)}
+                  className={cn(
+                    'flex items-center gap-1.5 rounded-full px-3 py-1.5 ds-caption font-medium transition',
+                    isActive
+                      ? 'bg-primary text-primary-foreground shadow-sm'
+                      : 'text-muted-foreground hover:bg-secondary',
+                  )}
+                >
+                  <Icon className="size-3.5" />
+                  {t.short}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Bottom bar: legend + hint */}
       <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4">
