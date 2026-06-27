@@ -7,12 +7,21 @@
     "employment": "open",
     "employmentType": "working_student",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-02", "field-03"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-02",
+      "field-03",
+      "field-24",
+      "field-54"
+    ],
     "companyId": "company-01",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-01"],
+    "advisorIds": [
+      "expert-01"
+    ],
     "fundingGoal": 480000,
     "fundingRaised": 112000,
     "region": "Baden-Württemberg, DE",
@@ -27,12 +36,26 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-08", "field-07"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-07",
+      "field-22",
+      "field-34",
+      "field-35",
+      "field-36",
+      "field-37",
+      "field-39",
+      "field-66"
+    ],
     "companyId": "company-01",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-02"],
+    "advisorIds": [
+      "expert-02"
+    ],
     "fundingGoal": 900000,
     "fundingRaised": 387000,
     "region": "Schwarzwald, Baden-Württemberg, DE",
@@ -47,12 +70,22 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc", "phd"],
-    "fieldIds": ["field-11", "field-15"],
+    "degrees": [
+      "msc",
+      "phd"
+    ],
+    "fieldIds": [
+      "field-11",
+      "field-15",
+      "field-32",
+      "field-60"
+    ],
     "companyId": "company-02",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-03"],
+    "advisorIds": [
+      "expert-03"
+    ],
     "fundingGoal": 350000,
     "fundingRaised": 210000,
     "region": "Germany",
@@ -67,12 +100,22 @@
     "employment": "yes",
     "employmentType": "graduate_program",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-15", "field-10"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-15",
+      "field-10",
+      "field-31",
+      "field-60",
+      "field-68"
+    ],
     "companyId": "company-02",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-04"],
+    "advisorIds": [
+      "expert-04"
+    ],
     "fundingGoal": 600000,
     "fundingRaised": 54000,
     "region": "Germany",
@@ -87,12 +130,21 @@
     "employment": "open",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-09", "field-10"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-10",
+      "field-37",
+      "field-70"
+    ],
     "companyId": "company-03",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-05"],
+    "advisorIds": [
+      "expert-05"
+    ],
     "fundingGoal": 1200000,
     "fundingRaised": 760000,
     "region": "Southeast Europe",
@@ -107,12 +159,20 @@
     "employment": "yes",
     "employmentType": "working_student",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-03", "field-19"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-03",
+      "field-19",
+      "field-23"
+    ],
     "companyId": "company-03",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-06"],
+    "advisorIds": [
+      "expert-06"
+    ],
     "fundingGoal": 750000,
     "fundingRaised": 290000,
     "region": "Germany, Romania, Morocco",
@@ -127,12 +187,22 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-01", "field-02"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-01",
+      "field-02",
+      "field-21",
+      "field-51",
+      "field-54"
+    ],
     "companyId": "company-04",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-07"],
+    "advisorIds": [
+      "expert-07"
+    ],
     "fundingGoal": 2000000,
     "fundingRaised": 1180000,
     "region": "Sub-Saharan Africa",
@@ -147,12 +217,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-04", "field-19"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-04",
+      "field-19",
+      "field-31",
+      "field-59",
+      "field-60"
+    ],
     "companyId": "company-04",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-08"],
+    "advisorIds": [
+      "expert-08"
+    ],
     "fundingGoal": 420000,
     "fundingRaised": 175000,
     "region": "Stuttgart, DE",
@@ -167,12 +247,24 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-02", "field-15"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-02",
+      "field-15",
+      "field-24",
+      "field-31",
+      "field-54",
+      "field-60",
+      "field-61"
+    ],
     "companyId": "company-05",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-09"],
+    "advisorIds": [
+      "expert-09"
+    ],
     "fundingGoal": 650000,
     "fundingRaised": 127000,
     "region": "Germany",
@@ -187,12 +279,23 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-08", "field-01"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-01",
+      "field-22",
+      "field-35",
+      "field-63"
+    ],
     "companyId": "company-05",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-10"],
+    "advisorIds": [
+      "expert-10"
+    ],
     "fundingGoal": 800000,
     "fundingRaised": 344000,
     "region": "Germany",
@@ -207,12 +310,23 @@
     "employment": "open",
     "employmentType": "graduate_program",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-04", "field-19"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-04",
+      "field-19",
+      "field-31",
+      "field-32",
+      "field-53",
+      "field-60"
+    ],
     "companyId": "company-06",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-11"],
+    "advisorIds": [
+      "expert-11"
+    ],
     "fundingGoal": 320000,
     "fundingRaised": 218000,
     "region": "Germany",
@@ -227,12 +341,24 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-05", "field-16"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-05",
+      "field-16",
+      "field-29",
+      "field-40",
+      "field-42",
+      "field-57",
+      "field-73"
+    ],
     "companyId": "company-06",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-12"],
+    "advisorIds": [
+      "expert-12"
+    ],
     "fundingGoal": 1500000,
     "fundingRaised": 680000,
     "region": "Baden-Württemberg, DE",
@@ -247,12 +373,23 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-09", "field-14"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-14",
+      "field-39",
+      "field-43",
+      "field-70",
+      "field-75"
+    ],
     "companyId": "company-07",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-13"],
+    "advisorIds": [
+      "expert-13"
+    ],
     "fundingGoal": 900000,
     "fundingRaised": 490000,
     "region": "Sub-Saharan Africa, South Asia",
@@ -267,12 +404,22 @@
     "employment": "yes",
     "employmentType": "working_student",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-06", "field-02"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-06",
+      "field-02",
+      "field-25",
+      "field-26",
+      "field-58"
+    ],
     "companyId": "company-07",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-14"],
+    "advisorIds": [
+      "expert-14"
+    ],
     "fundingGoal": 280000,
     "fundingRaised": 155000,
     "region": "Bodenseekreis, DE",
@@ -287,12 +434,22 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc", "phd"],
-    "fieldIds": ["field-11", "field-04"],
+    "degrees": [
+      "msc",
+      "phd"
+    ],
+    "fieldIds": [
+      "field-11",
+      "field-04",
+      "field-32",
+      "field-59"
+    ],
     "companyId": "company-08",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-15"],
+    "advisorIds": [
+      "expert-15"
+    ],
     "fundingGoal": 1800000,
     "fundingRaised": 820000,
     "region": "East Africa",
@@ -307,12 +464,21 @@
     "employment": "yes",
     "employmentType": "graduate_program",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-09", "field-18"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-18",
+      "field-39",
+      "field-47"
+    ],
     "companyId": "company-08",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-16"],
+    "advisorIds": [
+      "expert-16"
+    ],
     "fundingGoal": 2000000,
     "fundingRaised": 1650000,
     "region": "Rhineland-Palatinate, DE",
@@ -327,12 +493,23 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-16", "field-15"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-16",
+      "field-15",
+      "field-31",
+      "field-42",
+      "field-71",
+      "field-72"
+    ],
     "companyId": "company-09",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-17"],
+    "advisorIds": [
+      "expert-17"
+    ],
     "fundingGoal": 180000,
     "fundingRaised": 97000,
     "region": "Baden-Württemberg, DE",
@@ -347,12 +524,23 @@
     "employment": "open",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-18", "field-08"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-18",
+      "field-08",
+      "field-22",
+      "field-35",
+      "field-36"
+    ],
     "companyId": "company-09",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-18"],
+    "advisorIds": [
+      "expert-18"
+    ],
     "fundingGoal": 450000,
     "fundingRaised": 88000,
     "region": "Stuttgart & Mannheim, DE",
@@ -367,12 +555,21 @@
     "employment": "yes",
     "employmentType": "direct_entry",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-18", "field-01"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-18",
+      "field-01",
+      "field-48",
+      "field-49"
+    ],
     "companyId": "company-10",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-19"],
+    "advisorIds": [
+      "expert-19"
+    ],
     "fundingGoal": 1500000,
     "fundingRaised": 870000,
     "region": "Rhine-Neckar, DE",
@@ -387,12 +584,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-09", "field-02"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-02",
+      "field-39",
+      "field-51",
+      "field-68"
+    ],
     "companyId": "company-10",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-20"],
+    "advisorIds": [
+      "expert-20"
+    ],
     "fundingGoal": 5000000,
     "fundingRaised": 3200000,
     "region": "Türkiye",
@@ -407,12 +614,25 @@
     "employment": "yes",
     "employmentType": "working_student",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-10", "field-03"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-10",
+      "field-03",
+      "field-39",
+      "field-51",
+      "field-54",
+      "field-68",
+      "field-69",
+      "field-70"
+    ],
     "companyId": "company-11",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-21"],
+    "advisorIds": [
+      "expert-21"
+    ],
     "fundingGoal": 400000,
     "fundingRaised": 278000,
     "region": "Germany",
@@ -427,12 +647,23 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-04", "field-20"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-04",
+      "field-20",
+      "field-30",
+      "field-32",
+      "field-62",
+      "field-75"
+    ],
     "companyId": "company-11",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-22"],
+    "advisorIds": [
+      "expert-22"
+    ],
     "fundingGoal": 200000,
     "fundingRaised": 95000,
     "region": "Germany",
@@ -447,12 +678,21 @@
     "employment": "open",
     "employmentType": "working_student",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-09", "field-01"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-01",
+      "field-39",
+      "field-50"
+    ],
     "companyId": "company-12",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-23"],
+    "advisorIds": [
+      "expert-23"
+    ],
     "fundingGoal": 750000,
     "fundingRaised": 210000,
     "region": "Southeast Europe & East Africa",
@@ -467,12 +707,21 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-15", "field-04"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-15",
+      "field-04",
+      "field-32",
+      "field-61"
+    ],
     "companyId": "company-12",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-24"],
+    "advisorIds": [
+      "expert-24"
+    ],
     "fundingGoal": 550000,
     "fundingRaised": 66000,
     "region": "West Africa",
@@ -487,12 +736,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-01", "field-18"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-01",
+      "field-18",
+      "field-21",
+      "field-50"
+    ],
     "companyId": "company-13",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-25"],
+    "advisorIds": [
+      "expert-25"
+    ],
     "fundingGoal": 1200000,
     "fundingRaised": 540000,
     "region": "Baden-Württemberg, DE",
@@ -507,12 +765,21 @@
     "employment": "yes",
     "employmentType": "direct_entry",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-07", "field-01"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-07",
+      "field-01",
+      "field-21",
+      "field-69"
+    ],
     "companyId": "company-13",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-26"],
+    "advisorIds": [
+      "expert-26"
+    ],
     "fundingGoal": 800000,
     "fundingRaised": 290000,
     "region": "Rift Valley, Kenya",
@@ -527,12 +794,22 @@
     "employment": "open",
     "employmentType": "working_student",
     "workplaceType": "hybrid",
-    "degrees": ["msc"],
-    "fieldIds": ["field-05", "field-03"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-05",
+      "field-03",
+      "field-26",
+      "field-55",
+      "field-58"
+    ],
     "companyId": "company-14",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-27"],
+    "advisorIds": [
+      "expert-27"
+    ],
     "fundingGoal": 1800000,
     "fundingRaised": 1100000,
     "region": "Sahel, West Africa",
@@ -547,12 +824,24 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-08", "field-01"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-01",
+      "field-22",
+      "field-33",
+      "field-35",
+      "field-66"
+    ],
     "companyId": "company-14",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-28"],
+    "advisorIds": [
+      "expert-28"
+    ],
     "fundingGoal": 600000,
     "fundingRaised": 315000,
     "region": "Alpine Foothills, DE/AT",
@@ -567,12 +856,24 @@
     "employment": "yes",
     "employmentType": "internship",
     "workplaceType": "on_site",
-    "degrees": ["msc"],
-    "fieldIds": ["field-09", "field-05"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-05",
+      "field-27",
+      "field-28",
+      "field-39",
+      "field-56",
+      "field-67"
+    ],
     "companyId": "company-15",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-29"],
+    "advisorIds": [
+      "expert-29"
+    ],
     "fundingGoal": 3000000,
     "fundingRaised": 1650000,
     "region": "Middle East",
@@ -587,12 +888,23 @@
     "employment": "yes",
     "employmentType": "graduate_program",
     "workplaceType": "on_site",
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-10", "field-19"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-10",
+      "field-19",
+      "field-38",
+      "field-54",
+      "field-68"
+    ],
     "companyId": "company-15",
     "foundationId": null,
     "supervisorIds": [],
-    "advisorIds": ["expert-30"],
+    "advisorIds": [
+      "expert-30"
+    ],
     "fundingGoal": 350000,
     "fundingRaised": 42000,
     "region": "Baden-Württemberg, DE",
@@ -607,11 +919,20 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "phd"],
-    "fieldIds": ["field-04", "field-01"],
+    "degrees": [
+      "msc",
+      "phd"
+    ],
+    "fieldIds": [
+      "field-04",
+      "field-01",
+      "field-60"
+    ],
     "companyId": null,
     "foundationId": "uni-01",
-    "supervisorIds": ["supervisor-01"],
+    "supervisorIds": [
+      "supervisor-01"
+    ],
     "advisorIds": [],
     "fundingGoal": 350000,
     "fundingRaised": 85000,
@@ -627,11 +948,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-04", "field-14"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-04",
+      "field-14",
+      "field-30",
+      "field-45",
+      "field-60",
+      "field-77"
+    ],
     "companyId": null,
     "foundationId": "uni-01",
-    "supervisorIds": ["supervisor-02"],
+    "supervisorIds": [
+      "supervisor-02"
+    ],
     "advisorIds": [],
     "fundingGoal": 600000,
     "fundingRaised": 174000,
@@ -647,11 +979,19 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-11", "field-02"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-11",
+      "field-02",
+      "field-25"
+    ],
     "companyId": null,
     "foundationId": "uni-02",
-    "supervisorIds": ["supervisor-03"],
+    "supervisorIds": [
+      "supervisor-03"
+    ],
     "advisorIds": [],
     "fundingGoal": 1200000,
     "fundingRaised": 690000,
@@ -667,11 +1007,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "phd"],
-    "fieldIds": ["field-11", "field-08"],
+    "degrees": [
+      "msc",
+      "phd"
+    ],
+    "fieldIds": [
+      "field-11",
+      "field-08",
+      "field-31",
+      "field-33",
+      "field-49"
+    ],
     "companyId": null,
     "foundationId": "uni-02",
-    "supervisorIds": ["supervisor-04"],
+    "supervisorIds": [
+      "supervisor-04"
+    ],
     "advisorIds": [],
     "fundingGoal": 900000,
     "fundingRaised": 370000,
@@ -687,11 +1038,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-08", "field-14"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-14",
+      "field-45",
+      "field-44",
+      "field-77",
+      "field-76"
+    ],
     "companyId": null,
     "foundationId": "uni-02",
-    "supervisorIds": ["supervisor-05"],
+    "supervisorIds": [
+      "supervisor-05"
+    ],
     "advisorIds": [],
     "fundingGoal": 280000,
     "fundingRaised": 130000,
@@ -707,11 +1069,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-08", "field-17"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-17",
+      "field-33",
+      "field-34",
+      "field-35",
+      "field-64"
+    ],
     "companyId": null,
     "foundationId": "uni-03",
-    "supervisorIds": ["supervisor-06"],
+    "supervisorIds": [
+      "supervisor-06"
+    ],
     "advisorIds": [],
     "fundingGoal": 180000,
     "fundingRaised": 112000,
@@ -727,11 +1100,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-08", "field-18"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-18",
+      "field-35",
+      "field-64",
+      "field-63"
+    ],
     "companyId": null,
     "foundationId": "uni-03",
-    "supervisorIds": ["supervisor-07"],
+    "supervisorIds": [
+      "supervisor-07"
+    ],
     "advisorIds": [],
     "fundingGoal": 220000,
     "fundingRaised": 78000,
@@ -747,11 +1130,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-07", "field-08"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-07",
+      "field-08",
+      "field-35",
+      "field-36",
+      "field-66"
+    ],
     "companyId": null,
     "foundationId": "uni-03",
-    "supervisorIds": ["supervisor-08"],
+    "supervisorIds": [
+      "supervisor-08"
+    ],
     "advisorIds": [],
     "fundingGoal": 1500000,
     "fundingRaised": 820000,
@@ -767,11 +1160,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-03", "field-14"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-03",
+      "field-14",
+      "field-43",
+      "field-46",
+      "field-53",
+      "field-54"
+    ],
     "companyId": null,
     "foundationId": "uni-04",
-    "supervisorIds": ["supervisor-09"],
+    "supervisorIds": [
+      "supervisor-09"
+    ],
     "advisorIds": [],
     "fundingGoal": 450000,
     "fundingRaised": 203000,
@@ -787,11 +1191,23 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-13", "field-16"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-13",
+      "field-16",
+      "field-41",
+      "field-40",
+      "field-71",
+      "field-72"
+    ],
     "companyId": null,
     "foundationId": "uni-04",
-    "supervisorIds": ["supervisor-10"],
+    "supervisorIds": [
+      "supervisor-10"
+    ],
     "advisorIds": [],
     "fundingGoal": 300000,
     "fundingRaised": 167000,
@@ -807,11 +1223,20 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-05", "field-02"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-05",
+      "field-02",
+      "field-28",
+      "field-55"
+    ],
     "companyId": null,
     "foundationId": "uni-05",
-    "supervisorIds": ["supervisor-11"],
+    "supervisorIds": [
+      "supervisor-11"
+    ],
     "advisorIds": [],
     "fundingGoal": 500000,
     "fundingRaised": 185000,
@@ -827,11 +1252,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "phd"],
-    "fieldIds": ["field-09", "field-06"],
+    "degrees": [
+      "msc",
+      "phd"
+    ],
+    "fieldIds": [
+      "field-09",
+      "field-06",
+      "field-28",
+      "field-39",
+      "field-67"
+    ],
     "companyId": null,
     "foundationId": "uni-05",
-    "supervisorIds": ["supervisor-12"],
+    "supervisorIds": [
+      "supervisor-12"
+    ],
     "advisorIds": [],
     "fundingGoal": 650000,
     "fundingRaised": 290000,
@@ -847,11 +1283,19 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "phd"],
-    "fieldIds": ["field-03", "field-02"],
+    "degrees": [
+      "msc",
+      "phd"
+    ],
+    "fieldIds": [
+      "field-03",
+      "field-02"
+    ],
     "companyId": null,
     "foundationId": "uni-06",
-    "supervisorIds": ["supervisor-13"],
+    "supervisorIds": [
+      "supervisor-13"
+    ],
     "advisorIds": [],
     "fundingGoal": 2000000,
     "fundingRaised": 1250000,
@@ -867,11 +1311,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-03", "field-14"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-03",
+      "field-14",
+      "field-45",
+      "field-77",
+      "field-74"
+    ],
     "companyId": null,
     "foundationId": "uni-06",
-    "supervisorIds": ["supervisor-14"],
+    "supervisorIds": [
+      "supervisor-14"
+    ],
     "advisorIds": [],
     "fundingGoal": 800000,
     "fundingRaised": 420000,
@@ -887,11 +1341,19 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-03", "field-19"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-03",
+      "field-19",
+      "field-52"
+    ],
     "companyId": null,
     "foundationId": "uni-06",
-    "supervisorIds": ["supervisor-15"],
+    "supervisorIds": [
+      "supervisor-15"
+    ],
     "advisorIds": [],
     "fundingGoal": 400000,
     "fundingRaised": 215000,
@@ -907,11 +1369,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-05", "field-04"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-05",
+      "field-04",
+      "field-28",
+      "field-30",
+      "field-56",
+      "field-62"
+    ],
     "companyId": null,
     "foundationId": "uni-07",
-    "supervisorIds": ["supervisor-16"],
+    "supervisorIds": [
+      "supervisor-16"
+    ],
     "advisorIds": [],
     "fundingGoal": 520000,
     "fundingRaised": 198000,
@@ -927,11 +1400,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-05", "field-20"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-05",
+      "field-20",
+      "field-27",
+      "field-28",
+      "field-56"
+    ],
     "companyId": null,
     "foundationId": "uni-07",
-    "supervisorIds": ["supervisor-17"],
+    "supervisorIds": [
+      "supervisor-17"
+    ],
     "advisorIds": [],
     "fundingGoal": 700000,
     "fundingRaised": 390000,
@@ -947,11 +1430,24 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-10", "field-14"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-10",
+      "field-14",
+      "field-44",
+      "field-45",
+      "field-46",
+      "field-67",
+      "field-76",
+      "field-77"
+    ],
     "companyId": null,
     "foundationId": "uni-07",
-    "supervisorIds": ["supervisor-18"],
+    "supervisorIds": [
+      "supervisor-18"
+    ],
     "advisorIds": [],
     "fundingGoal": 450000,
     "fundingRaised": 135000,
@@ -967,11 +1463,23 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-08", "field-12"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-12",
+      "field-33",
+      "field-34",
+      "field-35",
+      "field-36",
+      "field-65"
+    ],
     "companyId": null,
     "foundationId": "uni-08",
-    "supervisorIds": ["supervisor-19"],
+    "supervisorIds": [
+      "supervisor-19"
+    ],
     "advisorIds": [],
     "fundingGoal": 1000000,
     "fundingRaised": 430000,
@@ -987,11 +1495,24 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-08", "field-12"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-08",
+      "field-12",
+      "field-22",
+      "field-33",
+      "field-35",
+      "field-36",
+      "field-65",
+      "field-66"
+    ],
     "companyId": null,
     "foundationId": "uni-08",
-    "supervisorIds": ["supervisor-20"],
+    "supervisorIds": [
+      "supervisor-20"
+    ],
     "advisorIds": [],
     "fundingGoal": 850000,
     "fundingRaised": 590000,
@@ -1007,11 +1528,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-17", "field-08"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-17",
+      "field-08",
+      "field-35",
+      "field-36",
+      "field-65"
+    ],
     "companyId": null,
     "foundationId": "uni-08",
-    "supervisorIds": ["supervisor-21"],
+    "supervisorIds": [
+      "supervisor-21"
+    ],
     "advisorIds": [],
     "fundingGoal": 1200000,
     "fundingRaised": 510000,
@@ -1027,11 +1558,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-02", "field-15"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-02",
+      "field-15",
+      "field-24",
+      "field-31",
+      "field-52"
+    ],
     "companyId": null,
     "foundationId": "uni-09",
-    "supervisorIds": ["supervisor-22"],
+    "supervisorIds": [
+      "supervisor-22"
+    ],
     "advisorIds": [],
     "fundingGoal": 380000,
     "fundingRaised": 97000,
@@ -1047,11 +1588,21 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-10", "field-02"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-10",
+      "field-02",
+      "field-38",
+      "field-68"
+    ],
     "companyId": null,
     "foundationId": "uni-09",
-    "supervisorIds": ["supervisor-23"],
+    "supervisorIds": [
+      "supervisor-23"
+    ],
     "advisorIds": [],
     "fundingGoal": 500000,
     "fundingRaised": 255000,
@@ -1067,11 +1618,19 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-01", "field-18"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-01",
+      "field-18",
+      "field-47"
+    ],
     "companyId": null,
     "foundationId": "uni-10",
-    "supervisorIds": ["supervisor-24"],
+    "supervisorIds": [
+      "supervisor-24"
+    ],
     "advisorIds": [],
     "fundingGoal": 350000,
     "fundingRaised": 188000,
@@ -1087,11 +1646,20 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-17", "field-18"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-17",
+      "field-18",
+      "field-21",
+      "field-48"
+    ],
     "companyId": null,
     "foundationId": "uni-10",
-    "supervisorIds": ["supervisor-25"],
+    "supervisorIds": [
+      "supervisor-25"
+    ],
     "advisorIds": [],
     "fundingGoal": 250000,
     "fundingRaised": 88000,
@@ -1107,11 +1675,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-04", "field-16"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-04",
+      "field-16",
+      "field-32",
+      "field-41",
+      "field-60",
+      "field-73"
+    ],
     "companyId": null,
     "foundationId": "uni-01",
-    "supervisorIds": ["supervisor-02"],
+    "supervisorIds": [
+      "supervisor-02"
+    ],
     "advisorIds": [],
     "fundingGoal": 280000,
     "fundingRaised": 210000,
@@ -1127,11 +1706,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-05", "field-20"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-05",
+      "field-20",
+      "field-29",
+      "field-45",
+      "field-74"
+    ],
     "companyId": null,
     "foundationId": "uni-05",
-    "supervisorIds": ["supervisor-11"],
+    "supervisorIds": [
+      "supervisor-11"
+    ],
     "advisorIds": [],
     "fundingGoal": 420000,
     "fundingRaised": 165000,
@@ -1147,11 +1737,20 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-03", "field-06"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-03",
+      "field-06",
+      "field-28",
+      "field-57"
+    ],
     "companyId": null,
     "foundationId": "uni-06",
-    "supervisorIds": ["supervisor-14"],
+    "supervisorIds": [
+      "supervisor-14"
+    ],
     "advisorIds": [],
     "fundingGoal": 380000,
     "fundingRaised": 220000,
@@ -1167,11 +1766,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc"],
-    "fieldIds": ["field-17", "field-08"],
+    "degrees": [
+      "msc"
+    ],
+    "fieldIds": [
+      "field-17",
+      "field-08",
+      "field-22",
+      "field-35",
+      "field-36",
+      "field-66"
+    ],
     "companyId": null,
     "foundationId": "uni-08",
-    "supervisorIds": ["supervisor-19"],
+    "supervisorIds": [
+      "supervisor-19"
+    ],
     "advisorIds": [],
     "fundingGoal": 700000,
     "fundingRaised": 175000,
@@ -1187,11 +1797,22 @@
     "employment": "no",
     "employmentType": null,
     "workplaceType": null,
-    "degrees": ["msc", "bsc"],
-    "fieldIds": ["field-02", "field-03"],
+    "degrees": [
+      "msc",
+      "bsc"
+    ],
+    "fieldIds": [
+      "field-02",
+      "field-03",
+      "field-23",
+      "field-53",
+      "field-54"
+    ],
     "companyId": null,
     "foundationId": "uni-09",
-    "supervisorIds": ["supervisor-23"],
+    "supervisorIds": [
+      "supervisor-23"
+    ],
     "advisorIds": [],
     "fundingGoal": 480000,
     "fundingRaised": 225000,
