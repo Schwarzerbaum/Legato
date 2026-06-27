@@ -158,10 +158,10 @@ function FloatingEdge({ id, source, target, data }: any) {
   const [path] = getBezierPath({ sourceX:sp.x, sourceY:sp.y, targetX:tp.x, targetY:tp.y })
   return (
     <path id={id} d={path} fill="none"
-      stroke={data?.active ? INK : `${INK}28`}
-      strokeWidth={data?.active ? 1.2 : 0.6}
-      strokeDasharray={data?.active ? '0' : '4 6'}
-      style={{ pointerEvents:'none', transition:'stroke 0.2s, stroke-width 0.2s' }}
+      stroke={INK}
+      strokeWidth={data?.active ? 1.5 : 1}
+      strokeOpacity={data?.active ? 0.5 : 0.2}
+      style={{ pointerEvents:'none', transition:'stroke-opacity 0.3s, stroke-width 0.3s' }}
     />
   )
 }
@@ -169,16 +169,16 @@ function FloatingEdge({ id, source, target, data }: any) {
 // ── Node components ───────────────────────────────────────────────────────────
 function CenterNode() {
   return (
-    <div style={{ background:'#f8fafc', border:`1px solid ${INK}1A`, borderRadius:8,
-      padding:'14px 24px', textAlign:'center', minWidth:200, boxShadow:`0 2px 18px ${INK}07` }}>
-      <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, letterSpacing:'-0.01em',
-        textTransform:'none', color:INK, opacity:0.22, marginBottom:6 }}>
-        Legato · Bank Intelligence
+    <div style={{ background:'#ffffff', border:`1px solid ${INK}14`, borderRadius:16,
+      padding:'16px 28px', textAlign:'center', minWidth:210, boxShadow:'0 4px 24px rgba(15,23,42,0.06)' }}>
+      <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:10, letterSpacing:'0.08em',
+        textTransform:'uppercase', color:INK, opacity:0.4, marginBottom:5 }}>
+        Bank Intelligence
       </div>
-      <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:17, fontStyle:'italic',
-        color:INK, opacity:0.68 }}>Philanthropy Due Diligence</div>
-      <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:10, color:INK,
-        opacity:0.25, marginTop:2 }}>{DOMAINS.length} domains · {SOURCES.length} organisations</div>
+      <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:16, fontWeight:600,
+        color:INK }}>Philanthropy Due Diligence</div>
+      <div style={{ fontFamily:"Inter, system-ui, -apple-system, sans-serif", fontSize:11, color:INK,
+        opacity:0.4, marginTop:3 }}>{DOMAINS.length} domains · {SOURCES.length} organisations</div>
       <Handle type="source" position={Position.Top} style={{ opacity:0, width:0, height:0 }} />
     </div>
   )
@@ -188,8 +188,9 @@ function DomainNode({ data }: any) {
   return (
     <div onClick={data.onClick} style={{
       background: data.active ? INK : PARCH,
-      border:`1px solid ${data.active ? INK : INK+'44'}`,
-      borderRadius:999, padding:'5px 14px', cursor:'pointer', whiteSpace:'nowrap',
+      border:`1px solid ${data.active ? INK : INK+'1f'}`,
+      borderRadius:999, padding:'6px 15px', cursor:'pointer', whiteSpace:'nowrap',
+      boxShadow: data.active ? 'none' : '0 1px 4px rgba(15,23,42,0.04)',
       opacity: data.dimmed ? 0.15 : 1,
       transition:'all 0.18s',
     }}>
@@ -541,7 +542,8 @@ function DiscoverFlow({ selDomains, selSrc, selProj, onDomain, onSrc, onProj }: 
       nodeTypes={nodeTypes} edgeTypes={edgeTypes}
       fitView fitViewOptions={{ padding:0.12 }}
       minZoom={0.15} maxZoom={2}
-      style={{ background:'#f8fafc' }}>
+      proOptions={{ hideAttribution: true }}
+      style={{ background:'#ffffff' }}>
       <Background variant={BackgroundVariant.Dots} color={`${INK}09`} gap={26} size={1} />
     </ReactFlow>
   )

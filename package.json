@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node node_modules/vite/bin/vite.js",
+    "bank": "npm --prefix legatum-nextjs install && npm --prefix legatum-nextjs run dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "npm run build && vite preview",
