@@ -3,7 +3,7 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Network, Bookmark, Scale, Search, Share2,
   Users, FolderOpen,
-  ListTree, FileText, Sparkles,
+  ListTree, Sparkles,
   Target, MessageSquare,
   Landmark, Receipt, Archive,
 } from 'lucide-react'
@@ -53,9 +53,7 @@ export const PHASES: PhaseConfig[] = [
     id: 3, name: 'Plan', color: '#d97706', lightBg: 'rgba(217,119,6,0.10)',
     defaultPanel: 'outline',
     items: [
-      { panel: 'outline',   label: 'Giving Plan', icon: ListTree },
-      { panel: 'editor',    label: 'Portfolio',   icon: FileText },
-      { panel: 'ai-assist', label: 'AI Advisor',  icon: Sparkles },
+      { panel: 'outline', label: 'Giving Plan', icon: ListTree },
     ],
   },
   {

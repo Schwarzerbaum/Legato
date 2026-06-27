@@ -30,6 +30,10 @@ interface AppState {
   committedTopicIds: string[]      // the giving portfolio — projects the donor commits to
   plannedTopicId: string | null    // seed for the Plan graph (most recent commitment)
 
+  // Giving plan (phase 3)
+  givingTotal: number              // total € the giver plans to donate
+  allocations: Record<string, number>  // committed topicId -> distribution weight (0–100)
+
   // Compare
   compareTopicIds: [string | null, string | null]
 
@@ -60,6 +64,8 @@ interface AppState {
   setSuggestedFieldIds: (ids: string[]) => void
   setSuggestionsLoading: (v: boolean) => void
   setSelectedProjectId: (id: string | null) => void
+  setGivingTotal: (n: number) => void
+  setAllocation: (topicId: string, weight: number) => void
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
@@ -79,6 +85,8 @@ export const useAppStore = create<AppState>((set, get) => ({
   bookmarkedTopicIds: [],
   committedTopicIds: [],
   plannedTopicId: null,
+  givingTotal: 1000,
+  allocations: {},
   compareTopicIds: [null, null],
 
   suggestedFieldIds: [],
@@ -211,6 +219,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     })
   },
   setSelectedProjectId: (id) => set({ selectedProjectId: id }),
+
+  setGivingTotal: (n) => set({ givingTotal: Math.max(0, Math.round(n || 0)) }),
+  setAllocation: (topicId, weight) =>
+    set({ allocations: { ...get().allocations, [topicId]: Math.max(0, Math.min(100, Math.round(weight))) } }),
 }))
 
 // Pure derived selector — 3 levels: fields → sources → topics

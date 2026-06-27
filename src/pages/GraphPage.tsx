@@ -8,7 +8,7 @@ import { SourceDetailPanel } from '@/components/SourceDetailPanel'
 import { ComparePage } from '@/pages/ComparePage'
 import { SearchPage } from '@/pages/SearchPage'
 import { ConnectionsGraphPage } from '@/pages/ConnectionsGraphPage'
-import { ResearchPage } from '@/pages/ResearchPage'
+import { PlanPage } from '@/pages/PlanPage'
 import { CompanionPage } from '@/pages/CompanionPage'
 import { ImpactHubPage } from '@/pages/ImpactHubPage'
 import { topicById, companyById, supervisorById, fieldById } from '@/data/index'
@@ -189,17 +189,17 @@ export function GraphPage() {
             </motion.div>
           )}
 
-          {/* Phase 3 — Research */}
+          {/* Phase 3 — Plan */}
           {isPhase3Panel && (
             <motion.div
-              key="research"
+              key="plan"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="h-full w-full"
             >
-              <ResearchPage />
+              <PlanPage />
             </motion.div>
           )}
 
