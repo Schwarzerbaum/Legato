@@ -9,6 +9,7 @@ import { ComparePage } from '@/pages/ComparePage'
 import { SearchPage } from '@/pages/SearchPage'
 import { ConnectionsGraphPage } from '@/pages/ConnectionsGraphPage'
 import { PlanPage } from '@/pages/PlanPage'
+import { CommitPage } from '@/pages/CommitPage'
 import { CompanionPage } from '@/pages/CompanionPage'
 import { ImpactHubPage } from '@/pages/ImpactHubPage'
 import { topicById, companyById, supervisorById, fieldById } from '@/data/index'
@@ -189,6 +190,20 @@ export function GraphPage() {
             </motion.div>
           )}
 
+          {/* Phase 2 — Commit (portfolio) */}
+          {currentPanel === 'commit' && (
+            <motion.div
+              key="commit"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="h-full w-full"
+            >
+              <CommitPage />
+            </motion.div>
+          )}
+
           {/* Phase 3 — Plan */}
           {isPhase3Panel && (
             <motion.div
@@ -232,7 +247,7 @@ export function GraphPage() {
           )}
 
           {/* Phase 2, 4–5 placeholders */}
-          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'impact-hub' && (
+          {!isPhase1Panel && !isPhase3Panel && !isPhase4Panel && currentPanel !== 'impact-hub' && currentPanel !== 'commit' && (
             <motion.div
               key={currentPanel}
               initial={{ opacity: 0 }}

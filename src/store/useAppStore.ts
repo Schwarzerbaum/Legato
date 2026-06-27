@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 export type AppView = 'onboarding' | 'graph'
 export type SidebarPanel =
-  'graph' | 'bookmarks' | 'compare' | 'search' | 'connections-graph' |
+  'graph' | 'bookmarks' | 'commit' | 'compare' | 'search' | 'connections-graph' |
   'literature' | 'advisors' | 'resources' | 'notes' |
   'outline' | 'editor' | 'citations' | 'ai-assist' |
   'companion' | 'checklist' | 'formatting' | 'submission' | 'feedback' |
@@ -188,7 +188,7 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   setCurrentPhase: (phase) => {
     const defaultPanels: Record<number, SidebarPanel> = {
-      1: 'graph', 2: 'connections-graph', 3: 'outline', 4: 'companion', 5: 'impact-hub',
+      1: 'graph', 2: 'commit', 3: 'outline', 4: 'companion', 5: 'impact-hub',
     }
     set({ currentPhase: phase, currentPanel: defaultPanels[phase], activeTopicId: null, activeSourceId: null })
   },

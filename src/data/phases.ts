@@ -2,7 +2,6 @@ import type { SidebarPanel } from '@/store/useAppStore'
 import type { LucideIcon } from 'lucide-react'
 import {
   Network, Bookmark, Scale, Search, Share2,
-  Users, FolderOpen,
   ListTree, Sparkles,
   Target, MessageSquare,
   Landmark, Receipt, Archive,
@@ -41,12 +40,10 @@ export const PHASES: PhaseConfig[] = [
   },
   {
     id: 2, name: 'Commit', color: '#0d9488', lightBg: 'rgba(13,148,136,0.10)',
-    defaultPanel: 'connections-graph',
+    defaultPanel: 'commit',
     items: [
-      { panel: 'connections-graph', label: 'Your Causes', icon: Share2 },
-      { panel: 'compare',      label: 'Compare',     icon: Scale },
-      { panel: 'advisors',      label: 'Advisors',    icon: Users },
-      { panel: 'resources',    label: 'Allocation',  icon: FolderOpen },
+      { panel: 'commit',  label: 'Portfolio', icon: Target },
+      { panel: 'compare', label: 'Compare',   icon: Scale },
     ],
   },
   {
