@@ -1,0 +1,6 @@
+<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- legato slur: a smoothly connected arc, with an "impact" accent dot -->
+  <path d="M14 34 C 60 14, 150 14, 196 34" stroke="#2EBF8B" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="205" cy="30" r="6" fill="#2EBF8B"/>
+  <text x="10" y="68" font-family="'Avenir Next','Segoe UI',Helvetica,Arial,sans-serif" font-size="46" font-weight="600" letter-spacing="-1" fill="#14304A">Legato</text>
+</svg>

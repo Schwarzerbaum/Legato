@@ -1,0 +1,72 @@
+[
+  {
+    "id": "uni-01",
+    "name": "Caritas Baden-Württemberg",
+    "country": "DE",
+    "domains": ["caritas-bw.de"],
+    "about": "Caritas Baden-Württemberg is the region's largest Catholic welfare organisation, providing social services to over 600,000 people annually across 700 member organisations and facilities. Its programmes span emergency housing, energy poverty relief, addiction counselling, and support for families in crisis. In partnership with LBBW and private donors, Caritas operates some of Germany's most trusted direct-assistance programmes with full financial transparency."
+  },
+  {
+    "id": "uni-02",
+    "name": "Deutsche Welthungerhilfe",
+    "country": "DE",
+    "domains": ["welthungerhilfe.de"],
+    "about": "Deutsche Welthungerhilfe is one of Germany's largest and most respected development and humanitarian aid organisations, active in over 70 countries fighting hunger, poverty, and the impact of climate change. Its programmes combine emergency food relief with long-term agricultural development, clean water infrastructure, and resilience-building for smallholder farming communities. Welthungerhilfe works with LBBW and institutional donors to ensure full project accountability from inception to final impact measurement."
+  },
+  {
+    "id": "uni-03",
+    "name": "NABU Naturschutzbund Deutschland",
+    "country": "DE",
+    "domains": ["nabu.de"],
+    "about": "NABU is Germany's largest nature conservation organisation, with over 900,000 members campaigning and acting for biodiversity, clean water, and healthy ecosystems at home and internationally. Its impact projects range from urban wildflower corridors and river rewilding to marine protected area enforcement and citizen science biodiversity monitoring. NABU structures its donor programmes to deliver verifiable, long-term ecological outcomes that donors can follow through annual impact reports."
+  },
+  {
+    "id": "uni-04",
+    "name": "Aktion Mensch",
+    "country": "DE",
+    "domains": ["aktion-mensch.de"],
+    "about": "Aktion Mensch is Germany's largest private donor organisation focused on inclusion and equal participation for people with disabilities and those facing social exclusion. Since 1964 it has distributed over €3.5 billion to more than 100,000 social projects, making it one of the most trusted names in German philanthropy. Its giving programmes on the LBBW Legato platform cover accessible public spaces, arts therapies in care homes, and digital inclusion initiatives."
+  },
+  {
+    "id": "uni-05",
+    "name": "Deutsches Rotes Kreuz",
+    "country": "DE",
+    "domains": ["drk.de"],
+    "about": "Deutsches Rotes Kreuz (DRK) is Germany's national Red Cross society, combining emergency response, healthcare services, social welfare, and humanitarian action under a single trusted brand recognised by 99% of German citizens. It operates mobile blood donation units, first aid training programmes, disaster psychosocial support teams, and integration assistance for newly arrived refugees. DRK's strict neutrality and transparent reporting make it a preferred partner for structured philanthropic giving through LBBW Legato."
+  },
+  {
+    "id": "uni-06",
+    "name": "SOS-Kinderdorf Deutschland",
+    "country": "DE",
+    "domains": ["sos-kinderdorf.de"],
+    "about": "SOS-Kinderdorf provides family-based care, child protection, and youth empowerment programmes for children who have lost parental care or are at risk of family breakdown, operating in Germany and 136 countries worldwide. In Germany alone, the organisation runs 15 SOS Children's Villages alongside emergency shelters, family support centres, and vocational training programmes for care leavers. SOS-Kinderdorf's long history of professional child care and transparent governance makes every donation through LBBW Legato accountable and traceable to individual outcomes."
+  },
+  {
+    "id": "uni-07",
+    "name": "Ärzte der Welt Deutschland",
+    "country": "DE",
+    "domains": ["aerzte-der-welt.de"],
+    "about": "Ärzte der Welt (Médecins du Monde Germany) provides free, confidential medical care to people excluded from healthcare systems — including homeless people, undocumented migrants, and people in conflict zones — operating in Germany and 25 countries internationally. Its mobile medical units and safe consultation spaces see over 120,000 patients per year who would otherwise go without care. Donors giving through LBBW Legato can track direct clinical impact per euro contributed, with quarterly field reports from programme countries."
+  },
+  {
+    "id": "uni-08",
+    "name": "WWF Deutschland",
+    "country": "DE",
+    "domains": ["wwf.de"],
+    "about": "WWF Deutschland is the German office of the World Wide Fund for Nature, running conservation programmes to protect biodiversity, forests, oceans, and freshwater ecosystems in Germany and globally. Its high-impact projects include large carnivore protection in the Carpathians, Mediterranean marine protected area enforcement, and marine habitat restoration along Germany's coastlines. WWF's scientific rigour and independent impact verification make it one of LBBW Legato's most trusted partner organisations for nature-focused giving."
+  },
+  {
+    "id": "uni-09",
+    "name": "Stiftung Bildung",
+    "country": "DE",
+    "domains": ["stiftung-bildung.de"],
+    "about": "Stiftung Bildung is Germany's leading foundation dedicated to equal educational opportunity, running programmes that support children from disadvantaged backgrounds in early childhood, primary, and secondary education across all 16 German states. Key initiatives include digital media literacy training for teachers, early childhood places for families unable to afford fees, and intensive German language integration support for newly arrived refugee children. The foundation publishes full annual impact reports for all funded projects."
+  },
+  {
+    "id": "uni-10",
+    "name": "Deutsche Umwelthilfe",
+    "country": "DE",
+    "domains": ["duh.de"],
+    "about": "Deutsche Umwelthilfe (DUH) is Germany's most active environmental legal advocacy organisation, using litigation, consumer campaigns, and policy engagement to enforce environmental standards and reduce pollution. Its landmark clean air lawsuits have won low-emission zones for over 5 million urban residents, and its plastics campaigns have driven measurable reductions in single-use packaging across German retail. DUH publishes all legal case outcomes and campaign impact data, enabling donors on LBBW Legato to track the systemic change their contribution is driving."
+  }
+]

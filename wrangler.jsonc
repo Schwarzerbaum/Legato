@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "start-hack-2026",
+  "compatibility_date": "2026-03-20",
+  "main": "./src/index.ts",
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  }
+}

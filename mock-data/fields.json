@@ -1,0 +1,22 @@
+[
+  { "id": "field-01", "name": "Climate & Clean Energy" },
+  { "id": "field-02", "name": "Education & Schools" },
+  { "id": "field-03", "name": "Child Welfare" },
+  { "id": "field-04", "name": "Poverty & Social Inclusion" },
+  { "id": "field-05", "name": "Health & Medical Research" },
+  { "id": "field-06", "name": "Mental Health" },
+  { "id": "field-07", "name": "Clean Water & Sanitation" },
+  { "id": "field-08", "name": "Biodiversity & Nature" },
+  { "id": "field-09", "name": "Disaster & Humanitarian Relief" },
+  { "id": "field-10", "name": "Refugees & Migration" },
+  { "id": "field-11", "name": "Food Security" },
+  { "id": "field-12", "name": "Animal Welfare" },
+  { "id": "field-13", "name": "Arts & Culture" },
+  { "id": "field-14", "name": "Human Rights & Justice" },
+  { "id": "field-15", "name": "Digital Inclusion" },
+  { "id": "field-16", "name": "Elderly Care" },
+  { "id": "field-17", "name": "Ocean & Marine Conservation" },
+  { "id": "field-18", "name": "Sustainable Cities" },
+  { "id": "field-19", "name": "Youth & Sports" },
+  { "id": "field-20", "name": "Gender Equality" }
+]

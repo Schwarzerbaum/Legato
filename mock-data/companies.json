@@ -1,0 +1,122 @@
+[
+  {
+    "id": "company-01",
+    "name": "Robert Bosch GmbH",
+    "description": "One of the world's leading technology and industrial companies, headquartered in Stuttgart. Bosch develops innovative solutions for mobility, industrial technology, consumer goods, and energy across 60+ countries.",
+    "about": "The Robert Bosch Stiftung and Bosch's corporate giving programme match private donor contributions on the LBBW Legato platform for education, biodiversity, and social welfare initiatives across Baden-Württemberg and Germany. Bosch provides a 1:1 match on all donations up to €500 per individual donor per project, with matched funds disbursed quarterly and full impact reporting published annually. Priority giving areas reflect Bosch's STEM heritage: digital learning for schools and precision-technology approaches to ecological restoration.",
+    "size": "10001+",
+    "domains": ["Technology", "Industrial"]
+  },
+  {
+    "id": "company-02",
+    "name": "SAP SE",
+    "description": "Europe's largest software company, headquartered in Walldorf, Baden-Württemberg. SAP provides enterprise application software and cloud services to organisations in 180 countries, processing a significant share of the world's economic activity.",
+    "about": "SAP's corporate giving programme channels software expertise and matched donations into digital inclusion, food security, and refugee integration projects through the LBBW Legato platform. The SAP Social Sabbatical and matched-giving initiative deploy technology know-how alongside financial contributions: donor funds are amplified by SAP's co-investment and by the volunteered time of SAP employees embedded in partner NGOs. SAP applies the same data-driven outcome measurement to its philanthropy that it does to business intelligence.",
+    "size": "10001+",
+    "domains": ["Software", "Technology"]
+  },
+  {
+    "id": "company-03",
+    "name": "Mercedes-Benz Group AG",
+    "description": "A global leader in premium and luxury vehicles and the world's oldest automobile brand, headquartered in Stuttgart. Mercedes-Benz manufactures passenger cars, vans, and commercial vehicles in 30+ production facilities worldwide.",
+    "about": "Mercedes-Benz's corporate philanthropy focuses on road safety education, humanitarian vehicle programmes, and child welfare in markets where the company has deep roots. Through the LBBW Legato giving platform, the company offers donors a co-funding route into verified impact projects, with Mercedes-Benz contributing in-kind vehicle donations, technical servicing, and driver training as its non-cash philanthropic contribution. Impact is independently audited and shared with all donors on the platform.",
+    "size": "10001+",
+    "domains": ["Automotive", "Mobility"]
+  },
+  {
+    "id": "company-04",
+    "name": "Porsche AG",
+    "description": "A leading global sports car manufacturer headquartered in Stuttgart-Zuffenhausen. Porsche is known for high-performance vehicles and has one of the highest revenue-per-employee ratios in the automotive industry.",
+    "about": "Porsche's 'Road to Zero' philanthropic giving initiative channels matched donor contributions into clean energy access, youth employability, and disaster relief projects selected for their measurable community impact. Porsche provides a 2:1 match on qualifying donations above €500, making it one of the most generous matching programmes available through LBBW Legato. Giving priorities align with Porsche's sustainability strategy: electrification access in underserved communities and vocational pathways for young adults excluded from the labour market.",
+    "size": "10001+",
+    "domains": ["Automotive", "Luxury Goods"]
+  },
+  {
+    "id": "company-05",
+    "name": "TRUMPF GmbH + Co. KG",
+    "description": "A global technology leader in laser technology, electronics, and digital manufacturing solutions, headquartered in Ditzingen near Stuttgart. TRUMPF is a major driver of the Industry 4.0 transformation in precision manufacturing.",
+    "about": "TRUMPF's STEM philanthropy programme donates precision manufacturing equipment — laser cutters, 3D printers, CNC machines — to school MakerSpaces and co-funds teacher training through the LBBW Legato giving platform. The company also runs an environmental giving initiative applying its LiDAR and precision measurement technology to reforestation projects in damaged German woodlands. In-kind equipment contributions are valued at cost and reported transparently alongside cash matched donations.",
+    "size": "10001+",
+    "domains": ["Industrial Technology", "Manufacturing"]
+  },
+  {
+    "id": "company-06",
+    "name": "Würth Group",
+    "description": "The world's largest wholesale distributor of assembly and fastening materials, headquartered in Künzelsau, Baden-Württemberg. Würth serves over 5 million customers in 80+ countries through a direct sales force of 35,000 people.",
+    "about": "Würth's charitable trust and corporate giving programme focus on vocational training access, rural healthcare, and community welfare in the communities where Würth trades. The Würth matched-giving programme on LBBW Legato offers a 1:1 donation match for apprenticeship support and palliative care projects, reflecting founder Reinhold Würth's philosophy that businesses have an obligation to the communities that enable their success. All giving is disbursed through vetted partner organisations with annual impact reporting.",
+    "size": "10001+",
+    "domains": ["Industrial Trade", "Professional Services"]
+  },
+  {
+    "id": "company-07",
+    "name": "ZF Friedrichshafen AG",
+    "description": "One of the world's largest automotive and industrial technology suppliers, headquartered in Friedrichshafen on Lake Constance. ZF develops driveline, chassis, and safety technology for passenger cars, commercial vehicles, and industrial machinery.",
+    "about": "ZF Friedrichshafen's global social responsibility giving programme leverages the company's mobility engineering expertise to fund adaptive vehicle and mobility solutions for disabled people in the Global South, and mental health support in schools across the Lake Constance region. ZF matches employee donations at 100% for projects on the LBBW Legato platform, creating a powerful peer-to-peer giving culture within the company. All projects are evaluated against ZF's Impact Framework which quantifies mobility access and wellbeing improvements.",
+    "size": "10001+",
+    "domains": ["Automotive", "Industrial Technology"]
+  },
+  {
+    "id": "company-08",
+    "name": "Allianz SE",
+    "description": "One of the world's largest financial services companies, providing insurance, asset management, and banking services to over 125 million customers in 70 countries. Allianz is headquartered in Munich and is a key pillar of the German financial system.",
+    "about": "Allianz's philanthropic giving through the Allianz Foundation and its LBBW Legato matched-giving programme focuses on climate resilience, agricultural microinsurance for smallholder farmers, and disaster relief. As a leading insurer, Allianz understands risk and applies actuarial rigour to measuring the social impact of its giving. Donor contributions are matched at 50 cents per euro on qualifying projects, and all programmes are independently evaluated against outcome targets set at inception.",
+    "size": "10001+",
+    "domains": ["Financial Services", "Insurance"]
+  },
+  {
+    "id": "company-09",
+    "name": "Festo SE & Co. KG",
+    "description": "A global leader in industrial automation and technical education, headquartered in Esslingen am Neckar. Festo develops pneumatic and electrical automation technology and runs one of the world's largest industrial technical training programmes.",
+    "about": "Festo's corporate giving programme applies the company's expertise in automation and precision control to social and environmental philanthropy, funding age-friendly skills workshops for seniors and automated urban greening systems in heat-stressed German cities. Through LBBW Legato, Festo co-funds projects where its technology can amplify donor impact: Festo provides all technical infrastructure and maintenance expertise, while donor funds pay for community integration and biological sustainability. Giving is focused on Baden-Württemberg communities where Festo employs local people.",
+    "size": "10001+",
+    "domains": ["Industrial Automation", "Technology"]
+  },
+  {
+    "id": "company-10",
+    "name": "Heidelberg Materials AG",
+    "description": "One of the world's largest building materials companies, producing cement, aggregates, and ready-mixed concrete. Headquartered in Heidelberg, the company operates in over 50 countries and is a global leader in developing low-carbon building materials.",
+    "about": "Heidelberg Materials' foundation giving programme subsidises the use of low-carbon construction materials in social housing and disaster-reconstruction projects where budget constraints would otherwise prevent sustainable building choices. On the LBBW Legato platform, donors co-fund the 'green premium' cost difference between standard and low-carbon concrete, while Heidelberg Materials contributes technical expertise, quality guarantees, and product certification at no charge. Special focus areas include post-earthquake school reconstruction and climate-resilient social housing in Germany.",
+    "size": "10001+",
+    "domains": ["Construction Materials", "Industry"]
+  },
+  {
+    "id": "company-11",
+    "name": "dm-drogerie markt GmbH & Co. KG",
+    "description": "Germany's largest drugstore chain by revenue and market share, headquartered in Karlsruhe. dm operates over 3,700 stores across Europe and is known for its strong social responsibility culture and employee ownership model.",
+    "about": "dm's corporate giving programme channels product donations, volunteer time, and matched cash contributions into refugee integration support, menstrual dignity initiatives, and community healthcare access across Germany. As a retailer present in virtually every German community, dm's giving network reaches people other philanthropic programmes miss. Through LBBW Legato, dm matches every donor euro with an equivalent product-donation contribution, ensuring the combined impact of cash and goods reaches vulnerable people quickly and without administrative overhead.",
+    "size": "10001+",
+    "domains": ["Retail", "Consumer Goods"]
+  },
+  {
+    "id": "company-12",
+    "name": "Vector Informatik GmbH",
+    "description": "A global leader in software tools and components for automotive network development, headquartered in Stuttgart. Vector's embedded software and testing tools are used in virtually every modern vehicle worldwide.",
+    "about": "Vector Informatik's 'Tech for Good' giving programme applies the company's embedded software and open-source engineering capabilities to disaster early warning platforms and digital financial inclusion tools for underserved communities. All software developed through the programme is released under open licences and made freely available to governments and NGOs globally. Vector matches employee volunteer hours with cash contributions on LBBW Legato, creating a hybrid philanthropy model where technical expertise and financial donations work in tandem.",
+    "size": "1001-5000",
+    "domains": ["Software", "Automotive Technology"]
+  },
+  {
+    "id": "company-13",
+    "name": "EnBW Energie Baden-Württemberg AG",
+    "description": "One of Germany's three largest energy companies, headquartered in Karlsruhe. EnBW operates electricity generation, transmission, and distribution networks and is a leading investor in renewable energy across Germany and Europe.",
+    "about": "EnBW's community energy giving programme funds solar installations on social housing estates, clean water infrastructure in Sub-Saharan Africa, and energy poverty relief across Baden-Württemberg — areas where the company's core expertise in renewable energy delivery creates genuine philanthropic leverage. EnBW provides all technical planning, grid connection services, and engineering expertise as its non-cash contribution; donor funds on LBBW Legato pay for hardware, installation, and community capacity building. EnBW targets 50 MW of community and social solar installed through its giving programme by 2030.",
+    "size": "10001+",
+    "domains": ["Energy", "Utilities"]
+  },
+  {
+    "id": "company-14",
+    "name": "Liebherr-International AG",
+    "description": "A diversified global technology group producing construction machinery, cranes, refrigeration systems, aerospace components, and household appliances. Liebherr is headquartered in Bulle, Switzerland, with major operations centred in Baden-Württemberg.",
+    "about": "Liebherr's humanitarian technology giving programme donates solar-powered refrigeration systems for vaccine cold chains in West Africa and co-funds Alpine peatland restoration using the precision earthmoving expertise of its construction division. Through LBBW Legato, Liebherr provides technical field support and maintenance for all donated equipment as its corporate contribution, while donor funds cover logistics, training, and programme delivery costs. Liebherr's giving philosophy: our products should be as present in the world's most vulnerable places as they are on its most productive job sites.",
+    "size": "10001+",
+    "domains": ["Industrial Technology", "Construction"]
+  },
+  {
+    "id": "company-15",
+    "name": "Daimler Truck AG",
+    "description": "One of the world's largest commercial vehicle manufacturers, headquartered in Stuttgart-Untertürkheim. Daimler Truck produces trucks, buses, and vans under the Mercedes-Benz Trucks, FUSO, Western Star, and BharatBenz brands globally.",
+    "about": "Daimler Truck's humanitarian giving programme donates and maintains converted truck-based mobile medical clinics for deployment in conflict zones, and funds community sport and social cohesion initiatives in German cities with large refugee populations. The company contributes vehicle engineering, adaptation, and field servicing as its non-cash philanthropic contribution, while donor funds on LBBW Legato cover medical supplies, staff salaries, and programme operational costs. Daimler Truck measures success by lives directly supported per vehicle donated — a metric reported publicly on an annual basis.",
+    "size": "10001+",
+    "domains": ["Automotive", "Commercial Vehicles"]
+  }
+]
